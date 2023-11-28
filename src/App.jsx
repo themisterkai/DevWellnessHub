@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react';
 
 import { updateName } from './reducers/settings';
 import { setMoodLevel } from './reducers/mood';
+import { loadHistoricalData } from './reducers/historical';
 
 export const App = () => {
   const settingsState = useSelector(state => state.settings);
   const currentDayStateMood = useSelector(state => state.mood);
+
   const [name, setName] = useState('');
   const [mood, setMood] = useState('');
 
@@ -15,6 +17,7 @@ export const App = () => {
   useEffect(() => {
     dispatch({ type: 'LOAD_DATA' });
     dispatch({ type: 'SAVE_DATA' });
+    dispatch(loadHistoricalData({}));
   }, []);
 
   useEffect(() => {
@@ -32,7 +35,7 @@ export const App = () => {
 
   return (
     <>
-      <h1>Hello {settingsState.name}</h1>
+      <h1>Hej {settingsState.name}</h1>
       Mood Level: {currentDayStateMood.moodLevel}
       <p />
       <div>

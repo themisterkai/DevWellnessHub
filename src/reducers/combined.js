@@ -6,6 +6,7 @@ import { focusTimer } from './focusTimer.js';
 import { habits } from './habits.js';
 import { settings } from './settings.js';
 import { getCurrentDate } from '../helpers.js';
+import { historical } from './historical.js';
 
 const combinedReducer = combineReducers({
   mood: mood.reducer,
@@ -13,6 +14,7 @@ const combinedReducer = combineReducers({
   breatheTimer: breatheTimer.reducer,
   habits: habits.reducer,
   settings: settings.reducer,
+  historical: historical.reducer,
 });
 
 const crossSliceReducer = (state, action) => {
@@ -28,15 +30,24 @@ const crossSliceReducer = (state, action) => {
       return state;
     }
     case 'LOAD_DATA': {
-      const name = localStorage.getItem('name') || state.settings.name;
-      const colorPalette =
-        localStorage.getItem('colorPalette') || state.settings.colorPalette;
-      const focusTimerLengthMS =
-        localStorage.getItem('focusTimerLengthMS') ||
-        state.settings.focusTimerLengthMS;
-      const breatheTimerLengthMS =
-        localStorage.getItem('breatheTimerLengthMS') ||
-        state.settings.breatheTimerLengthMS;
+      // const name = localStorage.getItem('name') || state.settings.name;
+      // const colorPalette =
+      //   localStorage.getItem('colorPalette') || state.settings.colorPalette;
+      // const focusTimerLengthMS =
+      //   localStorage.getItem('focusTimerLengthMS') ||
+      //   state.settings.focusTimerLengthMS;
+      // const breatheTimerLengthMS =
+      //   localStorage.getItem('breatheTimerLengthMS') ||
+      //   state.settings.breatheTimerLengthMS;
+
+      const settings = localStorage.getItem('settings');
+      let currentSettings = { ...state.settings };
+
+      if (settings != null) {
+        currentSettings = {
+          ...JSON.parse(settings),
+        };
+      }
 
       const currentData = {
         mood: state.mood,
@@ -44,6 +55,7 @@ const crossSliceReducer = (state, action) => {
         breatheTimer: state.breatheTimer,
         habits: state.habits,
       };
+
       const currentDayData = localStorage.getItem(getCurrentDate());
 
       if (currentDayData != null) {
@@ -58,11 +70,7 @@ const crossSliceReducer = (state, action) => {
         ...state,
         ...currentData,
         settings: {
-          ...state.settings,
-          name,
-          colorPalette,
-          focusTimerLengthMS,
-          breatheTimerLengthMS,
+          ...currentSettings,
         },
       };
     }
