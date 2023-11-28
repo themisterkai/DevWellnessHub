@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
-import { updateName } from './reducers/settings';
-import { setMoodLevel } from './reducers/mood';
 import { loadHistoricalData } from './reducers/historical';
+import { setMoodLevel } from './reducers/mood';
+import { updateName } from './reducers/settings';
 
 export const App = () => {
   const settingsState = useSelector(state => state.settings);

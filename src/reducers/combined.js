@@ -1,12 +1,12 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import { mood } from './mood.js';
 import { breatheTimer } from './breatheTimer.js';
 import { focusTimer } from './focusTimer.js';
 import { habits } from './habits.js';
-import { settings } from './settings.js';
 import { getCurrentDate } from '../helpers.js';
 import { historical } from './historical.js';
+import { mood } from './mood.js';
+import { settings } from './settings.js';
 
 const combinedReducer = combineReducers({
   mood: mood.reducer,
@@ -29,17 +29,8 @@ const crossSliceReducer = (state, action) => {
       localStorage.setItem(getCurrentDate(), JSON.stringify(currentData));
       return state;
     }
-    case 'LOAD_DATA': {
-      // const name = localStorage.getItem('name') || state.settings.name;
-      // const colorPalette =
-      //   localStorage.getItem('colorPalette') || state.settings.colorPalette;
-      // const focusTimerLengthMS =
-      //   localStorage.getItem('focusTimerLengthMS') ||
-      //   state.settings.focusTimerLengthMS;
-      // const breatheTimerLengthMS =
-      //   localStorage.getItem('breatheTimerLengthMS') ||
-      //   state.settings.breatheTimerLengthMS;
 
+    case 'LOAD_DATA': {
       const settings = localStorage.getItem('settings');
       let currentSettings = { ...state.settings };
 
@@ -56,10 +47,9 @@ const crossSliceReducer = (state, action) => {
         habits: state.habits,
       };
 
-      const currentDayData = localStorage.getItem(getCurrentDate());
-
-      if (currentDayData != null) {
-        const parsedData = JSON.parse(currentDayData);
+      const dataFromLocalStorage = localStorage.getItem(getCurrentDate());
+      if (dataFromLocalStorage != null) {
+        const parsedData = JSON.parse(dataFromLocalStorage);
         currentData.mood = parsedData.mood;
         currentData.focusTimer = parsedData.focusTimer;
         currentData.breatheTimer = parsedData.breatheTimer;
@@ -74,6 +64,7 @@ const crossSliceReducer = (state, action) => {
         },
       };
     }
+
     default:
       return state;
   }

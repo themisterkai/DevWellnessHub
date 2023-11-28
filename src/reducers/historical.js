@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { getCurrentDate } from '../helpers';
 
 const initialState = {
