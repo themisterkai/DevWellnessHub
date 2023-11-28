@@ -12,8 +12,9 @@ export const historical = createSlice({
   reducers: {
     loadHistoricalData: state => {
       const historicalData = { ...localStorage };
-      // delete settings page
+      // delete settings data
       delete historicalData.settings;
+      // delete data for the current date
       delete historicalData[getCurrentDate()];
       state.historicalData = { ...historicalData };
     },
