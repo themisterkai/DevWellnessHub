@@ -9,7 +9,18 @@ const initialState = {
 export const mood = createSlice({
   name: 'mood',
   initialState,
-  reducers: {},
+  reducers: {
+    setMoodLevel: (state, action) => {
+      state.moodLevel = action.payload.moodLevel;
+    },
+    setEnergyLevel: (state, action) => {
+      state.energyLevel = action.payload.energyLevel;
+    },
+    setOverwhelmedLevel: (state, action) => {
+      state.overwhelmedLevel = action.payload.overwhelmedLevel;
+    },
+  },
 });
 
-export const { loadMood } = mood.actions;
+export const { setMoodLevel, setEnergyLevel, setOverwhelmedLevel } =
+  mood.actions;

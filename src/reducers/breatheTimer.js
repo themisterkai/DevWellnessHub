@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  breatheTimerLength: '',
   isBreatheTimerRunning: false,
   breatheTimer: { minutes: 0, seconds: 0 },
   breatheTimerCount: 0,
@@ -13,4 +12,4 @@ export const breatheTimer = createSlice({
   reducers: {},
 });
 
-export const { loadBreathe } = breatheTimer.actions;
+// export const {} = breatheTimer.actions;

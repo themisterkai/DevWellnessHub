@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  name: 'KAIIIII',
+  name: '',
   // we should set a default value here
   colorPalette: '',
   // default value of 25 min in ms

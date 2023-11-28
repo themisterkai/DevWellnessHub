@@ -1,12 +1,14 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 
-import { useEffect } from 'react';
-
-import { useSelector } from 'react-redux';
+import { updateName } from './reducers/settings';
+import { setMoodLevel } from './reducers/mood';
 
 export const App = () => {
   const settingsState = useSelector(state => state.settings);
   const currentDayStateMood = useSelector(state => state.mood);
+  const [name, setName] = useState('');
+  const [mood, setMood] = useState('');
 
   const dispatch = useDispatch();
 
@@ -15,9 +17,48 @@ export const App = () => {
     dispatch({ type: 'SAVE_DATA' });
   }, []);
 
+  useEffect(() => {
+    setMoodLevel(currentDayStateMood);
+  }, [currentDayStateMood]);
+
+  const handleSubmitName = name => {
+    dispatch(updateName({ name }));
+  };
+
+  const handleSetMoodLevel = moodLevel => {
+    dispatch(setMoodLevel({ moodLevel }));
+    dispatch({ type: 'SAVE_DATA' });
+  };
+
   return (
-    <h1>
-      Hello {settingsState.name}, {currentDayStateMood.moodLevel}
-    </h1>
+    <>
+      <h1>Hello {settingsState.name}</h1>
+      Mood Level: {currentDayStateMood.moodLevel}
+      <p />
+      <div>
+        Set Name:{' '}
+        <input
+          onChange={e => {
+            setName(e.target.value);
+          }}
+        ></input>
+        <button onClick={() => handleSubmitName(name)}>Submit Name</button>
+      </div>
+      <div>
+        Set Mood Level:{' '}
+        <input
+          type="number"
+          value={mood}
+          min="1"
+          max="10"
+          onChange={e => {
+            setMood(e.target.value);
+          }}
+        ></input>
+        <button onClick={() => handleSetMoodLevel(mood)}>
+          Submit Mood Level
+        </button>
+      </div>
+    </>
   );
 };
