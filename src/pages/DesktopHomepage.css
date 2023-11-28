@@ -1,0 +1,18 @@
+/* DesktopHomepage.css */
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+  }
+
+
+.desktop-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    gap: 1vw;
+}

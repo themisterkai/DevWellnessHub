@@ -1,8 +1,8 @@
+import { DesktopHomepage } from "./pages/DesktopHomePage";
+
 function App() {
   return (
-    <>
-      <h1>Start here</h1>
-    </>
+    <DesktopHomepage/>
   );
 }
 
