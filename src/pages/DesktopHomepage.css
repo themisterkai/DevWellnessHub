@@ -1,0 +1,15 @@
+/* DesktopHomepage.css */
+.desktop-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    gap: 1vw;
+}
+
+.dash-user-name {
+  margin: 0;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+}
