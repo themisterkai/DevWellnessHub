@@ -4,8 +4,8 @@ const initialState = {
   name: '',
   // we should set a default value here
   colorPalette: '',
-  // default value of 25 min in ms
-  focusTimerLengthMS: 25 * 60 * 1000,
+  // default value of 1 min in ms (for testing purposes)
+  focusTimerLengthMS: 1 * 60 * 1000,
   // default value of 1 min
   breatheTimerLengthMS: 1 * 60 * 1000,
   isMobile: false,

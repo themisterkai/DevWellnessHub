@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  focusTimerLength: '',
   isFocusTimerRunning: false,
-  focusTimer: { minutes: 0, seconds: 0 },
+  isFocusTimerPaused: false,
+  focusTimer: 0,
   focusTimerCount: 0,
 };
 
@@ -11,20 +11,37 @@ export const focusTimer = createSlice({
   name: 'focusTimer',
   initialState,
   reducers: {
-    startTimer: state => {
+    startFocusTimer: state => {
       state.isFocusTimerRunning = true;
+      state.isFocusTimerPaused = false;
     },
 
-    endTimer: state => {
+    pauseFocusTimer: state => {
+      state.isFocusTimerPaused = true;
+    },
+
+    resetFocusTimer: state => {
       state.isFocusTimerRunning = false;
+      state.isFocusTimerPaused = false;
+      state.focusTimer = 0;
+    },
+
+    endFocusTimer: state => {
+      state.isFocusTimerRunning = false;
+      state.isFocusTimerPaused = false;
       state.focusTimerCount += 1;
     },
 
-    setTimer: (state, action) => {
-      state.focusTimer.minutes = action.payload.minutes;
-      state.focusTimer.seconds = action.payload.seconds;
+    setFocusTimer: (state, action) => {
+      state.focusTimer = action.payload.focusTimer;
     },
   },
 });
 
-// export const {} = focusTimer.actions;
+export const {
+  startFocusTimer,
+  pauseFocusTimer,
+  resetFocusTimer,
+  endFocusTimer,
+  setFocusTimer,
+} = focusTimer.actions;
