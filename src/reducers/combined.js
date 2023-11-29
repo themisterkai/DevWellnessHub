@@ -27,6 +27,7 @@ const crossSliceReducer = (state, action) => {
         habits: state.habits,
       };
       localStorage.setItem(getCurrentDate(), JSON.stringify(currentData));
+      localStorage.setItem('settings', JSON.stringify(state.settings));
       return state;
     }
 
