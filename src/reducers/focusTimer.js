@@ -17,7 +17,7 @@ export const focusTimer = createSlice({
     },
 
     pauseFocusTimer: state => {
-      state.isFocusTimerPaused = true;
+      state.isFocusTimerPaused = !state.isFocusTimerPaused;
     },
 
     resetFocusTimer: state => {

@@ -16,6 +16,7 @@ export const FocusTimer = () => {
       dispatch(setFocusTimer({ focusTimer: focusTimer.focusTimer - 1000 }));
     } else {
       dispatch(endFocusTimer({}));
+      dispatch(setFocusTimer({ focusTimer: focusTimerLengthMS }));
       dispatch({ type: 'SAVE_DATA' });
     }
   };

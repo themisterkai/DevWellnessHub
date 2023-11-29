@@ -20,19 +20,29 @@ export const FocusTimerDetailed = () => {
     <div className="focus-detailed-wrapper">
       {millisToMinutesAndSeconds(focusTimer.focusTimer)}
       <div>
-        <button
-          onClick={() =>
-            handleStartTimer(dispatch, focusTimer, focusTimerLengthMS)
-          }
-        >
-          start timer
-        </button>
-        <button onClick={() => handlePauseTimer(dispatch)}>pause timer</button>
-        <button onClick={() => handleResetTimer(dispatch, focusTimerLengthMS)}>
-          reset timer
-        </button>
+        {!focusTimer.isFocusTimerRunning && (
+          <button
+            onClick={() =>
+              handleStartTimer(dispatch, focusTimer, focusTimerLengthMS)
+            }
+          >
+            start timer
+          </button>
+        )}
+        {focusTimer.isFocusTimerRunning && (
+          <button onClick={() => handlePauseTimer(dispatch)}>
+            {!focusTimer.isFocusTimerPaused ? 'pause' : 'unpause'} timer
+          </button>
+        )}
+        {focusTimer.isFocusTimerRunning && (
+          <button
+            onClick={() => handleResetTimer(dispatch, focusTimerLengthMS)}
+          >
+            reset timer
+          </button>
+        )}
       </div>
-      <div>Number of focus timers: {focusTimer.focusTimerCount}</div>
+      <div># of focus timers: {focusTimer.focusTimerCount}</div>
     </div>
   );
 };
