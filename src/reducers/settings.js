@@ -6,7 +6,7 @@ const initialState = {
   colorPalette: '',
   // default value of 25 min in ms
   focusTimerLengthMS: 25 * 60 * 1000,
-  // defiult value of 1 min
+  // default value of 1 min
   breatheTimerLengthMS: 1 * 60 * 1000,
   isMobile: false,
 };
@@ -35,6 +35,10 @@ export const settings = createSlice({
       state.breatheTimerLengthMS = breatheTimerLengthMS;
       localStorage.setItem('settings', JSON.stringify(state));
     },
+    updateIsMobile: (state, action) => {
+      const { isMobile } = action.payload;
+      state.isMobile = isMobile;
+    },
   },
 });
 
@@ -44,4 +48,5 @@ export const {
   updateColorPalette,
   updateFocusTimerLengthMS,
   updateBreatheTimerLengthMS,
+  updateIsMobile,
 } = settings.actions;
