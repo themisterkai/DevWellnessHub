@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { App } from './App.jsx';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import './index.css';
+
+import { App } from './App.jsx';
 import { reducer } from './reducers/combined.js';
+import './index.css';
 
 const store = configureStore({ reducer });
 

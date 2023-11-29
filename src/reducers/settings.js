@@ -18,22 +18,22 @@ export const settings = createSlice({
     updateName: (state, action) => {
       const { name } = action.payload;
       state.name = name;
-      localStorage.setItem('name', name);
+      localStorage.setItem('settings', JSON.stringify(state));
     },
     updateColorPalette: (state, action) => {
       const { colorPalette } = action.payload;
       state.colorPalette = colorPalette;
-      localStorage.setItem('colorPalette', colorPalette);
+      localStorage.setItem('settings', JSON.stringify(state));
     },
     updateFocusTimerLengthMS: (state, action) => {
       const { focusTimerLengthMS } = action.payload;
       state.focusTimerLengthMS = focusTimerLengthMS;
-      localStorage.setItem('focusTimerLengthMS', focusTimerLengthMS);
+      localStorage.setItem('settings', JSON.stringify(state));
     },
     updateBreatheTimerLengthMS: (state, action) => {
       const { breatheTimerLengthMS } = action.payload;
       state.breatheTimerLengthMS = breatheTimerLengthMS;
-      localStorage.setItem('breatheTimerLengthMS', breatheTimerLengthMS);
+      localStorage.setItem('settings', JSON.stringify(state));
     },
     updateIsMobile: (state, action) => {
       const { isMobile } = action.payload;
