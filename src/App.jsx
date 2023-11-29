@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { updateName } from './reducers/settings';
 import { setMoodLevel } from './reducers/mood';
+import { DesktopHomepage } from "./pages/DesktopHomePage";
 
 export const App = () => {
   const settingsState = useSelector(state => state.settings);
@@ -59,6 +60,7 @@ export const App = () => {
           Submit Mood Level
         </button>
       </div>
+        <DesktopHomepage/>
     </>
   );
 };
