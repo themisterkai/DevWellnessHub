@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { updateName } from '../reducers/settings';
 import { setMoodLevel } from '../reducers/mood';
+import "./SettingsPage.css";
 //Welcoming page + initial user data inputted;
 //This page will be responsive by using MediaQueries only -- one page
 //fits all;
@@ -17,6 +18,19 @@ export const StartPage = ({ onSetupComplete }) => {
   const [mood, setMood] = useState('');
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    // Check localStorage for existing data
+    const storedSettings = JSON.parse(localStorage.getItem('settings'));
+    const storedName = storedSettings ? storedSettings.name : null;
+
+    console.log(storedName);
+
+    if (storedName) {
+      // If data is found, skip the StartPage
+      onSetupComplete();
+    }
+  }, [onSetupComplete]);
 
   useEffect(() => {
     dispatch({ type: 'LOAD_DATA' });

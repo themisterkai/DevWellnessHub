@@ -9,7 +9,9 @@ import { FocusTimerDetailed } from "../components/FocusTimer/FocusTimerDetailed"
 import { MoodTrackerDetailed } from "../components/MoodTracker/MoodTrackerDetailed"
 import { HabitTrackerDetailed } from "../components/HabitTracker/HabitTrackerDetailed"
 import { BreatheTimerDetailed } from "../components/BreatheTimer/BreatheTimerDetailed"
+import { SettingsPage } from './SettingsPage';
 import "./DesktopHomepage.css"
+
 
 
 export const DesktopHomepage = () => {
@@ -38,8 +40,9 @@ export const DesktopHomepage = () => {
                             {currentPage === 'mood' && <MoodTrackerDetailed />}
                             {currentPage === 'habit' && <HabitTrackerDetailed />}
                             {currentPage === 'breath' && <BreatheTimerDetailed />}
+                            {currentPage === 'settings' && <SettingsPage />}
                         </div>
-                    <HistoricalCalDetailed/>
+                        <HistoricalCalDetailed/>
                 </div>
             )}
         </div>   

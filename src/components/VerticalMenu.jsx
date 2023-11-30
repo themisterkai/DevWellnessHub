@@ -15,7 +15,7 @@ export const  VerticalMenu = ({onMenuClick}) => {
                 <span className="habit" onClick={() => onMenuClick('habit')}>. HABIT</span>
                 <span className="breath" onClick={() => onMenuClick('breath')}>. BREATH</span>
               </div>
-              <span className="settings-link">SETTINGS</span>
+              <span className="settings-link" onClick={() => onMenuClick('settings')}>SETTINGS</span>
             </div>
         </div>
 

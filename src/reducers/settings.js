@@ -39,6 +39,11 @@ export const settings = createSlice({
       const { isMobile } = action.payload;
       state.isMobile = isMobile;
     },
+    factoryReset: (state) => {
+      // Reset all fields to initial values
+      Object.assign(state, initialState);
+      localStorage.removeItem('settings');
+    },
   },
 });
 
@@ -49,4 +54,5 @@ export const {
   updateFocusTimerLengthMS,
   updateBreatheTimerLengthMS,
   updateIsMobile,
+  factoryReset,
 } = settings.actions;
