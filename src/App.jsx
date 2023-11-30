@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { StartPage } from './pages/StartPage';
+
 import { DesktopHomepage } from './pages/DesktopHomepage';
+import { StartPage } from './pages/StartPage';
 
 export const App = () => {
   const [isSetupComplete, setIsSetupComplete] = useState(false);
