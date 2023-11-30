@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  moodLevel: 0,
-  energyLevel: 0,
-  overwhelmedLevel: 0,
+  moodLevel: 5,
+  energyLevel: 5,
+  overwhelmedLevel: 5,
 };
 
 export const mood = createSlice({
