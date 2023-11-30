@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { endFocusTimer, setFocusTimer } from '../../reducers/focusTimer';
 
-export const FocusTimer = () => {
+export const FocusTimerRenderless = () => {
   const dispatch = useDispatch();
 
   const focusTimer = useSelector(state => state.focusTimer);
