@@ -24,14 +24,23 @@ export const HabitTrackerDetailed = () => {
       <div className="habit-detailed-wrapper-habits">
         {habits.map(habit => {
           return (
-            <div key={habit.id}>
+            <div
+              className="habit-detailed-wrapper-habits-options"
+              key={habit.id}
+            >
               <input
+                className="habit-detailed-wrapper-habits-options"
                 type="checkbox"
                 id={habit.id}
                 checked={habit.isComplete}
                 onChange={() => handleToggleHabit(habit.id)}
               />{' '}
-              <label htmlFor={habit.id}>{habit.description}</label>
+              <label
+                className="habit-detailed-wrapper-habits-options"
+                htmlFor={habit.id}
+              >
+                {habit.description}
+              </label>
             </div>
           );
         })}

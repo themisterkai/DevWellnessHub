@@ -23,4 +23,12 @@
 .habit-detailed-wrapper-habits {
   text-align: left;
   margin: 40px;
+  cursor: pointer;
+}
+
+.habit-detailed-wrapper-habits-options:hover {
+  cursor: pointer;
+}
+.habit-detailed-wrapper-habits-options {
+  cursor: pointer;
 }
