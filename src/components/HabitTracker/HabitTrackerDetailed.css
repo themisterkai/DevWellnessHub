@@ -3,13 +3,24 @@
   height: 95vh;
   background-color: #a45108;
   border-radius: 20px;
-
   display: inline-block;
-  text-align: center;
   gap: 5vh;
   color: #fff;
   font-size: 36px;
   font-weight: 400;
   letter-spacing: 1.08px;
   line-height: normal;
+}
+
+.habit-detailed-wrapper-title {
+  text-align: center;
+}
+
+.habit-detailed-wrapper-count {
+  text-align: center;
+}
+
+.habit-detailed-wrapper-habits {
+  text-align: left;
+  margin: 40px;
 }
