@@ -15,13 +15,14 @@ export const Dashboard = () => {
     return (
             <div className="dashboard-wrapper">
                 <h1 className="dash-user-name">Welcome {settingsState.name}</h1>
-                    
+                <div className="app-container">
                     <div className="app-wrapper">
                         <FocusTimer />
                         <HabitTracker />
                         <BreatheTimer />
                         <MoodTracker />
                     </div>
+                </div>
             </div>
 
     );

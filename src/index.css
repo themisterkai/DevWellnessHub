@@ -14,7 +14,7 @@ body {
   margin: 0;
   height: 100vh;
   display: flex;
-  background-color: black;
+  background-color: white;
   align-items: center; 
   justify-content: center; 
 }
