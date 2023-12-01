@@ -6,3 +6,15 @@
     background-color: #1C1D1F;
     border-radius: 20px;
 }
+
+.dash-user-name {
+    padding-bottom: 20px;
+}
+
+.app-wrapper {
+    width: 590px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 30px;
+}
