@@ -1,6 +1,15 @@
 .breathe-detailed-wrapper {
-    width: 45vw; 
-    height: 95vh;
-    background-color: #9708a4;
-    border-radius: 20px;
+  width: 45vw;
+  height: 95vh;
+  background-color: #9708a4;
+  border-radius: 20px;
+
+  display: inline-block;
+  text-align: center;
+  gap: 5vh;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 1.08px;
+  line-height: normal;
 }
