@@ -4,11 +4,38 @@ const initialState = {
   name: '',
   // we should set a default value here
   colorPalette: '',
-  // default value of 25 min in ms
-  focusTimerLengthMS: 25 * 60 * 1000,
+  // default value of 1 min in ms (for testing purposes)
+  focusTimerLengthMS: 1 * 60 * 1000,
   // default value of 1 min
   breatheTimerLengthMS: 1 * 60 * 1000,
   isMobile: false,
+  habits: [
+    {
+      id: 0,
+      description: 'habit one',
+      isComplete: false,
+    },
+    {
+      id: 1,
+      description: 'habit two',
+      isComplete: false,
+    },
+    {
+      id: 2,
+      description: 'habit three',
+      isComplete: false,
+    },
+    {
+      id: 3,
+      description: 'habit four',
+      isComplete: false,
+    },
+    {
+      id: 4,
+      description: 'habit five',
+      isComplete: false,
+    },
+  ],
 };
 
 export const settings = createSlice({
