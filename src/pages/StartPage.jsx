@@ -5,7 +5,6 @@ import {
   updateFocusTimerLengthMS,
   updateBreatheTimerLengthMS,
 } from '../reducers/settings';
-//import { setMoodLevel } from '../reducers/mood';
 import "./SettingsPage.css";
 //Welcoming page + initial user data inputted;
 //This page will be responsive by using MediaQueries only -- one page
@@ -17,9 +16,7 @@ export const StartPage = ({ onSetupComplete }) => {
   //The start page here will set initial data to the store,
   //used then for the app itself
   const settingsState = useSelector(state => state.settings);
-  //const currentDayStateMood = useSelector(state => state.mood);
-  const [name, setName] = useState('');
-  //const [mood, setMood] = useState('');
+  const [name, setName] = useState(settingsState.name);
   const [focusTimerLength, setFocusTimerLength] = useState(
     settingsState.focusTimerLengthMS / (60 * 1000) // convert milliseconds to minutes
   );
@@ -30,7 +27,8 @@ export const StartPage = ({ onSetupComplete }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // Check localStorage for existing data
+    //Check localStorage for existing data
+    //I think this could be refactored better?
     const storedSettings = JSON.parse(localStorage.getItem('settings'));
     const storedName = storedSettings ? storedSettings.name : null;
 
@@ -42,24 +40,16 @@ export const StartPage = ({ onSetupComplete }) => {
     }
   }, [onSetupComplete]);
 
+  /*
   useEffect(() => {
     dispatch({ type: 'LOAD_DATA' });
     dispatch({ type: 'SAVE_DATA' });
   }, []);
+  */
 
-  /*useEffect(() => {
-    setMoodLevel(currentDayStateMood);
-  }, [currentDayStateMood]);*/
-
-  const handleSubmitName = name => {
+  const handleSubmitName = () => {
     dispatch(updateName({ name }));
   };
-
-  /*
-  const handleSetMoodLevel = moodLevel => {
-    dispatch(setMoodLevel({ moodLevel }));
-    //dispatch({ type: 'SAVE_DATA' }); this one might
-  };*/
 
   const handleSetFocusTimerLength = () => {
     dispatch(updateFocusTimerLengthMS({
@@ -74,17 +64,32 @@ export const StartPage = ({ onSetupComplete }) => {
   }
 
   const handleGoToDashboard = () => {
-    //Validate that the required information is provided
-    //This could be changed or many other validations passed in!
-    if (!name || !focusTimerLength || !breatheTimerLength) {
-      alert('Please fill out all required information before proceeding.');
+    // Validate that the name is provided
+    if (!settingsState.name) {
+      alert('Please fill out your name before proceeding.');
       return;
     }
-
-    //If all validation passes, call the onSetupComplete function
-    onSetupComplete();
+  
+    // Check if focusTimerLengthMS and breatheTimerLengthMS are modified
+    const isFocusTimerModified = settingsState.focusTimerLengthMS !== 25 * 60 * 1000;
+    const isBreatheTimerModified = settingsState.breatheTimerLengthMS !== 1 * 60 * 1000;
+  
+    if (isFocusTimerModified && isBreatheTimerModified) {
+      // If both timers are modified, proceed to onSetupComplete
+      onSetupComplete();
+    } else {
+      // If neither timer is modified, show an alert and proceed after confirmation
+      const confirmation = window.confirm('You have not submitted the values for one or both timers. They will be set to the default values. Do you want to proceed?');
+  
+      if (confirmation) {
+        onSetupComplete();
+      } else {
+        alert('Please review and confirm your timer settings before proceeding.');
+      }
+    }
   };
-
+  
+  
     
   return (
     <>
@@ -97,7 +102,7 @@ export const StartPage = ({ onSetupComplete }) => {
           }}
         ></input>
         {' '}
-        <button onClick={() => handleSubmitName(name)}>Submit Name</button>
+        <button onClick={handleSubmitName}>Submit Name</button>
       </div>
       <div>
         Set Focus Timer Length (minutes):{' '}
