@@ -37,4 +37,5 @@
   .habit:hover, 
   .breath:hover {
     text-decoration: underline;
+    cursor: pointer;
   }
