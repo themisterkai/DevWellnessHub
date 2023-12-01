@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
-  handlePauseTimer,
-  handleResetTimer,
-  handleStartTimer,
+  handlePauseFocusTimer,
+  handleResetFocusTimer,
+  handleStartFocusTimer,
 } from './FocusTimerDispatch';
 import { millisToMinutesAndSeconds } from '../../helpers';
 import './FocusTimerDetailed.css';
@@ -18,25 +18,26 @@ export const FocusTimerDetailed = () => {
 
   return (
     <div className="focus-detailed-wrapper">
+      <h2>Get Focused</h2>
       {millisToMinutesAndSeconds(focusTimer.focusTimer)}
       <div>
         {!focusTimer.isFocusTimerRunning && (
           <button
             onClick={() =>
-              handleStartTimer(dispatch, focusTimer, focusTimerLengthMS)
+              handleStartFocusTimer(dispatch, focusTimer, focusTimerLengthMS)
             }
           >
             start timer
           </button>
         )}
         {focusTimer.isFocusTimerRunning && (
-          <button onClick={() => handlePauseTimer(dispatch)}>
+          <button onClick={() => handlePauseFocusTimer(dispatch)}>
             {!focusTimer.isFocusTimerPaused ? 'pause' : 'unpause'} timer
           </button>
         )}
         {focusTimer.isFocusTimerRunning && (
           <button
-            onClick={() => handleResetTimer(dispatch, focusTimerLengthMS)}
+            onClick={() => handleResetFocusTimer(dispatch, focusTimerLengthMS)}
           >
             reset timer
           </button>

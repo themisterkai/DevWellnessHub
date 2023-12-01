@@ -5,13 +5,13 @@ import {
   startFocusTimer,
 } from '../../reducers/focusTimer';
 
-export const handleStartTimer = (
+export const handleStartFocusTimer = (
   dispatch,
   focusTimerState,
   focusTimerLengthMS
 ) => {
   if (
-    !focusTimerState.isfocusTimerStateRunning &&
+    !focusTimerState.isFocusTimerRunning &&
     !focusTimerState.isFocusTimerPaused
   ) {
     dispatch(setFocusTimer({ focusTimer: focusTimerLengthMS }));
@@ -21,11 +21,11 @@ export const handleStartTimer = (
   }
 };
 
-export const handlePauseTimer = dispatch => {
+export const handlePauseFocusTimer = dispatch => {
   dispatch(pauseFocusTimer({}));
 };
 
-export const handleResetTimer = (dispatch, focusTimerLengthMS) => {
+export const handleResetFocusTimer = (dispatch, focusTimerLengthMS) => {
   dispatch(setFocusTimer({ focusTimer: focusTimerLengthMS }));
   dispatch(resetFocusTimer({}));
 };

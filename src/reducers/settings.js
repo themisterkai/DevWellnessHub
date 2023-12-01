@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+export const initialState = {
   name: '',
   // we should set a default value here
   colorPalette: '',
@@ -66,7 +66,7 @@ export const settings = createSlice({
       const { isMobile } = action.payload;
       state.isMobile = isMobile;
     },
-    factoryReset: (state) => {
+    factoryReset: state => {
       // Reset all fields to initial values
       Object.assign(state, initialState);
       localStorage.removeItem('settings');
