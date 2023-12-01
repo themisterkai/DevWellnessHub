@@ -27,6 +27,7 @@ const crossSliceReducer = (state, action) => {
         habits: state.habits,
       };
       localStorage.setItem(getCurrentDate(), JSON.stringify(currentData));
+      localStorage.setItem('settings', JSON.stringify(state.settings));
       return state;
     }
 
@@ -44,8 +45,12 @@ const crossSliceReducer = (state, action) => {
         mood: state.mood,
         focusTimer: state.focusTimer,
         breatheTimer: state.breatheTimer,
-        habits: state.habits,
+        habits: {
+          habits: [],
+        },
       };
+      // we pull the default habits from settings
+      currentData.habits.habits = state.settings.habits;
 
       const dataFromLocalStorage = localStorage.getItem(getCurrentDate());
       if (dataFromLocalStorage != null) {

@@ -1,21 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  habits: {
-    habits: [
-      {
-        id: 0,
-        description: 'habit one',
-        isComplete: false,
-      },
-    ],
-  },
+  habits: [],
 };
 
 export const habits = createSlice({
   name: 'habits',
   initialState,
-  reducers: {},
+  reducers: {
+    toggleHabit: (state, action) => {
+      const { id } = action.payload;
+      const selectedHabit = state.habits.find(
+        habit => habit.id === parseInt(id)
+      );
+      selectedHabit.isComplete = !selectedHabit.isComplete;
+    },
+  },
 });
 
-// export const {} = habits.actions;
+export const { toggleHabit } = habits.actions;
