@@ -1,7 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { updateName } from '../reducers/settings';
-import { setMoodLevel } from '../reducers/mood';
+import {
+  updateName,
+  updateFocusTimerLengthMS,
+  updateBreatheTimerLengthMS,
+} from '../reducers/settings';
+//import { setMoodLevel } from '../reducers/mood';
 import "./SettingsPage.css";
 //Welcoming page + initial user data inputted;
 //This page will be responsive by using MediaQueries only -- one page
@@ -13,9 +17,15 @@ export const StartPage = ({ onSetupComplete }) => {
   //The start page here will set initial data to the store,
   //used then for the app itself
   const settingsState = useSelector(state => state.settings);
-  const currentDayStateMood = useSelector(state => state.mood);
+  //const currentDayStateMood = useSelector(state => state.mood);
   const [name, setName] = useState('');
-  const [mood, setMood] = useState('');
+  //const [mood, setMood] = useState('');
+  const [focusTimerLength, setFocusTimerLength] = useState(
+    settingsState.focusTimerLengthMS / (60 * 1000) // convert milliseconds to minutes
+  );
+  const [breatheTimerLength, setBreatheTimerLength] = useState(
+    settingsState.breatheTimerLengthMS / (60 * 1000) // convert milliseconds to minutes
+  );
 
   const dispatch = useDispatch();
 
@@ -24,7 +34,7 @@ export const StartPage = ({ onSetupComplete }) => {
     const storedSettings = JSON.parse(localStorage.getItem('settings'));
     const storedName = storedSettings ? storedSettings.name : null;
 
-    console.log(storedName);
+    //console.log(storedName);
 
     if (storedName) {
       // If data is found, skip the StartPage
@@ -37,23 +47,36 @@ export const StartPage = ({ onSetupComplete }) => {
     dispatch({ type: 'SAVE_DATA' });
   }, []);
 
-  useEffect(() => {
+  /*useEffect(() => {
     setMoodLevel(currentDayStateMood);
-  }, [currentDayStateMood]);
+  }, [currentDayStateMood]);*/
 
   const handleSubmitName = name => {
     dispatch(updateName({ name }));
   };
 
+  /*
   const handleSetMoodLevel = moodLevel => {
     dispatch(setMoodLevel({ moodLevel }));
-    dispatch({ type: 'SAVE_DATA' });
-  };
+    //dispatch({ type: 'SAVE_DATA' }); this one might
+  };*/
+
+  const handleSetFocusTimerLength = () => {
+    dispatch(updateFocusTimerLengthMS({
+      focusTimerLengthMS: focusTimerLength * 60 * 1000 // convert minutes to milliseconds
+    }));
+  }
+
+  const handleSetBreatheTimerLength = () => {
+    dispatch(updateBreatheTimerLengthMS({
+      breatheTimerLengthMS: breatheTimerLength * 60 * 1000 // convert minutes to milliseconds
+    }));
+  }
 
   const handleGoToDashboard = () => {
     //Validate that the required information is provided
     //This could be changed or many other validations passed in!
-    if (!name || !mood) {
+    if (!name || !focusTimerLength || !breatheTimerLength) {
       alert('Please fill out all required information before proceeding.');
       return;
     }
@@ -66,8 +89,6 @@ export const StartPage = ({ onSetupComplete }) => {
   return (
     <>
       <h1>Hello {settingsState.name}</h1>
-      Mood Level: {currentDayStateMood.moodLevel}
-      <p />
       <div>
         Set Name:{' '}
         <input
@@ -79,19 +100,33 @@ export const StartPage = ({ onSetupComplete }) => {
         <button onClick={() => handleSubmitName(name)}>Submit Name</button>
       </div>
       <div>
-        Set Mood Level:{' '}
+        Set Focus Timer Length (minutes):{' '}
         <input
           type="number"
-          value={mood}
+          value={focusTimerLength}
           min="1"
-          max="10"
           onChange={e => {
-            setMood(e.target.value);
+            setFocusTimerLength(e.target.value);
           }}
         ></input>
         {' '}
-        <button onClick={() => handleSetMoodLevel(mood)}>
-          Submit Mood Level
+        <button onClick={handleSetFocusTimerLength}>
+          Submit Focus Timer Length
+        </button>
+      </div>
+      <div>
+        Set Breathe Timer Length (minutes):{' '}
+        <input
+          type="number"
+          value={breatheTimerLength}
+          min="1"
+          onChange={e => {
+            setBreatheTimerLength(e.target.value);
+          }}
+        ></input>
+        {' '}
+        <button onClick={handleSetBreatheTimerLength}>
+          Submit Breathe Timer Length
         </button>
       </div>
       <div>
@@ -99,6 +134,5 @@ export const StartPage = ({ onSetupComplete }) => {
       </div>
     </>
   );
-
 };
  
