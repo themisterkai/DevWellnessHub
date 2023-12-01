@@ -38,7 +38,7 @@ export const StartPage = ({ onSetupComplete }) => {
       // If data is found, skip the StartPage
       onSetupComplete();
     }
-  }, [onSetupComplete]);
+  }, []);
 
   /*
   useEffect(() => {
