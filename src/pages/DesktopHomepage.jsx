@@ -24,30 +24,34 @@ export const DesktopHomepage = () => {
   const handleMenuClick = page => {
     setCurrentPage(page);
   };
-
-  return (
-    <div>
-      <FocusTimerRenderless />
-      <BreatheTimerRenderless />
-      {isMobile ? (
-        <Dashboard />
-      ) : (
-        //Import VerticalMenu
-        //Import Dashboard
-        //Import HistoricalCalDetailed
-        <div className="desktop-wrapper">
-          <VerticalMenu onMenuClick={handleMenuClick} />
-          <div>
-            {currentPage === 'dashboard' && <Dashboard />}
-            {currentPage === 'focus' && <FocusTimerDetailed />}
-            {currentPage === 'mood' && <MoodTrackerDetailed />}
-            {currentPage === 'habit' && <HabitTrackerDetailed />}
-            {currentPage === 'breath' && <BreatheTimerDetailed />}
-            {currentPage === 'settings' && <SettingsPage />}
-          </div>
-          <HistoricalCalDetailed />
-        </div>
-      )}
-    </div>
-  );
+  
+  const handleMenuClick = (page) => {
+    setCurrentPage(page);
+  };
+    
+    return (
+        <>
+          <FocusTimerRenderless />
+          <BreatheTimerRenderless />
+            {isMobile ? (
+                <Dashboard />
+            ) : (
+                //Import VerticalMenu
+                //Import Dashboard
+                //Import HistoricalCalDetailed
+                <div className="desktop-wrapper">
+                    <VerticalMenu onMenuClick={handleMenuClick} />
+                        <div>
+                            {currentPage === 'dashboard' && <Dashboard/>}
+                            {currentPage === 'focus' && <FocusTimerDetailed />}
+                            {currentPage === 'mood' && <MoodTrackerDetailed />}
+                            {currentPage === 'habit' && <HabitTrackerDetailed />}
+                            {currentPage === 'breath' && <BreatheTimerDetailed />}
+                            {currentPage === 'settings' && <SettingsPage />}
+                        </div>
+                        <HistoricalCalDetailed/>
+                </div>
+            )}
+        </>   
+    );
 };

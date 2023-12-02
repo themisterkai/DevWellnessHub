@@ -1,0 +1,43 @@
+.mood-wrapper{
+    width: 46.43%; 
+    height: 46.43%;
+    background-color: #4a4d53;
+    border-radius: 7.7%;
+    position: relative;
+}
+
+.mood-name{
+    position: absolute;
+    top: 7.7%;
+    left: 7.7%;
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 1.5vmin;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    line-height: normal;
+}
+
+.mood-lines-wrapper {
+    position: absolute;
+    top: 43.1%;
+    left: 17%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: 2.5vmin;
+    width: 65.4%;
+}
+
+.mood-stable-SVG {
+    width: 90%;
+    height: 100%;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media only screen and (max-width: 768px) {
+    .mood-name {
+        font-size: 2.3vmin;
+    }
+
+}

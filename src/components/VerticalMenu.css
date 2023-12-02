@@ -15,7 +15,7 @@
     flex-direction: column;
     gap: 5vh;
     color: #fff;
-    font-size: 36px;
+    font-size: 2vmax;
     font-weight: 400;
     letter-spacing: 1.08px;
     line-height: normal;
@@ -37,4 +37,24 @@
   .habit:hover, 
   .breath:hover {
     text-decoration: underline;
+    cursor: pointer;
   }
+
+  /* Media query for medium-sized screens (e.g., tablets) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .vertical-menu-bar {
+    width: 20vw; 
+    height: 95vh;
+    border-radius: 20px;
+  }
+
+  .menu-items {
+    gap: 3vh;
+    font-size: 1.5vmax;
+  }
+
+  .functionality-menu-items {
+    gap: 1vh;
+  }
+}
+
