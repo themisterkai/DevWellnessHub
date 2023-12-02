@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-
+import useScreenSize from '../../hooks/useScreenSize';
+import { Link } from 'react-router-dom';
 import {
   handlePauseTimer,
   handleResetTimer,
@@ -9,6 +10,7 @@ import { millisToMinutesAndSeconds } from '../../helpers';
 import './FocusTimerDetailed.css';
 
 export const FocusTimerDetailed = () => {
+  const { isMobile } = useScreenSize();
   const dispatch = useDispatch();
 
   const focusTimer = useSelector(state => state.focusTimer);
@@ -18,6 +20,7 @@ export const FocusTimerDetailed = () => {
 
   return (
     <div className="focus-detailed-wrapper">
+      {isMobile && <Link to="/">Go to Dashboard</Link>}
       {millisToMinutesAndSeconds(focusTimer.focusTimer)}
       <div>
         {!focusTimer.isFocusTimerRunning && (

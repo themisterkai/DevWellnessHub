@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import useScreenSize from "../hooks/useScreenSize";
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   updateName,
@@ -8,6 +10,7 @@ import {
 } from '../reducers/settings';
 
 export const SettingsPage = () => {
+  const { isMobile } = useScreenSize();
   const dispatch = useDispatch();
   const settingsState = useSelector((state) => state.settings);
 
@@ -34,6 +37,7 @@ export const SettingsPage = () => {
 
   return (
     <div className="settings-wrapper">
+      {isMobile && <Link to="/">Go to Dashboard</Link>}
       <div>
         Set Name:{' '}
         <input

@@ -2,6 +2,7 @@
 //which is composed by VerticalMenu + Dashboard + HistoricalCalDetailed;
 import { useState } from 'react';
 import useScreenSize from "../hooks/useScreenSize";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HistoricalCalDetailed } from "../components/HistoricalCal/HistoricalCalDetailed";
 import { VerticalMenu } from "../components/VerticalMenu";
 import { Dashboard } from "./Dashboard";
@@ -11,8 +12,6 @@ import { HabitTrackerDetailed } from "../components/HabitTracker/HabitTrackerDet
 import { BreatheTimerDetailed } from "../components/BreatheTimer/BreatheTimerDetailed"
 import { SettingsPage } from './SettingsPage';
 import "./DesktopHomepage.css"
-
-
 
 export const DesktopHomepage = () => {
     //Here the logic if to switch on mobile or on desktop with
@@ -26,8 +25,19 @@ export const DesktopHomepage = () => {
     
     return (
         <>
-            {isMobile ? (
-                <Dashboard />
+            {isMobile ? (                    
+                   <Router>
+                   <Routes>
+                     {/* Mobile routes */}
+                     <Route path="/" element={<Dashboard />} />
+                     <Route path="/focus-timer" element={<FocusTimerDetailed />} />
+                     <Route path="/habit-tracker" element={<HabitTrackerDetailed />} />
+                     <Route path="/breathe-timer" element={<BreatheTimerDetailed />} />
+                     <Route path="/mood-tracker" element={<MoodTrackerDetailed />} />
+                     <Route path="/settings" element={<SettingsPage />} />
+                     {/* Add more mobile-only routes as needed */}
+                   </Routes>
+                 </Router>
             ) : (
                 //Import VerticalMenu
                 //Import Dashboard
