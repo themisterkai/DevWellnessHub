@@ -37,7 +37,7 @@
 /* Media query for smaller screens (e.g., mobile devices) */
 @media only screen and (max-width: 768px) {
     .habit-name {
-        font-size: 1.3vmax;
+        font-size: 2.3vmin;
     }
 
 }

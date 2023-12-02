@@ -25,7 +25,7 @@ export const DesktopHomepage = () => {
     };
     
     return (
-        <div>
+        <>
             {isMobile ? (
                 <Dashboard />
             ) : (
@@ -45,7 +45,7 @@ export const DesktopHomepage = () => {
                         <HistoricalCalDetailed/>
                 </div>
             )}
-        </div>   
+        </>   
     );
     
 };

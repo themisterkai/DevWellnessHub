@@ -15,7 +15,7 @@
     flex-direction: column;
     gap: 5vh;
     color: #fff;
-    font-size: 36px;
+    font-size: 2vmax;
     font-weight: 400;
     letter-spacing: 1.08px;
     line-height: normal;
@@ -50,7 +50,7 @@
 
   .menu-items {
     gap: 3vh;
-    font-size: 16px;
+    font-size: 1.5vmax;
   }
 
   .functionality-menu-items {
