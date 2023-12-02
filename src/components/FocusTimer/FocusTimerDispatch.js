@@ -26,6 +26,6 @@ export const handlePauseFocusTimer = dispatch => {
 };
 
 export const handleResetFocusTimer = (dispatch, focusTimerLengthMS) => {
-  dispatch(setFocusTimer({ focusTimer: focusTimerLengthMS }));
   dispatch(resetFocusTimer({}));
+  dispatch(setFocusTimer({ focusTimer: focusTimerLengthMS }));
 };

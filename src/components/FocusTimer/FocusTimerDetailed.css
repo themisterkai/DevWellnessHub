@@ -13,3 +13,69 @@
   letter-spacing: 1.08px;
   line-height: normal;
 }
+
+.focus-detailed-reset-container {
+  width: 100%;
+  text-align: right;
+  padding: 0px 50px;
+  box-sizing: border-box;
+}
+
+.focus-detailed-reset-icon {
+  margin-left: auto;
+  width: 80px;
+  cursor: pointer;
+}
+
+.focus-detailed-reset-icon:hover {
+  transform: scale(1.05);
+}
+
+.focus-detailed-reset-icon:active {
+  transform: scale(0.95);
+}
+
+.focus-detailed-circular-progress-bar-wrapper {
+  width: 100%;
+}
+
+.focus-detailed-circular-progress-bar {
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+  aspect-ratio: 1 / 1;
+  text-align: center;
+  border-radius: 100%;
+  box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+  cursor: pointer;
+}
+
+.focus-detailed-circular-progress-bar:active {
+  transform: scale(0.98);
+}
+
+.focus-detailed-options button {
+  font-size: 36px;
+  border: 2px solid grey;
+  background-color: #083ca4;
+  /* background-color: white; */
+  color: grey;
+  padding: 14px 28px;
+}
+
+.focus-detailed-options {
+  margin-top: 100px;
+}
+
+.CircularProgressbar-path {
+  stroke: rgb(249, 95, 95);
+}
+.CircularProgressbar-trail {
+  stroke: #022569;
+}
+.CircularProgressbar-text {
+  fill: white;
+}
+.CircularProgressbar-background {
+  fill: green;
+}
