@@ -39,3 +39,22 @@
     text-decoration: underline;
     cursor: pointer;
   }
+
+  /* Media query for medium-sized screens (e.g., tablets) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .vertical-menu-bar {
+    width: 20vw; 
+    height: 95vh;
+    border-radius: 20px;
+  }
+
+  .menu-items {
+    gap: 3vh;
+    font-size: 16px;
+  }
+
+  .functionality-menu-items {
+    gap: 1vh;
+  }
+}
+

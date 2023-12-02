@@ -1,5 +1,4 @@
 /* Dashboard.css */
-
 .dashboard-wrapper {
     width: 45vw; 
     height: 95vh;
@@ -8,21 +7,89 @@
 
 }
 
-.dash-user-name {
-    padding-bottom: 20px;
-}
-
 .app-container {
     margin: 0;
+    padding: 0;
     display: flex;
+    flex-flow: column wrap;
     align-items: center; 
-    justify-content: center; 
+    gap: 1.5vmin;
+}
+
+.dashboard-header {
+    padding-top: 5%;
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5vmin;
+}
+
+.settings-icon {
+    width: 3.5vmin;
 }
 
 .app-wrapper {
-    width: 590px;
+    width: 90vmin;
+    height: 90vmin;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
+    gap: 1vmin 1vmin;
+}
+
+.main-app-name {
+    margin-top: 1%;
+    color: #f0f2f1;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-size: 4vmin;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.36px;
+    line-height: normal;
+}
+
+.dash-user-name {
+    color: #f0f2f1;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-size: 3vmin;
+    font-weight: 600;
+    letter-spacing: 0.36px;
+    line-height: normal;
+}
+
+.line-dashboard {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 90%;
+}
+
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media only screen and (max-width: 768px) {
+    .dashboard-wrapper {
+        width: 100vw;
+        height: 100vh; /* Adjust as needed */
+        border-radius: 0px;
+    }
+
+}
+
+/* Media query for medium-sized screens (e.g., tablets) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .app-wrapper {
+        width: 40vmin;
+        height: 40vmin;
+    }
+}
+
+/* Media query for larger screens (e.g., desktops) */
+@media only screen and (min-width: 1025px) {
+    /* You can add styles specific to larger screens here if needed */ 
+    .app-wrapper {
+        width: 55vmin;
+        height: 55vmin;
+    }
 }
