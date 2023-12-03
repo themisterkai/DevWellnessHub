@@ -1,21 +1,22 @@
 //Vertical Menu for desktop & tablet only
+import { Link } from 'react-router-dom';
 import './VerticalMenu.css'; // You'll need to create this CSS file
 
 
-export const  VerticalMenu = ({onMenuClick}) => {
+export const  VerticalMenu = () => {
 
     return (
         
         <div className="vertical-menu-bar">
             <div className="menu-items">
-              <span className="dashboard-link" onClick={() => onMenuClick('dashboard')}>DASHBOARD</span>
+              <Link className="dashboard-link" to="/">DASHBOARD</Link>
               <div className="functionality-menu-items">
-                <span className="focus" onClick={() => onMenuClick('focus')}>. FOCUS</span>
-                <span className="mood" onClick={() => onMenuClick('mood')}>. MOOD</span>
-                <span className="habit" onClick={() => onMenuClick('habit')}>. HABIT</span>
-                <span className="breath" onClick={() => onMenuClick('breath')}>. BREATH</span>
+                <Link className="focus" to="/focus-timer">. FOCUS</Link>
+                <Link className="mood" to="/mood-tracker">. MOOD</Link>
+                <Link className="habit" to="/habit-tracker">. HABIT</Link>
+                <Link className="breath" to="/breathe-timer">. BREATH</Link>
               </div>
-              <span className="settings-link" onClick={() => onMenuClick('settings')}>SETTINGS</span>
+              <Link className="settings-link" to="/settings">SETTINGS</Link>
             </div>
         </div>
 

@@ -14,7 +14,6 @@
     display: flex;
     flex-direction: column;
     gap: 5vh;
-    color: #fff;
     font-size: 2vmax;
     font-weight: 400;
     letter-spacing: 1.08px;
@@ -27,15 +26,25 @@
     gap: 2vh;
   }
 
-  .focus, .mood, .habit, .breath {
+ 
+
+  .dashboard-link, 
+  .focus, 
+  .mood, 
+  .habit, 
+  .breath, 
+  .settings-link {
+    color: #fff;
     text-decoration: none;
     transition: text-decoration 0.3s ease-in-out;
   }
   
+  .dashboard-link:hover,
   .focus:hover, 
   .mood:hover, 
   .habit:hover, 
-  .breath:hover {
+  .breath:hover,
+  .settings-link:hover {
     text-decoration: underline;
     cursor: pointer;
   }
