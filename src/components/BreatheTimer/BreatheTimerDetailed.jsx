@@ -1,19 +1,22 @@
 import { clsx } from 'clsx';
-import { useDispatch, useSelector } from 'react-redux';
 import {
   CircularProgressbarWithChildren,
   buildStyles,
 } from 'react-circular-progressbar';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import {
   handleResetBreatheTimer,
   handleStartBreatheTimer,
 } from './BreatheTimerDispatch';
 import { millisToMinutesAndSeconds } from '../../helpers';
-import './BreatheTimerDetailed.css';
+import useScreenSize from '../../hooks/useScreenSize';
 import { ResetIcon } from '../svgs/ResetIcon';
+import './BreatheTimerDetailed.css';
 
 export const BreatheTimerDetailed = () => {
+  const { isMobile } = useScreenSize();
   const dispatch = useDispatch();
 
   const breatheTimer = useSelector(state => state.breatheTimer);
@@ -43,6 +46,7 @@ export const BreatheTimerDetailed = () => {
 
   return (
     <div className="breathe-detailed-wrapper">
+      {isMobile && <Link to="/">Go to Dashboard</Link>}
       <h2>Breathe and Relax</h2>
       <div className="breathe-detailed-reset-container">
         <div
