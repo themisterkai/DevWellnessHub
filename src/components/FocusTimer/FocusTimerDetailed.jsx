@@ -76,7 +76,7 @@ export const FocusTimerDetailed = () => {
         </div>
       </div>
       <div className="focus-detailed-options">
-        <div>Focus timer done today: {focusTimer.focusTimerCount}</div>
+        <div>Focus timers done today: {focusTimer.focusTimerCount}</div>
       </div>
     </div>
   );

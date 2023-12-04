@@ -3,7 +3,6 @@
   height: 95vh;
   background-color: #9708a4;
   border-radius: 20px;
-
   display: inline-block;
   text-align: center;
   gap: 5vh;
@@ -12,4 +11,128 @@
   font-weight: 400;
   letter-spacing: 1.08px;
   line-height: normal;
+}
+
+.breathe-detailed-reset-container {
+  width: 100%;
+  text-align: right;
+  padding: 0px 50px;
+  box-sizing: border-box;
+}
+
+.breathe-detailed-reset-icon {
+  margin-left: auto;
+  width: 80px;
+  cursor: pointer;
+}
+
+.breathe-detailed-reset-icon:hover {
+  transform: scale(1.05);
+}
+
+.breathe-detailed-reset-icon:active {
+  transform: scale(0.95);
+}
+
+.breathe-detailed-circular-progress-bar-wrapper {
+  width: 100%;
+}
+
+.breathe-detailed-circular-progress-bar {
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+  aspect-ratio: 1 / 1;
+  text-align: center;
+  border-radius: 100%;
+  box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+  cursor: pointer;
+}
+
+.pulsing {
+  animation-name: pulse;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  cursor: default;
+}
+
+.pulsing:after {
+  content: 'breathe in';
+  position: absolute;
+  color: rgba(255, 255, 255, 0.7);
+  top: calc(55%);
+  left: calc(0%);
+  font-size: 48px;
+  font-family: Helvetica;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  animation-name: text;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.pulsing:before {
+  content: '';
+  width: 16px;
+  height: 50%;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: calc(50% - 8px);
+  /* z-index: 999; */
+  animation-timing-function: linear;
+  transform-origin: center bottom;
+  animation-name: rotate;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+.breathe-detailed-options button {
+  font-size: 36px;
+  border: 2px solid grey;
+  background-color: #083ca4;
+  /* background-color: white; */
+  color: grey;
+  padding: 14px 28px;
+}
+
+.breathe-detailed-options {
+  margin-top: 100px;
+}
+
+@keyframes text {
+  0% {
+    content: 'breathe in';
+  }
+
+  50% {
+    content: 'hold';
+  }
+  51% {
+    content: 'breathe out';
+  }
+  100% {
+    content: 'hold';
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
