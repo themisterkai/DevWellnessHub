@@ -2,6 +2,8 @@
 //which is composed by VerticalMenu + Dashboard + HistoricalCalDetailed;
 import useScreenSize from "../hooks/useScreenSize";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { FocusTimerRenderless } from "../components/FocusTimer/FocusTimerRenderless"
+import { BreatheTimerRenderless } from "../components/BreatheTimer/BreatheTimerRenderless"
 import { HistoricalCalDetailed } from "../components/HistoricalCal/HistoricalCalDetailed";
 import { VerticalMenu } from "../components/VerticalMenu";
 import { Dashboard } from "./Dashboard";
@@ -20,6 +22,8 @@ export const DesktopHomepage = () => {
     
     return (
         <>
+            <FocusTimerRenderless />
+            <BreatheTimerRenderless />
             {isMobile ? (                    
                 <Router>
                    <Routes>
