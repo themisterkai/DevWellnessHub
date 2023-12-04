@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-
+import useScreenSize from '../../hooks/useScreenSize';
+import { Link } from 'react-router-dom';
 import {
   handlePauseBreatheTimer,
   handleResetBreatheTimer,
@@ -9,6 +10,7 @@ import { millisToMinutesAndSeconds } from '../../helpers';
 import './BreatheTimerDetailed.css';
 
 export const BreatheTimerDetailed = () => {
+  const { isMobile } = useScreenSize();
   const dispatch = useDispatch();
 
   const breatheTimer = useSelector(state => state.breatheTimer);
@@ -18,6 +20,7 @@ export const BreatheTimerDetailed = () => {
 
   return (
     <div className="breathe-detailed-wrapper">
+      {isMobile && <Link to="/">Go to Dashboard</Link>}
       <h2>Breathe and Relax</h2>
       {millisToMinutesAndSeconds(breatheTimer.breatheTimer)}
       <div>

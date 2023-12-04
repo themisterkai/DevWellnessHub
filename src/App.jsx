@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-
 import { DesktopHomepage } from './pages/DesktopHomepage';
 import { StartPage } from './pages/StartPage';
 
