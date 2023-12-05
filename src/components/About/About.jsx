@@ -9,10 +9,10 @@ export const About = () => {
         unique challenges developers face. That&apos;s why we&apos;ve curated a
         suite of features designed to empower you on your journey towards
         well-being and success:
-        <ul>Focus Timer: Master Your Productivity Habit</ul>
-        <ul>Tracker: Cultivate Lasting Success</ul>
-        <ul>Mood Tracker: Navigate Your Emotional</ul>
-        <ul>Landscape Breathe Timer: Recharge and Refresh</ul>
+        <ul>Focus Timer: Master Your Productivity</ul>
+        <ul>Mood Tracker: Navigate Your Emotional Landscape</ul>
+        <ul>Habit Tracker: Cultivate Lasting Success</ul>
+        <ul>Breathe Timer: Recharge and Refresh</ul>
         <p />
         DevWellnessHub is not just an app; it&apos;s a companion on your journey
         to becoming a healthier, more productive, and fulfilled developer.
