@@ -6,6 +6,7 @@ import {
   setOverwhelmedLevel,
 } from '../../reducers/mood';
 import './MoodTrackerDetailed.css';
+import { MobileToDashBTN } from '../MobileToDashBTN';
 
 export const MoodTrackerDetailed = () => {
   const dispatch = useDispatch();
@@ -27,9 +28,13 @@ export const MoodTrackerDetailed = () => {
   };
 
   return (
-    <div className="mood-detailed-wrapper">
-      <h2>How are you feeling today?</h2>
-      <div className="moodLevel">
+    <div className="main-wrapper">
+      <div className="app-container">
+      <header className="main-header">
+          <div className="main-app-name">. MOOD</div>    
+      </header>
+      <h2 className="secondary-header">How are you feeling today?</h2>
+      <div className="range-mood">
         <div>Mood Level: {mood.moodLevel}</div>
         <input
           type="range"
@@ -39,7 +44,7 @@ export const MoodTrackerDetailed = () => {
           value={mood.moodLevel}
         ></input>
       </div>
-      <div className="energyLevel">
+      <div className="range-mood">
         <div>Energy Level: {mood.energyLevel}</div>
         <input
           type="range"
@@ -49,7 +54,7 @@ export const MoodTrackerDetailed = () => {
           value={mood.energyLevel}
         ></input>
       </div>
-      <div className="energyLevel">
+      <div className="range-mood">
         <div>Overwhelmed Level: {mood.overwhelmedLevel}</div>
         <input
           type="range"
@@ -58,6 +63,8 @@ export const MoodTrackerDetailed = () => {
           onChange={e => handleUpdateOverwhelmedLevel(e.target.value)}
           value={mood.overwhelmedLevel}
         ></input>
+      </div>
+      <MobileToDashBTN />
       </div>
     </div>
   );

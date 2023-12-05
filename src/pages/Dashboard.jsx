@@ -19,15 +19,15 @@ export const Dashboard = () => {
     return (
         <>
         {isMobile ? (
-            <div className="dashboard-wrapper">
+            <div className="main-wrapper">
                 <div className="app-container">
-                    <header className="dashboard-header">
+                    <header className="main-header">
                         <div className="main-app-name">DevWellnessHub</div>
                         <Link to="/settings">
                             <SettingsIcon />
                         </Link>
                     </header>
-                    <h1 className="dash-user-name">Welcome {settingsState.name}, ready for today's session?</h1>
+                    <h1 className="secondary-header">Welcome {settingsState.name}, ready for today's session?</h1>
                     <DashLine />
                     <div className="app-wrapper">
                             <FocusTimer />
@@ -38,10 +38,10 @@ export const Dashboard = () => {
                 </div>
             </div>
         ) : (
-            <div className="dashboard-wrapper">
+            <div className="main-wrapper">
             <div className="app-container">
                 <div className="main-app-name">DevWellnessHub</div>
-                <h1 className="dash-user-name">Welcome {settingsState.name}, ready for today's session?</h1>
+                <h1 className="secondary-header">Welcome {settingsState.name}, ready for today's session?</h1>
                 <div className="app-wrapper">
                         <DashLine />
                         <FocusTimer />

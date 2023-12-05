@@ -11,13 +11,13 @@ export const mood = createSlice({
   initialState,
   reducers: {
     setMoodLevel: (state, action) => {
-      state.moodLevel = action.payload.moodLevel;
+      state.moodLevel = parseInt(action.payload.moodLevel);
     },
     setEnergyLevel: (state, action) => {
-      state.energyLevel = action.payload.energyLevel;
+      state.energyLevel = parseInt(action.payload.energyLevel);
     },
     setOverwhelmedLevel: (state, action) => {
-      state.overwhelmedLevel = action.payload.overwhelmedLevel;
+      state.overwhelmedLevel = parseInt(action.payload.overwhelmedLevel);
     },
   },
 });
