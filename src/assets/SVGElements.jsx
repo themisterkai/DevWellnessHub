@@ -183,7 +183,7 @@ export const DashLine = () => {
   )
 };
 
-export const ResetFocusIcon = () => {
+export const ResetIcon = () => {
   return (
     <svg
       viewBox="0 0 21 21"

@@ -41,18 +41,20 @@ export const SettingsPage = () => {
           <div className="main-app-name">Your settings</div>
         </header>
         <h2 className="secondary-header">Adjust with your needs:</h2>
+      <p className="text-paragraph settings-description">Change your name, set Focus Timer length (minutes) and Breathe Timer length (minutes).</p>
       <div className="settings-field-wrapper">
       <div className="field-wrap">
-        <div className="text-paragraph">Name:</div>
+      <div className="text-paragraph">Name:</div>
+      <div className="text-paragraph">Focus:</div>
+      <div className="text-paragraph">Breathe:</div>
+      </div>
+      <div className="field-wrap">
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="settings-input-field"
         />
-      </div>
-      <div className="field-wrap">
-        <div className="text-paragraph">Focus Length (minutes):</div>
         <input
           type="number"
           value={focusTimerLength}
@@ -60,9 +62,6 @@ export const SettingsPage = () => {
           onChange={(e) => setFocusTimerLength(e.target.value)}
           className="settings-input-field"
         />
-      </div>
-      <div className="field-wrap">
-        <div className="text-paragraph">Breathe Length (minutes):</div>
         <input
           type="number"
           value={breatheTimerLength}

@@ -9,7 +9,7 @@ import {
   handleResetFocusTimer,
   handleStartFocusTimer,
 } from './FocusTimerDispatch';
-import { ResetFocusIcon } from '../../assets/SVGElements';
+import { ResetIcon } from '../../assets/SVGElements';
 import { millisToMinutesAndSeconds } from '../../helpers';
 import './FocusTimerDetailed.css';
 
@@ -55,7 +55,7 @@ export const FocusTimerDetailed = () => {
           <div className="main-app-name">. FOCUS</div>    
         </header>
         <h2 className="secondary-header">Get focused now!</h2>
-        <div className="focus-detailed-reset-icon" onClick={() => handleResetFocusTimer(dispatch, focusTimerLengthMS)}><ResetFocusIcon /></div>
+        <div className="focus-detailed-reset-icon" onClick={() => handleResetFocusTimer(dispatch, focusTimerLengthMS)}><ResetIcon /></div>
         <div
           className="focus-detailed-circular-progress-bar"
           onClick={() => handleClickTimer()}
