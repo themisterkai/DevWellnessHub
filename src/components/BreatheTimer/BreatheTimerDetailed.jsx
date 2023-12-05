@@ -19,7 +19,8 @@ export const BreatheTimerDetailed = () => {
   );
 
   return (
-    <div className="breathe-detailed-wrapper">
+    <div className="main-wrapper">
+      <div className="app-container">
       {isMobile && <Link to="/">Go to Dashboard</Link>}
       <h2>Breathe and Relax</h2>
       {millisToMinutesAndSeconds(breatheTimer.breatheTimer)}
@@ -53,6 +54,7 @@ export const BreatheTimerDetailed = () => {
         )}
       </div>
       <div># of breathe timers: {breatheTimer.breatheTimerCount}</div>
+      </div>
     </div>
   );
 };

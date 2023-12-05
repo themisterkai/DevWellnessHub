@@ -37,6 +37,17 @@
     color: #1c1d1f;
 }
 
+.breath-timer-running {
+    position: absolute;
+    top: 40%;
+    left: 26%;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 2.3vmin;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    line-height: normal;
+}
+
 .breath-timer-done-counter {
     position: absolute;
     top: 80.77%;
@@ -58,4 +69,15 @@
     .breath-timer-done-counter {
         font-size: 2.5vmin;
     }
+ 
+    .breath-timer-running {
+        font-size: 4vmin;
+    }
+}
+
+/* Media query for medium-sized screens (e.g., tablets) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .breath-timer-running {
+        font-size: 1.8vmin;
+    }   
 }

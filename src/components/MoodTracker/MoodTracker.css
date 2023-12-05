@@ -29,6 +29,22 @@
     width: 65.4%;
 }
 
+.moods-wrapper {
+    position: absolute;
+    top: 35%;
+    left: 24%;
+}
+
+.mood-up-SVG {
+    width: 70%;
+    
+}
+
+.mood-down-SVG {
+    width: 70%;
+
+}
+
 .mood-stable-SVG {
     width: 90%;
     height: 100%;

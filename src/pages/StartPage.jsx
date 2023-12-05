@@ -5,7 +5,7 @@ import {
   updateFocusTimerLengthMS,
   updateBreatheTimerLengthMS,
 } from '../reducers/settings';
-import "./SettingsPage.css";
+import "./StartPage.css";
 //Welcoming page + initial user data inputted;
 //This page will be responsive by using MediaQueries only -- one page
 //fits all;
@@ -23,6 +23,11 @@ export const StartPage = ({ onSetupComplete }) => {
   const [breatheTimerLength, setBreatheTimerLength] = useState(
     settingsState.breatheTimerLengthMS / (60 * 1000) // convert milliseconds to minutes
   );
+
+  // Add state variables to track button clicks
+  const [nameSubmitted, setNameSubmitted] = useState(false);
+  const [focusTimerSubmitted, setFocusTimerSubmitted] = useState(false);
+  const [breatheTimerSubmitted, setBreatheTimerSubmitted] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -49,18 +54,21 @@ export const StartPage = ({ onSetupComplete }) => {
 
   const handleSubmitName = () => {
     dispatch(updateName({ name }));
+    setNameSubmitted(true);
   };
 
   const handleSetFocusTimerLength = () => {
     dispatch(updateFocusTimerLengthMS({
       focusTimerLengthMS: focusTimerLength * 60 * 1000 // convert minutes to milliseconds
     }));
+    setFocusTimerSubmitted(true);
   }
 
   const handleSetBreatheTimerLength = () => {
     dispatch(updateBreatheTimerLengthMS({
       breatheTimerLengthMS: breatheTimerLength * 60 * 1000 // convert minutes to milliseconds
     }));
+    setBreatheTimerSubmitted(true);
   }
 
   const handleGoToDashboard = () => {
@@ -70,11 +78,7 @@ export const StartPage = ({ onSetupComplete }) => {
       return;
     }
   
-    // Check if focusTimerLengthMS and breatheTimerLengthMS are modified
-    const isFocusTimerModified = settingsState.focusTimerLengthMS !== 25 * 60 * 1000;
-    const isBreatheTimerModified = settingsState.breatheTimerLengthMS !== 1 * 60 * 1000;
-  
-    if (isFocusTimerModified && isBreatheTimerModified) {
+    if (focusTimerSubmitted && breatheTimerSubmitted) {
       // If both timers are modified, proceed to onSetupComplete
       onSetupComplete();
     } else {
@@ -92,7 +96,7 @@ export const StartPage = ({ onSetupComplete }) => {
   
     
   return (
-    <>
+    <div className="start-wrapper">
       <h1>Hello {settingsState.name}</h1>
       <div>
         Set Name:{' '}
@@ -137,7 +141,7 @@ export const StartPage = ({ onSetupComplete }) => {
       <div>
         <button onClick={handleGoToDashboard}>Go to Dashboard</button>
       </div>
-    </>
+    </div>
   );
 };
  

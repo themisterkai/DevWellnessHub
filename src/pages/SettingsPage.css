@@ -1,11 +1,44 @@
-.settings-wrapper {
+/* SettingsPage.css */
+.settings-field-wrapper {
+    width: 80%;
     display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    gap: 1vh;
-    width: 45vw; 
-    height: 95vh;
-    background-color:rgb(200, 200, 200);
-    border-radius: 20px;
+    flex-flow: column;
+    align-items: cent;
+    justify-content: center;
+    gap: 5vmin;
+}
+
+.settings-input-field {
+    width: 30%;
+    height: 2vmin;
+    border-radius: 0.5vmin;
+
+}
+
+.settings-buttons-wrapper {
+    padding-top: 5%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 2vmin;
+}
+
+.field-wrap {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    align-items: center;
+    gap: 2vmin;
+}
+
+/* Media query for medium-sized screens (e.g., tablets) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .app-wrapper {
+        width: 40vmin;
+        height: 40vmin;
+    }
+
+    .main-app-name {
+        padding-top: 10%;
+    }
 }

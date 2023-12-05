@@ -1,15 +1,19 @@
-.mood-detailed-wrapper {
-  width: 45vw;
-  height: 95vh;
-  background-color: #a40808;
-  border-radius: 20px;
+.range-mood {
+    width: 70%; 
+    margin: 3vmin auto; 
+    text-align: center;
+    color: #f0f2f1;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 3vmin;
+    font-weight: 400;
+    letter-spacing: 0.36px;
+    line-height: normal;
+    margin-bottom: 2vmin;
+  }
 
-  display: inline-block;
-  text-align: center;
-  gap: 5vh;
-  color: #fff;
-  font-size: 36px;
-  font-weight: 400;
-  letter-spacing: 1.08px;
-  line-height: normal;
-}
+input[type="range"] {
+    width: 100%;
+    height: 1vmin; /* Set the height of the track */
+    -webkit-appearance: none; /* Remove default styles in WebKit browsers */
+  }
+  
