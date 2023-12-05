@@ -15,8 +15,8 @@ export const HabitTracker = () => {
   // if desktop render <HabitTrackerDetailed />
   // if mobile clicking will go to <MobileHabitTrackerPage />
   return(
-    <div className="habit-wrapper">
-        <div className="habit-name">. HABIT</div>
+    <div className="tile-wrapper">
+        <div className="tile-main-name">. HABIT</div>
         <div className="habit-circles-wrapper">
           {habitsState.habits.map((habit, index) => (
             <HabitCircle key={index} style={{ fill: getCircleColor(habit.id) }} />

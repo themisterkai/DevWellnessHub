@@ -12,8 +12,8 @@ export const MoodTracker = () => {
 
 
     return(
-        <div className="mood-wrapper">
-            <div className="mood-name">. MOOD</div>
+        <div className="tile-wrapper">
+            <div className="tile-main-name">. MOOD</div>
             {totalLevel > 8 && (
                <div className="moods-wrapper">
                <MoodUp />

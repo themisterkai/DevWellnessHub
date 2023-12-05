@@ -15,9 +15,9 @@ export const FocusTimer = () => {
     
 
     return(
-        <div className="focus-wrapper">
+        <div className="tile-wrapper">
              {isMobile && <Link to="/focus-timer">test</Link>}
-                <div className="focus-name">. FOCUS</div>          
+                <div className="tile-main-name">. FOCUS</div>          
                 <div className="focus-timer-done-counter">{focusTimerCount}</div>
                 <div className="focus-circle">
                     <FocusCircle />

@@ -13,9 +13,9 @@ export const BreatheTimer = () => {
     const breatheTimerCount = useSelector(state => state.breatheTimer.breatheTimerCount);
     
     return(
-        <div className="breathe-wrapper">
+        <div className="tile-wrapper">
             {isMobile && <Link to="/breathe-timer">test</Link>}
-            <div className="breath-name">. BREATH</div>
+            <div className="tile-main-name">. BREATH</div>
             <div className="breath-timer-done-counter">{breatheTimerCount}</div>
             <div className="breath-circle">
                 <BreathCircle />

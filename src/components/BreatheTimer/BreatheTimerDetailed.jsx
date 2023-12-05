@@ -4,7 +4,6 @@ import {
   buildStyles,
 } from 'react-circular-progressbar';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import {
   handleResetBreatheTimer,
@@ -12,8 +11,9 @@ import {
 } from './BreatheTimerDispatch';
 import { millisToMinutesAndSeconds } from '../../helpers';
 import useScreenSize from '../../hooks/useScreenSize';
-import { ResetIcon } from '../svgs/ResetIcon';
+import { ResetIcon } from '../../assets/SVGElements';
 import './BreatheTimerDetailed.css';
+import { MobileToDashBTN } from '../MobileToDashBTN';
 
 export const BreatheTimerDetailed = () => {
   const { isMobile } = useScreenSize();
@@ -39,7 +39,7 @@ export const BreatheTimerDetailed = () => {
   };
 
   const breatheTimerClassnames = clsx({
-    'breathe-detailed-circular-progress-bar': true,
+    'focus-detailed-circular-progress-bar': true,
     pulsing:
       breatheTimer.isBreatheTimerRunning && !breatheTimer.isBreatheTimerPaused,
   });
@@ -47,19 +47,11 @@ export const BreatheTimerDetailed = () => {
   return (
     <div className="main-wrapper">
       <div className="app-container">
-      {isMobile && <Link to="/">Go to Dashboard</Link>}
-      <h2>Breathe and Relax</h2>
-      <div className="breathe-detailed-reset-container">
-        <div
-          className="breathe-detailed-reset-icon"
-          onClick={() =>
-            handleResetBreatheTimer(dispatch, breatheTimerLengthMS)
-          }
-        >
-          <ResetIcon />
-        </div>
-      </div>
-      <div className="breathe-detailed-circular-progress-bar-wrapper">
+      <header className="main-header">
+          <div className="main-app-name">. BREATHE</div>    
+      </header>
+      <h2 className="secondary-header">Breathe and Relax</h2>
+      <div className="focus-detailed-reset-icon" onClick={() => handleResetBreatheTimer(dispatch, breatheTimerLengthMS)}><ResetIcon /></div>
         <div
           className={breatheTimerClassnames}
           onClick={() => handleClickTimer()}
@@ -73,14 +65,13 @@ export const BreatheTimerDetailed = () => {
               rotation: 1 / 2 + 1 / 8,
             })}
           >
-            <h1>{millisToMinutesAndSeconds(breatheTimer.breatheTimer)}</h1>
-            <h6>{renderBreatheTimerText()}</h6>
+            <h1 className="focus-timer-elapsing">{millisToMinutesAndSeconds(breatheTimer.breatheTimer)}</h1>
+            <h6 className="focus-timer-next">{renderBreatheTimerText()}</h6>
           </CircularProgressbarWithChildren>
         </div>
-      </div>
-      <div className="breathe-detailed-options">
-        <div>Breathe timer done today: {breatheTimer.breatheTimerCount}</div>
-      </div>
+        <p className="focus-done-day">Breathe timer done today: {breatheTimer.breatheTimerCount}</p>
+      <MobileToDashBTN />
     </div>
+  </div>
   );
 };

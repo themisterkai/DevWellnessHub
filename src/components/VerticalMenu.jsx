@@ -14,7 +14,7 @@ export const  VerticalMenu = () => {
                 <Link className="focus" to="/focus-timer">. FOCUS</Link>
                 <Link className="mood" to="/mood-tracker">. MOOD</Link>
                 <Link className="habit" to="/habit-tracker">. HABIT</Link>
-                <Link className="breath" to="/breathe-timer">. BREATH</Link>
+                <Link className="breath" to="/breathe-timer">. BREATHE</Link>
               </div>
               <Link className="settings-link" to="/settings">SETTINGS</Link>
             </div>
