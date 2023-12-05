@@ -1,8 +1,22 @@
+/* MasterStyle.css -- all the classes here to be reusable! */
 .start-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    justify-content: center; 
-    gap: 1vh;
-    color: white;
+    width: 70vw; 
+    height: 70vh;
+    background-color: #1C1D1F;
+    border-radius: 20px;
+
+}
+
+.app-button.go-dash {
+    margin-top: 10%;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media only screen and (max-width: 768px) {
+    .start-wrapper {
+        width: 100vw;
+        height: 100vh; /* Adjust as needed */
+        border-radius: 0px;
+    }
+
 }

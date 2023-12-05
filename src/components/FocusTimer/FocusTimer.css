@@ -43,10 +43,6 @@
 
 /* Media query for smaller screens (e.g., mobile devices) */
 @media only screen and (max-width: 768px) {
-    .focus-name {
-        font-size: 2.3vmin;
-    }
-
     .focus-timer-done-counter {
         font-size: 2.5vmin;
     }

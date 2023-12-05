@@ -59,6 +59,7 @@
     color: #f0f2f1;
     font-family: "Inter-Regular", Helvetica;
     font-size: 3vmin;
+    text-align: center;
     font-weight: 400;
     letter-spacing: 0.36px;
     line-height: normal;
@@ -70,7 +71,7 @@
     left: 7.7%;
     color: #f0f2f1;
     font-family: "Inter-Regular", Helvetica;
-    font-size: 1.5vmin;
+    font-size: 3vmin;
     font-weight: 400;
     letter-spacing: 0.3px;
     line-height: normal;
@@ -123,7 +124,11 @@
     }
 
     .text-paragraph {
-        font-size: 2.5vmin;
+        font-size: 2vmin;
+    }
+
+    .tile-main-name {
+        font-size: 1.8vmin;
     }
 }
 
@@ -140,6 +145,10 @@
     }
 
     .text-paragraph {
-        font-size: 2vmin;
+        font-size: 2.5vmin;
+    }
+
+    .tile-main-name {
+        font-size: 1.8vmin;
     }
 }

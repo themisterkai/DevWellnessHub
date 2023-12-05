@@ -29,11 +29,3 @@
     width: 90%;
     height: 100%;
 }
-
-/* Media query for smaller screens (e.g., mobile devices) */
-@media only screen and (max-width: 768px) {
-    .mood-name {
-        font-size: 2.3vmin;
-    }
-
-}

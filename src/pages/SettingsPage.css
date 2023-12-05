@@ -2,15 +2,19 @@
 .settings-field-wrapper {
     width: 80%;
     display: flex;
-    flex-flow: column;
-    align-items: cent;
+    flex-flow: row;
+    align-items: center;
     justify-content: center;
     gap: 5vmin;
 }
 
+.settings-description {
+    width: 80%
+}
+
 .settings-input-field {
-    width: 30%;
-    height: 2vmin;
+    width: 80%;
+    margin-left: 20%;
     border-radius: 0.5vmin;
 
 }
@@ -25,20 +29,8 @@
 
 .field-wrap {
     display: flex;
-    flex-flow: row;
-    align-items: center;
-    align-items: center;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: center;
     gap: 2vmin;
-}
-
-/* Media query for medium-sized screens (e.g., tablets) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .app-wrapper {
-        width: 40vmin;
-        height: 40vmin;
-    }
-
-    .main-app-name {
-        padding-top: 10%;
-    }
 }

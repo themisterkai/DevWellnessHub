@@ -13,11 +13,3 @@
     width: 33%;
     height: 33%;
 }
-
-/* Media query for smaller screens (e.g., mobile devices) */
-@media only screen and (max-width: 768px) {
-    .habit-name {
-        font-size: 2.3vmin;
-    }
-
-}
