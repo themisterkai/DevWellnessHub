@@ -12,7 +12,9 @@ import { MoodTrackerDetailed } from "../components/MoodTracker/MoodTrackerDetail
 import { HabitTrackerDetailed } from "../components/HabitTracker/HabitTrackerDetailed"
 import { BreatheTimerDetailed } from "../components/BreatheTimer/BreatheTimerDetailed"
 import { SettingsPage } from './SettingsPage';
+import { StartPage } from "./StartPage";
 import "./DesktopHomepage.css"
+
 
 export const DesktopHomepage = () => {
     //Here the logic if to switch on mobile or on desktop with
@@ -29,6 +31,7 @@ export const DesktopHomepage = () => {
                    <Routes>
                      {/* Mobile routes */}
                      <Route path="/" element={<Dashboard />} />
+                     <Route path="/start" element={<StartPage />} />
                      <Route path="/focus-timer" element={<FocusTimerDetailed />} />
                      <Route path="/habit-tracker" element={<HabitTrackerDetailed />} />
                      <Route path="/breathe-timer" element={<BreatheTimerDetailed />} />
@@ -44,6 +47,7 @@ export const DesktopHomepage = () => {
                     <div>
                         <Routes>
                             <Route path="/" element={<Dashboard />} />
+                            <Route path="/start" element={<StartPage />} />
                             <Route path="/focus-timer" element={<FocusTimerDetailed />} />
                             <Route path="/mood-tracker" element={<MoodTrackerDetailed />} />
                             <Route path="/habit-tracker" element={<HabitTrackerDetailed />} />

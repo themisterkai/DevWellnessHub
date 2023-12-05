@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MobileToDashBTN } from '../components/MobileToDashBTN' 
+import { MobileToDashBTN } from '../components/MobileToDashBTN'
 import { useDispatch, useSelector } from 'react-redux';
 import {
   updateName,
@@ -7,6 +7,11 @@ import {
   updateBreatheTimerLengthMS,
   factoryReset,
 } from '../reducers/settings';
+import { resetFactoryBreatheTimer } from '../reducers/breatheTimer';
+import { resetFactoryFocusTimer } from '../reducers/focusTimer';
+import { resetMood } from '../reducers/mood';
+import { resetHabits } from '../reducers/habits';
+import { resetHistorical } from '../reducers/historical';
 import './SettingsPage.css'
 
 export const SettingsPage = () => {
@@ -24,7 +29,13 @@ export const SettingsPage = () => {
 
   const handleFactoryReset = () => {
     dispatch(factoryReset());
+    dispatch(resetFactoryBreatheTimer());
+    dispatch(resetFactoryFocusTimer());
+    dispatch(resetMood());
+    dispatch(resetHabits());
+    dispatch(resetHistorical());
     // You can also redirect the user to the StartPage here
+    //window.location.href = '/start';
   };
 
   const handleSaveChanges = () => {

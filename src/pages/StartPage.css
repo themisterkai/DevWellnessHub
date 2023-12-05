@@ -14,9 +14,9 @@
 /* Media query for smaller screens (e.g., mobile devices) */
 @media only screen and (max-width: 768px) {
     .start-wrapper {
-        width: 100vw;
-        height: 100vh; /* Adjust as needed */
-        border-radius: 0px;
+        width: 90vw;
+        height: 90vh; /* Adjust as needed */
+        border-radius: 20px;
     }
 
 }

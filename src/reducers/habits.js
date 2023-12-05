@@ -15,7 +15,13 @@ export const habits = createSlice({
       );
       selectedHabit.isComplete = !selectedHabit.isComplete;
     },
+
+    resetHabits: state => {
+      // Reset habits fields to initial values
+      Object.assign(state, initialState);
+      localStorage.removeItem('habits'); 
+    },
   },
 });
 
-export const { toggleHabit } = habits.actions;
+export const { toggleHabit, resetHabits } = habits.actions;

@@ -18,8 +18,14 @@ export const historical = createSlice({
       delete historicalData[getCurrentDate()];
       state.historicalData = { ...historicalData };
     },
+
+    resetHistorical: state => {
+      // Reset historical fields to initial values
+      Object.assign(state, initialState);
+      localStorage.removeItem('historical');
+    },
   },
 });
 
-export const { loadHistoricalData, setEnergyLevel, setOverwhelmedLevel } =
+export const { loadHistoricalData, setEnergyLevel, setOverwhelmedLevel, resetHistorical } =
   historical.actions;

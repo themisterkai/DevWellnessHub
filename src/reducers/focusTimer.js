@@ -35,6 +35,12 @@ export const focusTimer = createSlice({
     setFocusTimer: (state, action) => {
       state.focusTimer = action.payload.focusTimer;
     },
+
+    resetFactoryFocusTimer: state => {
+      // Reset focusTimer to initial values
+      Object.assign(state, initialState);
+      localStorage.removeItem('focusTimer');
+    },
   },
 });
 
@@ -44,4 +50,5 @@ export const {
   resetFocusTimer,
   endFocusTimer,
   setFocusTimer,
+  resetFactoryFocusTimer,
 } = focusTimer.actions;

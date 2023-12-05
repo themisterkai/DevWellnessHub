@@ -19,8 +19,13 @@ export const mood = createSlice({
     setOverwhelmedLevel: (state, action) => {
       state.overwhelmedLevel = parseInt(action.payload.overwhelmedLevel);
     },
+    resetMood: state => {
+      
+      Object.assign(state, initialState);
+      localStorage.removeItem('mood'); 
+    },
   },
 });
 
-export const { setMoodLevel, setEnergyLevel, setOverwhelmedLevel } =
+export const { setMoodLevel, setEnergyLevel, setOverwhelmedLevel, resetMood } =
   mood.actions;

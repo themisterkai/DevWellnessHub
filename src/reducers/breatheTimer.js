@@ -35,6 +35,12 @@ export const breatheTimer = createSlice({
     setBreatheTimer: (state, action) => {
       state.breatheTimer = action.payload.breatheTimer;
     },
+
+    resetFactoryBreatheTimer: state => {
+      // Reset breatheTimer to initial values
+      Object.assign(state, initialState);
+      localStorage.removeItem('breatheTimer'); 
+    },
   },
 });
 
@@ -44,4 +50,5 @@ export const {
   resetBreatheTimer,
   endBreatheTimer,
   setBreatheTimer,
+  resetFactoryBreatheTimer,
 } = breatheTimer.actions;
