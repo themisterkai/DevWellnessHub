@@ -23,6 +23,7 @@ export const DesktopHomepage = () => {
   //conditional rendering of which components (better than doing it in the App.jsx)
   const { isMobile } = useScreenSize();
 
+
   return (
     <>
       <FocusTimerRenderless />
@@ -54,13 +55,9 @@ export const DesktopHomepage = () => {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/focus-timer" element={<FocusTimerDetailed />} />
                 <Route path="/mood-tracker" element={<MoodTrackerDetailed />} />
-                <Route
-                  path="/habit-tracker"
-                  element={<HabitTrackerDetailed />}
+                <Route path="/habit-tracker"element={<HabitTrackerDetailed />}
                 />
-                <Route
-                  path="/breathe-timer"
-                  element={<BreatheTimerDetailed />}
+                <Route path="/breathe-timer" element={<BreatheTimerDetailed />}
                 />
                 <Route path="/settings" element={<SettingsPage />} />
               </Routes>

@@ -135,11 +135,6 @@ body {
 
 /* Media query for medium-sized screens (e.g., tablets) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .app-wrapper {
-        width: 40vmin;
-        height: 40vmin;
-    }
-
     .main-app-name {
         padding-top: 10%;
     }
@@ -156,11 +151,6 @@ body {
 /* Media query for larger screens (e.g., desktops) */
 @media only screen and (min-width: 1025px) {
     /* You can add styles specific to larger screens here if needed */ 
-    .app-wrapper {
-        width: 55vmin;
-        height: 55vmin;
-    }
-    
     .main-app-name {
         padding-top: 10%;
     }
