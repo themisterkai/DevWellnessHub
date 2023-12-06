@@ -7,6 +7,7 @@ export const HabitsAbout = () => {
   return (
     <div className="about-wrapper">
       <div className="app-container">
+      <div className="main-header">
       {isMobile && (
         <div className="back-arrow">
           <Link to="/habit-tracker">
@@ -14,7 +15,8 @@ export const HabitsAbout = () => {
           </Link>
         </div>
       )}
-      <div className="about-header">. HABIT</div>   
+      <div className="about-header">. HABIT</div>
+      </div>
       <div className="about-paragraph">
         Habits are the product of repetition and intentional actions. When we
         consistently engage in specific behaviors, our brains establish neural

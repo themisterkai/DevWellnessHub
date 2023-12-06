@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { MobileToDashBTN } from '../MobileToDashBTN';
+import { MobileFocusBTN } from '../MobileBTN';
 import {
   CircularProgressbarWithChildren,
   buildStyles,
@@ -10,15 +10,13 @@ import {
   handleStartFocusTimer,
 } from './FocusTimerDispatch';
 import { getYesterdayDate, millisToMinutesAndSeconds } from '../../helpers';
-import { DashLine, InfoIcon, ResetIcon } from '../../assets/SVGElements';
-import { Link } from 'react-router-dom';
-import useScreenSize from '../../hooks/useScreenSize';
+import { DashLine, ResetIcon } from '../../assets/SVGElements';
 import './FocusTimerDetailed.css';
 
 export const FocusTimerDetailed = () => {
   const dispatch = useDispatch();
   const yesterdayDate = getYesterdayDate();
-  const { isMobile } = useScreenSize();
+
 
   const focusTimer = useSelector(state => state.focusTimer);
   const focusTimerLengthMS = useSelector(
@@ -71,13 +69,6 @@ export const FocusTimerDetailed = () => {
       <div className="app-container">
         <header className="main-header">
           <div className="main-app-name">. FOCUS</div>
-          {isMobile && (
-            <div className="info-button">
-              <Link to="/about-focus-timer">
-                <InfoIcon />
-              </Link>
-            </div>
-          )}
         </header>
         <h2 className="secondary-header">Get focused now!</h2>
         <div
@@ -124,7 +115,7 @@ export const FocusTimerDetailed = () => {
             </div>
           )}
         </div>
-        <MobileToDashBTN />
+        <MobileFocusBTN />
       </div>
     </div>
   );
