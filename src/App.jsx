@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { applyColorPalette } from './helpers';
-import { DesktopHomepage } from './pages/DesktopHomePage';
+import { DesktopHomepage } from './pages/DesktopHomepage';
 import { StartPage } from './pages/StartPage';
 import './MasterStyle.css';
 
 export const App = () => {
   const [isSetupComplete, setIsSetupComplete] = useState(false);
   const dispatch = useDispatch();
-  const selectedPalette = useSelector((state) => state.settings.colorPalette);
+  const selectedPalette = useSelector(state => state.settings.colorPalette);
 
   const handleSetupComplete = () => {
     setIsSetupComplete(true);
@@ -23,10 +23,10 @@ export const App = () => {
     applyColorPalette(selectedPalette);
   }, [selectedPalette]);
 
-  return ( 
+  return (
     <div>
       {isSetupComplete ? (
-          <DesktopHomepage />
+        <DesktopHomepage />
       ) : (
         <StartPage onSetupComplete={handleSetupComplete} />
       )}
