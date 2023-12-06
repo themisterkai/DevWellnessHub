@@ -1,4 +1,13 @@
 /* MasterStyle.css -- all the classes here to be reusable! */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    background-color: black;
+    align-items: center; 
+    justify-content: center; 
+  }
+  
 .main-wrapper {
     width: 45vw; 
     height: 95vh;
