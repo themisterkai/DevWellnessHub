@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MobileToDashBTN } from '../components/MobileToDashBTN' 
+import { MobileToDashBTN } from '../components/MobileBTN' 
 import { useDispatch, useSelector } from 'react-redux';
 import {
   updateName,

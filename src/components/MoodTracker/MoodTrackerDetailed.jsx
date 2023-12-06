@@ -1,20 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
-
+import { MobileMoodBTN } from '../MobileBTN';
 import {
   setEnergyLevel,
   setMoodLevel,
   setOverwhelmedLevel,
 } from '../../reducers/mood';
-import './MoodTrackerDetailed.css';
-import { MobileToDashBTN } from '../MobileToDashBTN';
 import { getYesterdayDate } from '../../helpers';
-import useScreenSize from '../../hooks/useScreenSize';
-import { Link } from 'react-router-dom';
-import { DashLine, InfoIcon } from '../../assets/SVGElements';
+import { DashLine } from '../../assets/SVGElements';
+import './MoodTrackerDetailed.css';
 
 export const MoodTrackerDetailed = () => {
   const dispatch = useDispatch();
-  const { isMobile } = useScreenSize();
   const mood = useSelector(state => state.mood);
   const yesterdayDate = getYesterdayDate();
 
@@ -59,13 +55,6 @@ export const MoodTrackerDetailed = () => {
       <div className="app-container">
         <header className="main-header">
           <div className="main-app-name">. MOOD</div>
-          {isMobile && (
-            <div className="info-button">
-              <Link to="/about-mood-tracker">
-                <InfoIcon />
-              </Link>
-            </div>
-          )}
         </header>
         <h2 className="secondary-header">How are you feeling today?</h2>
         <div className="range-mood">
@@ -129,7 +118,7 @@ export const MoodTrackerDetailed = () => {
             </div>
           )}
         </div>
-        <MobileToDashBTN />
+        <MobileMoodBTN />
       </div>
     </div>
   );

@@ -7,14 +7,16 @@ export const About = () => {
   return (
     <div className="about-wrapper">
       <div className="app-container">
-      {isMobile && (
+      <div className="main-header">
+        {isMobile && (
         <div className="back-arrow">
           <Link to="/">
             <span className="material-symbols-outlined">arrow_back</span>
           </Link>
         </div>
       )}
-      <div className="about-header">. ABOUT</div>   
+      <div className="about-header">. ABOUT</div>
+      </div>
       <div className="about-paragraph">
         In the fast-paced realm of coding and innovation, we understand the
         unique challenges developers face. That&apos;s why we&apos;ve curated a
