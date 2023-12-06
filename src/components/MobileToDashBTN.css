@@ -1,0 +1,11 @@
+.back-dash-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2.5vmin;
+    transition: text-decoration 0.3s ease-in-out;
+}
+
+.back-dash-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

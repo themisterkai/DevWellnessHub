@@ -5,7 +5,7 @@ import {
   updateFocusTimerLengthMS,
   updateBreatheTimerLengthMS,
 } from '../reducers/settings';
-import "./SettingsPage.css";
+import "./StartPage.css";
 //Welcoming page + initial user data inputted;
 //This page will be responsive by using MediaQueries only -- one page
 //fits all;
@@ -23,6 +23,11 @@ export const StartPage = ({ onSetupComplete }) => {
   const [breatheTimerLength, setBreatheTimerLength] = useState(
     settingsState.breatheTimerLengthMS / (60 * 1000) // convert milliseconds to minutes
   );
+
+  // Add state variables to track button clicks
+  const [nameSubmitted, setNameSubmitted] = useState(false);
+  const [focusTimerSubmitted, setFocusTimerSubmitted] = useState(false);
+  const [breatheTimerSubmitted, setBreatheTimerSubmitted] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -49,18 +54,21 @@ export const StartPage = ({ onSetupComplete }) => {
 
   const handleSubmitName = () => {
     dispatch(updateName({ name }));
+    setNameSubmitted(true);
   };
 
   const handleSetFocusTimerLength = () => {
     dispatch(updateFocusTimerLengthMS({
       focusTimerLengthMS: focusTimerLength * 60 * 1000 // convert minutes to milliseconds
     }));
+    setFocusTimerSubmitted(true);
   }
 
   const handleSetBreatheTimerLength = () => {
     dispatch(updateBreatheTimerLengthMS({
       breatheTimerLengthMS: breatheTimerLength * 60 * 1000 // convert minutes to milliseconds
     }));
+    setBreatheTimerSubmitted(true);
   }
 
   const handleGoToDashboard = () => {
@@ -70,11 +78,7 @@ export const StartPage = ({ onSetupComplete }) => {
       return;
     }
   
-    // Check if focusTimerLengthMS and breatheTimerLengthMS are modified
-    const isFocusTimerModified = settingsState.focusTimerLengthMS !== 25 * 60 * 1000;
-    const isBreatheTimerModified = settingsState.breatheTimerLengthMS !== 1 * 60 * 1000;
-  
-    if (isFocusTimerModified && isBreatheTimerModified) {
+    if (focusTimerSubmitted && breatheTimerSubmitted) {
       // If both timers are modified, proceed to onSetupComplete
       onSetupComplete();
     } else {
@@ -92,52 +96,53 @@ export const StartPage = ({ onSetupComplete }) => {
   
     
   return (
-    <>
-      <h1>Hello {settingsState.name}</h1>
-      <div>
-        Set Name:{' '}
-        <input
+    <div className="start-wrapper">
+      <div className="app-container">
+      <header className="main-header">
+        <div className="main-app-name">Welcome to DevWellnessHub!</div>
+      </header>
+      <h1 className="secondary-header">Hello {settingsState.name === "" ? ("beautiful soul.") : (<>{settingsState.name}.</>)}</h1>
+      <div className="settings-field-wrapper">
+      <div className="field-wrap">
+      <div className="text-paragraph">Your Name:</div>
+      <div className="text-paragraph">Focus:</div>
+      <div className="text-paragraph">Breathe:</div>
+      </div>
+      <div className="field-wrap">
+      <input
           onChange={e => {
             setName(e.target.value);
           }}
-        ></input>
-        {' '}
-        <button onClick={handleSubmitName}>Submit Name</button>
-      </div>
-      <div>
-        Set Focus Timer Length (minutes):{' '}
-        <input
+      ></input>
+      <input
           type="number"
           value={focusTimerLength}
           min="1"
           onChange={e => {
             setFocusTimerLength(e.target.value);
           }}
-        ></input>
-        {' '}
-        <button onClick={handleSetFocusTimerLength}>
-          Submit Focus Timer Length
-        </button>
-      </div>
-      <div>
-        Set Breathe Timer Length (minutes):{' '}
-        <input
+      ></input>
+      <input
           type="number"
           value={breatheTimerLength}
           min="1"
           onChange={e => {
             setBreatheTimerLength(e.target.value);
           }}
-        ></input>
-        {' '}
-        <button onClick={handleSetBreatheTimerLength}>
-          Submit Breathe Timer Length
-        </button>
+      ></input>
+      </div>
+      <div className="field-wrap">
+      <button  onClick={handleSubmitName}>Save</button>
+      <button  onClick={handleSetFocusTimerLength}>Save</button>
+      <button  onClick={handleSetBreatheTimerLength}>Save</button>
+      </div>
+      
       </div>
       <div>
-        <button onClick={handleGoToDashboard}>Go to Dashboard</button>
+        <button className="app-button go-dash" onClick={handleGoToDashboard}>Go to Dashboard</button>
       </div>
-    </>
+      </div>
+    </div>
   );
 };
  
