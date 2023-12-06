@@ -17,9 +17,6 @@ export const millisToMinutesAndSeconds = millis => {
 };
 
 export const applyColorPalette = selectedPalette => {
-  selectedPalette == null || selectedPalette === ''
-    ? (selectedPalette = 'dark')
-    : selectedPalette;
   const colorPalettes = {
     dark: {
       '--primary-bg-color': '#000000',
