@@ -5,6 +5,16 @@
   border-radius: 20px;
 }
 
+.about-wrapper .app-container .back-arrow {
+  margin-left: 30px;
+  margin-top: 30px;
+  color: var(--accent-color);
+}
+
+.about-wrapper .app-container .back-arrow a {
+  color: var(--accent-color);
+}
+
 .about-header {
   padding-top: 10%;
   color: var(--primary-text-color);
@@ -24,5 +34,4 @@
   font-weight: 400;
   letter-spacing: 0.36px;
   line-height: normal;
-  
 }

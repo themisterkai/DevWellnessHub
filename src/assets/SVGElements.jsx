@@ -1,8 +1,8 @@
 export const SettingsIcon = () => {
   return (
-    <svg 
-      viewBox="0 0 23 23" 
-      fill="none" 
+    <svg
+      viewBox="0 0 23 23"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="settings-icon"
     >
@@ -18,34 +18,44 @@ export const SettingsIcon = () => {
         stroke="var(--accent-color)" 
         strokeWidth="1.5"
       />
-    </svg>    
-  )
+    </svg>
+  );
+};
+
+export const InfoIcon = () => {
+  // return <span className="material-symbols-outlined">info</span>;
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 -960 960 960"
+      width="24"
+      fill="white"
+      className="info-button"
+    >
+      <path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+    </svg>
+  );
 };
 
 export const FocusCircle = () => {
   return (
-    <svg 
-        viewBox="0 0 72 72" 
-        fill="none" 
-        xmlns="http://www.w3.org/2000/svg"
-        className="focus-circle-SVG"
+    <svg
+      viewBox="0 0 72 72"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="focus-circle-SVG"
     >
-        <circle 
-            id="Ellipse 16" 
-            cx="36" 
-            cy="36" 
-            r="35" 
-            stroke="#6F6F6F"
-        />
+      <circle id="Ellipse 16" cx="36" cy="36" r="35" stroke="#6F6F6F" />
     </svg>
-  )
+  );
 };
 
 export const SetFocusText = () => {
   return (
-    <svg 
-      viewBox="0 0 20 9" 
-      fill="none" 
+    <svg
+      viewBox="0 0 20 9"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="set-timer"
       >
@@ -54,52 +64,40 @@ export const SetFocusText = () => {
           fill="var(--primary-text-color)"
         />
     </svg>
-  )
+  );
 };
 
 export const HabitCircle = ({ style }) => {
   return (
-    <svg 
-      viewBox="0 0 20 20" 
-      fill="none" 
+    <svg
+      viewBox="0 0 20 20"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="habit-circle-SVG"
     >
-      <circle 
-        cx="10" 
-        cy="10" 
-        r="10" 
-        style={style} 
-      />
+      <circle cx="10" cy="10" r="10" style={style} />
     </svg>
   );
 };
 
-
 export const BreathCircle = () => {
   return (
-    <svg 
-      viewBox="0 0 70 70" 
-      fill="none" 
+    <svg
+      viewBox="0 0 70 70"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="breath-circle-SVG"
     >
-      <circle 
-        id="Ellipse 9" 
-        cx="35" 
-        cy="35" 
-        r="35" 
-        fill="#6F6F6F"
-      />
+      <circle id="Ellipse 9" cx="35" cy="35" r="35" fill="#6F6F6F" />
     </svg>
-  )
+  );
 };
 
 export const BreakBreathText = () => {
   return (
-    <svg 
-      viewBox="0 0 35 8" 
-      fill="none" 
+    <svg
+      viewBox="0 0 35 8"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="breath-break"
     >
@@ -107,33 +105,33 @@ export const BreakBreathText = () => {
         d="M0.632102 8V0.727273H3.54403C4.07907 0.727273 4.52533 0.806581 4.88281 0.965199C5.24029 1.12382 5.509 1.34399 5.68892 1.62571C5.86884 1.90507 5.95881 2.22704 5.95881 2.59162C5.95881 2.87571 5.90199 3.12547 5.78835 3.34091C5.67472 3.55398 5.51847 3.72917 5.3196 3.86648C5.12311 4.00142 4.8982 4.0973 4.64489 4.15412V4.22514C4.92188 4.23698 5.18111 4.3151 5.42259 4.45952C5.66643 4.60393 5.86411 4.80634 6.01562 5.06676C6.16714 5.32481 6.2429 5.63258 6.2429 5.99006C6.2429 6.37595 6.14702 6.72041 5.95526 7.02344C5.76586 7.3241 5.48532 7.56203 5.11364 7.73722C4.74195 7.91241 4.28385 8 3.73935 8H0.632102ZM2.16974 6.7429H3.4233C3.8518 6.7429 4.1643 6.66122 4.3608 6.49787C4.55729 6.33215 4.65554 6.11198 4.65554 5.83736C4.65554 5.63613 4.60701 5.45857 4.50994 5.30469C4.41288 5.1508 4.27438 5.03007 4.09446 4.94247C3.9169 4.85488 3.70502 4.81108 3.45881 4.81108H2.16974V6.7429ZM2.16974 3.7706H3.30966C3.52036 3.7706 3.70739 3.7339 3.87074 3.66051C4.03646 3.58475 4.16667 3.47822 4.26136 3.34091C4.35843 3.2036 4.40696 3.03906 4.40696 2.8473C4.40696 2.58452 4.31345 2.37263 4.12642 2.21165C3.94176 2.05066 3.67898 1.97017 3.33807 1.97017H2.16974V3.7706ZM7.54343 8V0.727273H10.4127C10.962 0.727273 11.4307 0.825521 11.819 1.02202C12.2096 1.21615 12.5067 1.49195 12.7103 1.84943C12.9163 2.20455 13.0193 2.6224 13.0193 3.10298C13.0193 3.58594 12.9151 4.00142 12.7068 4.34943C12.4984 4.69508 12.1966 4.96023 11.8012 5.14489C11.4083 5.32955 10.9324 5.42188 10.3737 5.42188H8.45252V4.18608H10.1251C10.4187 4.18608 10.6625 4.14583 10.8566 4.06534C11.0508 3.98485 11.1952 3.86411 11.2899 3.70312C11.3869 3.54214 11.4355 3.34209 11.4355 3.10298C11.4355 2.86151 11.3869 2.65791 11.2899 2.49219C11.1952 2.32647 11.0496 2.20099 10.8531 2.11577C10.659 2.02817 10.4139 1.98438 10.118 1.98438H9.08107V8H7.54343ZM11.471 4.69034L13.2785 8H11.5811L9.81261 4.69034H11.471ZM14.4059 8V0.727273H19.3065V1.99503H15.9436V3.72798H19.0544V4.99574H15.9436V6.73224H19.3207V8H14.4059ZM22.0825 8H20.4348L22.9455 0.727273H24.927L27.4341 8H25.7864L23.9646 2.3892H23.9078L22.0825 8ZM21.9795 5.14134H25.8716V6.34162H21.9795V5.14134ZM28.6094 8V0.727273H30.1471V3.93395H30.243L32.8602 0.727273H34.7032L32.0043 3.98366L34.7352 8H32.8957L30.9035 5.00994L30.1471 5.93324V8H28.6094Z" 
         fill="var(--primary-text-color)"
       />
-    </svg>  
-  )
+    </svg>
+  );
 };
 
 export const MoodStableLine = () => {
   return (
-    <svg 
-      viewBox="0 0 91 6" 
-      fill="none" 
+    <svg
+      viewBox="0 0 91 6"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="mood-stable-SVG"
     >
-      <path 
-        d="M3 3L88 3" 
-        stroke="#6F6F6F" 
-        strokeWidth="5" 
+      <path
+        d="M3 3L88 3"
+        stroke="#6F6F6F"
+        strokeWidth="5"
         strokeLinecap="round"
       />
-    </svg>    
-  )
+    </svg>
+  );
 };
 
 export const MoodUp = () => {
   return (
-    <svg 
-      viewBox="0 0 91 49" 
-      fill="none" 
+    <svg
+      viewBox="0 0 91 49"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="mood-up-SVG"
     >
@@ -143,15 +141,15 @@ export const MoodUp = () => {
         strokeWidth="5" 
         strokeLinecap="round"
       />
-    </svg>       
-  )
+    </svg>
+  );
 };
 
 export const MoodDown = () => {
   return (
-    <svg 
-      viewBox="0 0 91 50" 
-      fill="none" 
+    <svg
+      viewBox="0 0 91 50"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="mood-down-SVG"
     >
@@ -162,14 +160,14 @@ export const MoodDown = () => {
         strokeLinecap="round"
       />
     </svg>
-  )
+  );
 };
 
 export const DashLine = () => {
   return (
-    <svg 
-      viewBox="0 0 282 3" 
-      fill="none" 
+    <svg
+      viewBox="0 0 282 3"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="line-dashboard"
     >
@@ -180,7 +178,7 @@ export const DashLine = () => {
         strokeLinecap="round"
       />
     </svg>
-  )
+  );
 };
 
 export const ResetIcon = () => {
@@ -205,4 +203,3 @@ export const ResetIcon = () => {
     </svg>
   );
 };
-
