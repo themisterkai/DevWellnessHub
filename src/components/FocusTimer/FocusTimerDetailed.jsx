@@ -9,17 +9,33 @@ import {
   handleResetFocusTimer,
   handleStartFocusTimer,
 } from './FocusTimerDispatch';
-import { ResetIcon } from '../../assets/SVGElements';
-import { millisToMinutesAndSeconds } from '../../helpers';
+import { getYesterdayDate, millisToMinutesAndSeconds } from '../../helpers';
+import { DashLine, ResetIcon } from '../../assets/SVGElements';
 import './FocusTimerDetailed.css';
-
 
 export const FocusTimerDetailed = () => {
   const dispatch = useDispatch();
+  const yesterdayDate = getYesterdayDate();
+
 
   const focusTimer = useSelector(state => state.focusTimer);
   const focusTimerLengthMS = useSelector(
     state => state.settings.focusTimerLengthMS
+  );
+
+  const historical = useSelector(state => state.historical.historicalData);
+  const dataYesterday = historical[yesterdayDate];
+
+  const historicalFocusData = Object.entries(historical).reduce(
+    (acc, curr) => {
+      acc.count += 1;
+      acc.done += curr[1].focusTimer.focusTimerCount;
+      return acc;
+    },
+    {
+      done: 0,
+      count: 0,
+    }
   );
 
   const percentage = (focusTimer.focusTimer / focusTimerLengthMS) * 100;
@@ -79,8 +95,26 @@ export const FocusTimerDetailed = () => {
           </CircularProgressbarWithChildren>
         </div>
         <p className="focus-done-day">
-          Focus timer done today: {focusTimer.focusTimerCount}
+          Focus timers done today: {focusTimer.focusTimerCount}
         </p>
+        <DashLine />
+        <div className="focus-history">
+          {dataYesterday != null && (
+            <div className="focus-history-yesterday">
+              Yesterday&apos;s data:
+              <p />
+              Count: {dataYesterday.focusTimer.focusTimerCount}
+            </div>
+          )}
+          {historicalFocusData.count != 0 && (
+            <div className="focus-history-overall">
+              Overall data:
+              <p />
+              Average per day:{' '}
+              {historicalFocusData.done / historicalFocusData.count}
+            </div>
+          )}
+        </div>
         <MobileFocusBTN />
       </div>
     </div>

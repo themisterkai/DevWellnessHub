@@ -1,13 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { toggleHabit } from '../../reducers/habits';
+import { getYesterdayDate } from '../../helpers';
+import { DashLine } from '../../assets/SVGElements';
 import { MobileHabitBTN } from '../MobileBTN';
 import './HabitTrackerDetailed.css';
-import { toggleHabit } from '../../reducers/habits';
-
-
 
 export const HabitTrackerDetailed = () => {
   const dispatch = useDispatch();
   const habits = useSelector(state => state.habits.habits);
+  const yesterdayDate = getYesterdayDate();
+
+  const historical = useSelector(state => state.historical.historicalData);
+  const dataYesterday = historical[yesterdayDate];
 
   const handleToggleHabit = id => {
     dispatch(toggleHabit({ id }));
@@ -15,6 +19,22 @@ export const HabitTrackerDetailed = () => {
   };
 
   const habitsCompletedCount = habits.filter(habit => habit.isComplete).length;
+
+  const historicalHabitData = Object.entries(historical).reduce(
+    (acc, curr) => {
+      console.log('acc', acc);
+      acc.count += 1;
+      const habits = curr[1].habits.habits;
+      acc.done += habits.filter(habit => habit.isComplete).length;
+      acc.habitCount += habits.length;
+      return acc;
+    },
+    {
+      done: 0,
+      habitCount: 0,
+      count: 0,
+    }
+  );
 
   return (
     <div className="main-wrapper">
@@ -44,6 +64,29 @@ export const HabitTrackerDetailed = () => {
               </div>
             );
           })}
+        </div>
+        <DashLine />
+        <div className="habit-history">
+          {dataYesterday != null && (
+            <div className="habit-history-yesterday">
+              Yesterday&apos;s data:
+              <p />
+              🏆:{' '}
+              {
+                dataYesterday.habits.habits.filter(habit => habit.isComplete)
+                  .length
+              }{' '}
+              / {dataYesterday.habits.habits.length}
+            </div>
+          )}
+          {historicalHabitData.count != 0 && (
+            <div className="habit-history-overall">
+              Overall data:
+              <p />
+              🏆: {historicalHabitData.done / historicalHabitData.count}/{' '}
+              {historicalHabitData.habitCount / historicalHabitData.count}
+            </div>
+          )}
         </div>
         <MobileHabitBTN />
       </div>

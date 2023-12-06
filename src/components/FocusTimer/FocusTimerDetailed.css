@@ -24,7 +24,7 @@
   aspect-ratio: 1 / 1;
   text-align: center;
   border-radius: 100%;
-  box-shadow: -50px -50px 100px #6F6F6F, 50px 50px 100px #6F6F6F;
+  box-shadow: -50px -50px 100px #6f6f6f, 50px 50px 100px #6f6f6f;
   cursor: pointer;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .focus-timer-next {
-  font-family: "Inter-Regular", Helvetica;
+  font-family: 'Inter-Regular', Helvetica;
   color: var(--primary-text-color);
   font-size: 2vmin;
   font-weight: 600;
@@ -45,13 +45,11 @@
   stroke: var(--accent-color);
 }
 .CircularProgressbar-trail {
-  stroke: #6F6F6F;
+  stroke: #6f6f6f;
 }
 .CircularProgressbar-text {
   fill: var(--primary-text-color);
 }
-
-
 
 .focus-detailed-circular-progress-bar:active {
   transform: scale(0.98);
@@ -60,7 +58,7 @@
 .focus-done-day {
   padding-top: 5%;
   color: var(--primary-text-color);
-  font-family: "Inter-Regular", Helvetica;
+  font-family: 'Inter-Regular', Helvetica;
   font-size: 3.5vmin;
   font-weight: 600;
   letter-spacing: 0.36px;
@@ -72,7 +70,7 @@
   .focus-timer-elapsing {
     font-size: 3vmin;
   }
-  
+
   .focus-timer-next {
     font-size: 1vmin;
   }
@@ -84,11 +82,11 @@
 
 /* Media query for larger screens (e.g., desktops) */
 @media only screen and (min-width: 1025px) {
-  /* You can add styles specific to larger screens here if needed */ 
+  /* You can add styles specific to larger screens here if needed */
   .focus-timer-elapsing {
     font-size: 4vmin;
   }
-  
+
   .focus-timer-next {
     font-size: 1vmin;
   }
@@ -98,3 +96,20 @@
   }
 }
 
+.focus-history {
+  color: var(--primary-text-color);
+  font-family: 'Inter-Regular', Helvetica;
+  font-size: 2vmin;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+.focus-history-yesterday {
+  padding: 20px;
+  float: left;
+}
+
+.focus-history-overall {
+  padding: 20px;
+  float: left;
+}

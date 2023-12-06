@@ -3,124 +3,122 @@
 /* Variables for dynamic theming. Color palettes. */
 /* Dark Color Palette */
 :root {
-    --primary-bg-color:#000000;        
-    --secondary-bg-color: #1C1D1F;
-    --tertiary-bg-color: #4a4d53;
-    --primary-text-color: #F0F2F1;      
-    --accent-color: #F0F2F1;            
-    /* ... add more variables as needed for the dark palette */
-  }
+  --primary-bg-color: #000000;
+  --secondary-bg-color: #1c1d1f;
+  --tertiary-bg-color: #4a4d53;
+  --primary-text-color: #f0f2f1;
+  --accent-color: #f0f2f1;
+  /* ... add more variables as needed for the dark palette */
+}
 
 body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    background-color: var(--primary-bg-color);
-    align-items: center; 
-    justify-content: center; 
-  }
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  background-color: var(--primary-bg-color);
+  align-items: center;
+  justify-content: center;
+}
 
 .main-wrapper {
-    width: 45vw; 
-    height: 95vh;
-    background-color: var(--secondary-bg-color);
-    border-radius: 20px;
-
+  width: 45vw;
+  height: 95vh;
+  background-color: var(--secondary-bg-color);
+  border-radius: 20px;
 }
 
-.tile-wrapper{
-    width: 46.43%; 
-    height: 46.43%;
-    background-color: var(--tertiary-bg-color);
-    border-radius: 7.7%;
-    position: relative;
+.tile-wrapper {
+  width: 46.43%;
+  height: 46.43%;
+  background-color: var(--tertiary-bg-color);
+  border-radius: 7.7%;
+  position: relative;
 }
-
 
 .app-container {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    gap: 1.5vmin;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 1.5vmin;
 }
 
 .main-header {
-    padding-top: 5%;
-    width: 90%;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 5vmin;
+  padding-top: 5%;
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5vmin;
 }
 
 .main-app-name {
-    color: var(--primary-text-color);
-    font-family: "Inter-SemiBold", Helvetica;
-    font-size: 4vmin;
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: 0.36px;
-    line-height: normal;
+  color: var(--primary-text-color);
+  font-family: 'Inter-SemiBold', Helvetica;
+  font-size: 4vmin;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.36px;
+  line-height: normal;
 }
 
 .secondary-header {
-    color: var(--primary-text-color);
-    font-family: "Inter-SemiBold", Helvetica;
-    font-size: 3vmin;
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: 0.36px;
-    line-height: normal;
+  color: var(--primary-text-color);
+  font-family: 'Inter-SemiBold', Helvetica;
+  font-size: 3vmin;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.36px;
+  line-height: normal;
 }
 
 .text-paragraph {
-    color: var(--primary-text-color);
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 3vmin;
-    text-align: center;
-    font-weight: 400;
-    letter-spacing: 0.36px;
-    line-height: normal;
+  color: var(--primary-text-color);
+  font-family: 'Inter-Regular', Helvetica;
+  font-size: 3vmin;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.36px;
+  line-height: normal;
 }
 
 .tile-main-name {
-    position: absolute;
-    top: 7.7%;
-    left: 7.7%;
-    color: var(--primary-text-color);
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 3vmin;
-    font-weight: 400;
-    letter-spacing: 0.3px;
-    line-height: normal;
+  position: absolute;
+  top: 7.7%;
+  left: 7.7%;
+  color: var(--primary-text-color);
+  font-family: 'Inter-Regular', Helvetica;
+  font-size: 3vmin;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: normal;
 }
 
 .app-button {
-    display: inline-block;
-    padding: 5px 10px;
-    font-size: 14px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 2px solid var(--tertiary-bg-color); /* Border color */
-    color: var(--primary-text-color); /* Text color */
-    background-color: var(--tertiary-bg-color); /* Background color */
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid var(--tertiary-bg-color); /* Border color */
+  color: var(--primary-text-color); /* Text color */
+  background-color: var(--tertiary-bg-color); /* Background color */
 }
 
 .app-button:hover {
-    background-color: var(--primary-text-color); /* Background color */
-    border-color: var(--primary-text-color);
-    color: var(--tertiary-bg-color);
+  background-color: var(--primary-text-color); /* Background color */
+  border-color: var(--primary-text-color);
+  color: var(--tertiary-bg-color);
 }
 
 .line-dashboard {
-    padding-top: 2%;
-    padding-bottom: 2%;
-    width: 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  width: 100%;
 }
 
 .settings-buttons-wrapper {
@@ -133,41 +131,41 @@ body {
 
 /* Media query for smaller screens (e.g., mobile devices) */
 @media only screen and (max-width: 768px) {
-    .main-wrapper {
-        width: 100vw;
-        height: 100vh; /* Adjust as needed */
-        border-radius: 0px;
-    }
-
+  .main-wrapper {
+    width: 100vw;
+    height: 100vh; /* Adjust as needed */
+    border-radius: 0px;
+  }
 }
 
 /* Media query for medium-sized screens (e.g., tablets) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .main-app-name {
-        padding-top: 10%;
-    }
+  .main-app-name {
+      padding-top: 10%;
+  }
 
-    .text-paragraph {
-        font-size: 2vmin;
-    }
+  .text-paragraph {
+    font-size: 2vmin;
+  }
 
-    .tile-main-name {
-        font-size: 1.8vmin;
-    }
+  .tile-main-name {
+    font-size: 1.8vmin;
+  }
 }
 
 /* Media query for larger screens (e.g., desktops) */
 @media only screen and (min-width: 1025px) {
-    /* You can add styles specific to larger screens here if needed */ 
-    .main-app-name {
-        padding-top: 10%;
-    }
+  /* You can add styles specific to larger screens here if needed */
+  .main-app-name {
+    padding-top: 5%;
+  }
 
-    .text-paragraph {
-        font-size: 2.5vmin;
-    }
+  .text-paragraph {
+    font-size: 2.5vmin;
+  }
 
-    .tile-main-name {
-        font-size: 1.8vmin;
-    }
+  .tile-main-name {
+    font-size: 1.8vmin;
+  }
 }
+

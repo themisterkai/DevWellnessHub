@@ -1,39 +1,61 @@
 .habit-detailed-counter {
-    color: var(--primary-text-color);
-    font-family: "Inter-SemiBold", Helvetica;
-    font-size: 2.5vmin;
-    font-weight: 400;
-    letter-spacing: 0.36px;
-    line-height: normal;
+  color: var(--primary-text-color);
+  font-family: 'Inter-SemiBold', Helvetica;
+  font-size: 2.5vmin;
+  font-weight: 400;
+  letter-spacing: 0.36px;
+  line-height: normal;
 }
 
 .habit-detailed-wrapper-habits {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: flex-start; 
-    gap: 1.5vmin;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  gap: 1.5vmin;
+  width: 100%;
 }
 
 .habit-detailed-wrapper-habits-options {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    gap: 1vmin;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 1vmin;
+  padding-left: 5vmin;
 }
 
 .habit-detailed-checkbox {
-    content: "";
-    width: 3vmin; /* Adjust the size of the checkbox */
-    height: 3vmin; /* Adjust the size of the checkbox */
-    border: 0.5vmin solid var(--tertiary-bg-color); /* Border color of the checkbox */
-    background-color: var(--primary-text-color); /* Background color of the checkbox */
+  content: '';
+  width: 3vmin; /* Adjust the size of the checkbox */
+  height: 3vmin; /* Adjust the size of the checkbox */
+  border: 0.5vmin solid var(--tertiary-bg-color); /* Border color of the checkbox */
+  background-color: var(
+    --primary-text-color
+  ); /* Background color of the checkbox */
 }
 
 .habit-detailed-text-label {
-    color: var(--primary-text-color);
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 2.5vmin;
-    font-weight: 400;
-    letter-spacing: 0.36px;
-    line-height: normal;
+  color: var(--primary-text-color);
+  font-family: 'Inter-Regular', Helvetica;
+  font-size: 2.5vmin;
+  font-weight: 400;
+  letter-spacing: 0.36px;
+  line-height: normal;
+}
+
+.habit-history {
+  color: var(--primary-text-color);
+  font-family: 'Inter-Regular', Helvetica;
+  font-size: 2vmin;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+.habit-history-yesterday {
+  padding: 20px;
+  float: left;
+}
+
+.habit-history-overall {
+  padding: 20px;
+  float: left;
 }

@@ -61,11 +61,23 @@ const crossSliceReducer = (state, action) => {
         currentData.habits = parsedData.habits;
       }
 
+      const historicalData = { ...localStorage };
+      // delete settings data
+      delete historicalData.settings;
+      // delete data for the current date
+      delete historicalData[getCurrentDate()];
+      Object.entries(historicalData).map(entry => {
+        historicalData[entry[0]] = JSON.parse(entry[1]);
+      });
+
       return {
         ...state,
         ...currentData,
         settings: {
           ...currentSettings,
+        },
+        historical: {
+          historicalData: historicalData,
         },
       };
     }

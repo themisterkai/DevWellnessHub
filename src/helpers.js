@@ -3,28 +3,35 @@ export const getCurrentDate = () => {
   return currentDate;
 };
 
+export const getYesterdayDate = () => {
+  const yesterday = new Date(new Date().setDate(new Date().getDate() - 1))
+    .toISOString()
+    .split('T')[0];
+  return yesterday;
+};
+
 export const millisToMinutesAndSeconds = millis => {
   var minutes = Math.floor(millis / 60000);
   var seconds = ((millis % 60000) / 1000).toFixed(0);
   return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
 };
 
-export const applyColorPalette = (selectedPalette) => {
+export const applyColorPalette = selectedPalette => {
   const colorPalettes = {
     dark: {
-      '--primary-bg-color': '#000000',        
+      '--primary-bg-color': '#000000',
       '--secondary-bg-color': '#1C1D1F',
       '--tertiary-bg-color': '#4a4d53',
-      '--primary-text-color': '#F0F2F1',      
-      '--accent-color': '#F0F2F1',         
+      '--primary-text-color': '#F0F2F1',
+      '--accent-color': '#F0F2F1',
       /* Add more variables as needed */
     },
     light: {
-      '--primary-bg-color': '#4a4d53',      
-      '--secondary-bg-color': '#E7E9E8',    
-      '--tertiary-bg-color': '#F0F2F1',      
-      '--primary-text-color': '#1C1D1F',      
-      '--accent-color': '#1C1D1F',         
+      '--primary-bg-color': '#4a4d53',
+      '--secondary-bg-color': '#E7E9E8',
+      '--tertiary-bg-color': '#F0F2F1',
+      '--primary-text-color': '#1C1D1F',
+      '--accent-color': '#1C1D1F',
       /* Add more variables as needed */
     },
     // Add more color palettes as needed

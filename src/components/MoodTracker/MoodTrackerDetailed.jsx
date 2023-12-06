@@ -5,13 +5,18 @@ import {
   setMoodLevel,
   setOverwhelmedLevel,
 } from '../../reducers/mood';
+import { getYesterdayDate } from '../../helpers';
+import { DashLine } from '../../assets/SVGElements';
 import './MoodTrackerDetailed.css';
-
-
 
 export const MoodTrackerDetailed = () => {
   const dispatch = useDispatch();
   const mood = useSelector(state => state.mood);
+  const yesterdayDate = getYesterdayDate();
+
+  const historical = useSelector(state => state.historical.historicalData);
+
+  const dataYesterday = historical[yesterdayDate];
 
   const handleUpdateMoodLevel = moodLevel => {
     dispatch(setMoodLevel({ moodLevel }));
@@ -27,6 +32,23 @@ export const MoodTrackerDetailed = () => {
     dispatch(setOverwhelmedLevel({ overwhelmedLevel }));
     dispatch({ type: 'SAVE_DATA' });
   };
+
+  const historicalMoodData = Object.entries(historical).reduce(
+    (acc, curr) => {
+      acc.count += 1;
+      const moodLevels = curr[1].mood;
+      acc.mood += parseInt(moodLevels.moodLevel);
+      acc.energy += parseInt(moodLevels.energyLevel);
+      acc.overwhelmed += parseInt(moodLevels.overwhelmedLevel);
+      return acc;
+    },
+    {
+      mood: 0,
+      energy: 0,
+      overwhelmed: 0,
+      count: 0,
+    }
+  );
 
   return (
     <div className="main-wrapper">
@@ -64,6 +86,37 @@ export const MoodTrackerDetailed = () => {
             onChange={e => handleUpdateOverwhelmedLevel(e.target.value)}
             value={mood.overwhelmedLevel}
           ></input>
+        </div>
+        <DashLine />
+        <div className="mood-history">
+          {dataYesterday != null && (
+            <div className="mood-history-yesterday">
+              Yesterday&apos;s data:
+              <ul>
+                <li>mood: {dataYesterday.mood.moodLevel}/5</li>
+                <li>energy: {dataYesterday.mood.energyLevel}/5</li>
+                <li>overwhelmed: {dataYesterday.mood.overwhelmedLevel}/5</li>
+              </ul>
+            </div>
+          )}
+          {historicalMoodData.count != 0 && (
+            <div className="mood-history-overall">
+              Overall data:
+              <ul>
+                <li>
+                  mood: {historicalMoodData.mood / historicalMoodData.count}/5
+                </li>
+                <li>
+                  energy: {historicalMoodData.energy / historicalMoodData.count}
+                  /5
+                </li>
+                <li>
+                  overwhelmed:{' '}
+                  {historicalMoodData.overwhelmed / historicalMoodData.count}/5
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
         <MobileMoodBTN />
       </div>
