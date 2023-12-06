@@ -73,6 +73,25 @@
   }
 }
 
+.breathe-history {
+  color: var(--primary-text-color);
+  font-family: 'Inter-Regular', Helvetica;
+  font-size: 3.5vmin;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+.breathe-history-yesterday {
+  padding: 20px;
+  float: left;
+}
+
+.breathe-history-overall {
+  padding: 20px;
+  float: left;
+}
+
+
 /* Media query for medium-sized screens (e.g., tablets) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .focus-timer-elapsing {
@@ -80,6 +99,10 @@
   }
 
   .pulsing:after {
+    font-size: 2vmin;
+  }
+
+  .breathe-history {
     font-size: 2vmin;
   }
 }
@@ -94,22 +117,9 @@
   .pulsing:after {
     font-size: 2vmin;
   }
+
+  .breathe-history {
+    font-size: 2vmin;
+  }
 }
 
-.breathe-history {
-  color: var(--primary-text-color);
-  font-family: 'Inter-Regular', Helvetica;
-  font-size: 2vmin;
-  font-weight: 400;
-  overflow: hidden;
-}
-
-.breathe-history-yesterday {
-  padding: 20px;
-  float: left;
-}
-
-.breathe-history-overall {
-  padding: 20px;
-  float: left;
-}

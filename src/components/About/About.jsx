@@ -1,20 +1,11 @@
-import { Link } from 'react-router-dom';
-import useScreenSize from '../../hooks/useScreenSize';
+import { MobileGoBackBTN } from '../MobileBTN';
 import './About.css';
 
 export const About = () => {
-  const { isMobile } = useScreenSize();
   return (
     <div className="about-wrapper">
       <div className="app-container">
       <div className="main-header">
-        {isMobile && (
-        <div className="back-arrow">
-          <Link to="/">
-            <span className="material-symbols-outlined">arrow_back</span>
-          </Link>
-        </div>
-      )}
       <div className="about-header">. ABOUT</div>
       </div>
       <div className="about-paragraph">
@@ -42,6 +33,7 @@ export const About = () => {
         journey to becoming a healthier, more productive, and fulfilled
         developer.
       </div>
+      <MobileGoBackBTN />
       </div>
     </div>
   );

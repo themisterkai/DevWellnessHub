@@ -1,11 +1,19 @@
 .back-dash-link {
     color: var(--primary-text-color);
     text-decoration: none;
-    font-size: 2.5vmin;
+    font-size: 4vmin;
     transition: text-decoration 0.3s ease-in-out;
 }
 
 .back-dash-link:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+
+.mobile-back-btn-wrapper {
+    padding-top: 1%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 4vmin;
 }

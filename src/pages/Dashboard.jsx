@@ -25,12 +25,9 @@ export const Dashboard = () => {
           <div className="app-container">
             <header className="main-header">
               <div className="main-app-name">DevWellnessHub</div>
-              <Link to="/settings">
-                <SettingsIcon />
-              </Link>
             </header>
             <h1 className="secondary-header">
-              Welcome {settingsState.name}, ready for today&apos;s session?
+              Hi {settingsState.name}, ready for today&apos;s session?
             </h1>
             <DashLine />
             <div className="app-wrapper">
@@ -47,7 +44,7 @@ export const Dashboard = () => {
           <div className="app-container">
             <div className="main-app-name">DevWellnessHub</div>
             <h1 className="secondary-header">
-              Welcome {settingsState.name}, ready for today&apos;s session?
+              Hi {settingsState.name}, ready for today&apos;s session?
             </h1>
             <div className="app-wrapper">
               <DashLine />

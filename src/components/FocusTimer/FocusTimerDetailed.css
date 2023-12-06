@@ -29,13 +29,13 @@
 
 .focus-timer-elapsing {
   color: var(--primary-text-color);
-  font-size: 4vmin;
+  font-size: 7vmin;
 }
 
 .focus-timer-next {
   font-family: 'Inter-Regular', Helvetica;
   color: var(--primary-text-color);
-  font-size: 2vmin;
+  font-size: 4vmin;
   font-weight: 600;
   letter-spacing: 0.36px;
 }
@@ -58,7 +58,7 @@
   padding-top: 5%;
   color: var(--primary-text-color);
   font-family: 'Inter-Regular', Helvetica;
-  font-size: 3.5vmin;
+  font-size: 5vmin;
   font-weight: 600;
   letter-spacing: 0.36px;
   line-height: normal;
@@ -67,7 +67,7 @@
 .focus-history {
   color: var(--primary-text-color);
   font-family: 'Inter-Regular', Helvetica;
-  font-size: 2vmin;
+  font-size: 3.5vmin;
   font-weight: 400;
   overflow: hidden;
 }
@@ -96,6 +96,11 @@
     font-size: 2vmin;
   }
 
+  .focus-history {
+    font-size: 2vmin;
+  }
+
+
   .focus-detailed-circular-progress-bar {
     width: 20vw;
     height: 20vw;
@@ -114,6 +119,10 @@
   }
 
   .focus-done-day {
+    font-size: 2vmin;
+  }
+  
+  .focus-history {
     font-size: 2vmin;
   }
 
