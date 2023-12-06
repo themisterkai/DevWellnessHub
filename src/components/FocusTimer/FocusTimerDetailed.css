@@ -19,9 +19,8 @@
 
 .focus-detailed-circular-progress-bar {
   margin: 0 auto;
-  width: 40%;
-  height: 4%;
-  aspect-ratio: 1 / 1;
+  width: 65vw;
+  height: 65vw;
   text-align: center;
   border-radius: 100%;
   box-shadow: -50px -50px 100px #6f6f6f, 50px 50px 100px #6f6f6f;
@@ -65,6 +64,24 @@
   line-height: normal;
 }
 
+.focus-history {
+  color: var(--primary-text-color);
+  font-family: 'Inter-Regular', Helvetica;
+  font-size: 2vmin;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+.focus-history-yesterday {
+  padding: 20px;
+  float: left;
+}
+
+.focus-history-overall {
+  padding: 20px;
+  float: left;
+}
+
 /* Media query for medium-sized screens (e.g., tablets) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .focus-timer-elapsing {
@@ -94,22 +111,9 @@
   .focus-done-day {
     font-size: 2vmin;
   }
-}
 
-.focus-history {
-  color: var(--primary-text-color);
-  font-family: 'Inter-Regular', Helvetica;
-  font-size: 2vmin;
-  font-weight: 400;
-  overflow: hidden;
-}
-
-.focus-history-yesterday {
-  padding: 20px;
-  float: left;
-}
-
-.focus-history-overall {
-  padding: 20px;
-  float: left;
+  .focus-detailed-circular-progress-bar {
+    width: 20vw;
+    height: 20vw;
+  }
 }
