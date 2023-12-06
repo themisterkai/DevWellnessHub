@@ -18,6 +18,21 @@ export const MobileToDashBTN = () => {
   )
 }
 
+export const MobileGoBackBTN = () => {
+  const { isMobile } = useScreenSize();
+
+return (
+  <>
+  {isMobile && (
+  <>
+  <DashLine />
+  <Link className="back-dash-link" to="../">. BACK</Link>
+  </>
+  )}
+  </>
+)
+}
+
 export const MobileInfoBTN = () => {
   const { isMobile } = useScreenSize();
 
@@ -26,7 +41,10 @@ return (
   {isMobile && (
   <>
   <DashLine />
-  <Link className="back-dash-link" to="/about">. INFO</Link>
+  <div className="mobile-back-btn-wrapper">
+  <Link className="back-dash-link" to="/settings">. SETTINGS</Link>
+  <Link className="back-dash-link" to="/about">. ABOUT</Link>
+  </div>
   </>
   )}
   </>
@@ -41,7 +59,7 @@ return (
   {isMobile && (
   <>
   <DashLine />
-  <div className="settings-buttons-wrapper">
+  <div className="mobile-back-btn-wrapper">
     <Link className="back-dash-link" to="/">. DASHBOARD</Link>
     <Link className="back-dash-link" to="/about-focus-timer">. FOCUS INFO</Link>
   </div>
@@ -59,7 +77,7 @@ return (
   {isMobile && (
   <>
   <DashLine />
-  <div className="settings-buttons-wrapper">
+  <div className="mobile-back-btn-wrapper">
     <Link className="back-dash-link" to="/">. DASHBOARD</Link>
     <Link className="back-dash-link" to="/about-breathe-timer">. BREATHE INFO</Link>
   </div>
@@ -77,7 +95,7 @@ return (
   {isMobile && (
   <>
   <DashLine />
-  <div className="settings-buttons-wrapper">
+  <div className="mobile-back-btn-wrapper">
     <Link className="back-dash-link" to="/">. DASHBOARD</Link>
     <Link className="back-dash-link" to="/about-habit-tracker">. HABIT INFO</Link>
   </div>
@@ -95,7 +113,7 @@ return (
   {isMobile && (
   <>
   <DashLine />
-  <div className="settings-buttons-wrapper">
+  <div className="mobile-back-btn-wrapper">
     <Link className="back-dash-link" to="/">. DASHBOARD</Link>
     <Link className="back-dash-link" to="/about-mood-tracker">. MOOD INFO</Link>
   </div>
