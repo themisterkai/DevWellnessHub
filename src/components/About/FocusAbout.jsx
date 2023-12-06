@@ -1,8 +1,18 @@
+import { Link } from 'react-router-dom';
+import useScreenSize from '../../hooks/useScreenSize';
 import './About.css';
 
 export const FocusAbout = () => {
+  const { isMobile } = useScreenSize();
   return (
     <div className="about-wrapper">
+      {isMobile && (
+        <div className="back-arrow">
+          <Link to="/focus-timer">
+            <span className="material-symbols-outlined">arrow_back</span>
+          </Link>
+        </div>
+      )}
       <h2>. FOCUS</h2>
       <div className="about-text">
         A Focus Timer, or Pomodoro timer, divides your work into manageable

@@ -1,8 +1,18 @@
+import { Link } from 'react-router-dom';
+import useScreenSize from '../../hooks/useScreenSize';
 import './About.css';
 
 export const HabitsAbout = () => {
+  const { isMobile } = useScreenSize();
   return (
     <div className="about-wrapper">
+      {isMobile && (
+        <div className="back-arrow">
+          <Link to="/habit-tracker">
+            <span className="material-symbols-outlined">arrow_back</span>
+          </Link>
+        </div>
+      )}
       <h2>. HABIT</h2>
       <div className="about-text">
         Habits are the product of repetition and intentional actions. When we

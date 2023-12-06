@@ -1,8 +1,18 @@
+import { Link } from 'react-router-dom';
+import useScreenSize from '../../hooks/useScreenSize';
 import './About.css';
 
 export const MoodAbout = () => {
+  const { isMobile } = useScreenSize();
   return (
     <div className="about-wrapper">
+      {isMobile && (
+        <div className="back-arrow">
+          <Link to="/mood-tracker">
+            <span className="material-symbols-outlined">arrow_back</span>
+          </Link>
+        </div>
+      )}
       <h2>. MOOD</h2>
       <div className="about-text">
         Emotions are intricate signals that reflect our mental state. Tracking

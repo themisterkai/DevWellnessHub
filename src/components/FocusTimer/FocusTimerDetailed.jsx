@@ -9,13 +9,15 @@ import {
   handleResetFocusTimer,
   handleStartFocusTimer,
 } from './FocusTimerDispatch';
-import { ResetIcon } from '../../assets/SVGElements';
+import { InfoIcon, ResetIcon } from '../../assets/SVGElements';
 import { millisToMinutesAndSeconds } from '../../helpers';
 import './FocusTimerDetailed.css';
-
+import { Link } from 'react-router-dom';
+import useScreenSize from '../../hooks/useScreenSize';
 
 export const FocusTimerDetailed = () => {
   const dispatch = useDispatch();
+  const { isMobile } = useScreenSize();
 
   const focusTimer = useSelector(state => state.focusTimer);
   const focusTimerLengthMS = useSelector(
@@ -52,10 +54,22 @@ export const FocusTimerDetailed = () => {
     <div className="main-wrapper">
       <div className="app-container">
         <header className="main-header">
-          <div className="main-app-name">. FOCUS</div>    
+          <div className="main-app-name">. FOCUS</div>
+          {isMobile && (
+            <div className="info-button">
+              <Link to="/about-focus-timer">
+                <InfoIcon />
+              </Link>
+            </div>
+          )}
         </header>
         <h2 className="secondary-header">Get focused now!</h2>
-        <div className="focus-detailed-reset-icon" onClick={() => handleResetFocusTimer(dispatch, focusTimerLengthMS)}><ResetIcon /></div>
+        <div
+          className="focus-detailed-reset-icon"
+          onClick={() => handleResetFocusTimer(dispatch, focusTimerLengthMS)}
+        >
+          <ResetIcon />
+        </div>
         <div
           className="focus-detailed-circular-progress-bar"
           onClick={() => handleClickTimer()}
@@ -67,11 +81,15 @@ export const FocusTimerDetailed = () => {
               pathTransitionDuration: 0.5,
             })}
           >
-            <h1 className="focus-timer-elapsing">{millisToMinutesAndSeconds(focusTimer.focusTimer)}</h1>
+            <h1 className="focus-timer-elapsing">
+              {millisToMinutesAndSeconds(focusTimer.focusTimer)}
+            </h1>
             <h6 className="focus-timer-next">{renderFocusTimerText()}</h6>
           </CircularProgressbarWithChildren>
         </div>
-        <p className="focus-done-day">Focus timer done today: {focusTimer.focusTimerCount}</p>
+        <p className="focus-done-day">
+          Focus timer done today: {focusTimer.focusTimerCount}
+        </p>
         <MobileToDashBTN />
       </div>
     </div>

@@ -11,9 +11,10 @@ import {
 } from './BreatheTimerDispatch';
 import { millisToMinutesAndSeconds } from '../../helpers';
 import useScreenSize from '../../hooks/useScreenSize';
-import { ResetIcon } from '../../assets/SVGElements';
+import { InfoIcon, ResetIcon } from '../../assets/SVGElements';
 import './BreatheTimerDetailed.css';
 import { MobileToDashBTN } from '../MobileToDashBTN';
+import { Link } from 'react-router-dom';
 
 export const BreatheTimerDetailed = () => {
   const { isMobile } = useScreenSize();
@@ -47,11 +48,25 @@ export const BreatheTimerDetailed = () => {
   return (
     <div className="main-wrapper">
       <div className="app-container">
-      <header className="main-header">
-          <div className="main-app-name">. BREATHE</div>    
-      </header>
-      <h2 className="secondary-header">Breathe and Relax</h2>
-      <div className="focus-detailed-reset-icon" onClick={() => handleResetBreatheTimer(dispatch, breatheTimerLengthMS)}><ResetIcon /></div>
+        <header className="main-header">
+          <div className="main-app-name">. BREATHE</div>
+          {isMobile && (
+            <div className="info-button">
+              <Link to="/about-breathe-timer">
+                <InfoIcon />
+              </Link>
+            </div>
+          )}
+        </header>
+        <h2 className="secondary-header">Breathe and Relax</h2>
+        <div
+          className="focus-detailed-reset-icon"
+          onClick={() =>
+            handleResetBreatheTimer(dispatch, breatheTimerLengthMS)
+          }
+        >
+          <ResetIcon />
+        </div>
         <div
           className={breatheTimerClassnames}
           onClick={() => handleClickTimer()}
@@ -65,13 +80,17 @@ export const BreatheTimerDetailed = () => {
               rotation: 1 / 2 + 1 / 8,
             })}
           >
-            <h1 className="focus-timer-elapsing">{millisToMinutesAndSeconds(breatheTimer.breatheTimer)}</h1>
+            <h1 className="focus-timer-elapsing">
+              {millisToMinutesAndSeconds(breatheTimer.breatheTimer)}
+            </h1>
             <h6 className="focus-timer-next">{renderBreatheTimerText()}</h6>
           </CircularProgressbarWithChildren>
         </div>
-        <p className="focus-done-day">Breathe timer done today: {breatheTimer.breatheTimerCount}</p>
-      <MobileToDashBTN />
+        <p className="focus-done-day">
+          Breathe timer done today: {breatheTimer.breatheTimerCount}
+        </p>
+        <MobileToDashBTN />
+      </div>
     </div>
-  </div>
   );
 };

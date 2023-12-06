@@ -1,12 +1,11 @@
 .about-wrapper {
-  width: 30vw;
-  height: 95vh;
+  height: 100vh;
   background-color: #1c1d1f;
   border-radius: 20px;
   display: inline-block;
   gap: 5vh;
   color: #fff;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 400;
   letter-spacing: 1.08px;
   line-height: normal;
@@ -18,7 +17,20 @@
 
 .about-wrapper h2 {
   margin-left: 30px;
+  margin-top: 10px;
+  margin-bottom: -10px;
 }
+
+.about-wrapper .back-arrow {
+  margin-left: 30px;
+  margin-top: 30px;
+  color: #fff;
+}
+
+.about-wrapper .back-arrow a {
+  color: #fff;
+}
+
 .habit-name {
   position: absolute;
   top: 7.7%;
@@ -35,5 +47,18 @@
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .about-wrapper {
     font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .about-wrapper {
+    width: 30vw;
+    height: 95vh;
+    font-size: 22px;
+  }
+
+  .about-wrapper h2 {
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
 }

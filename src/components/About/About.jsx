@@ -1,8 +1,18 @@
+import { Link } from 'react-router-dom';
+import useScreenSize from '../../hooks/useScreenSize';
 import './About.css';
 
 export const About = () => {
+  const { isMobile } = useScreenSize();
   return (
     <div className="about-wrapper">
+      {isMobile && (
+        <div className="back-arrow">
+          <Link to="/">
+            <span className="material-symbols-outlined">arrow_back</span>
+          </Link>
+        </div>
+      )}
       <h2>. ABOUT</h2>
       <div className="about-text">
         In the fast-paced realm of coding and innovation, we understand the

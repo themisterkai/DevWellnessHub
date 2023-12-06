@@ -1,8 +1,18 @@
+import { Link } from 'react-router-dom';
+import useScreenSize from '../../hooks/useScreenSize';
 import './About.css';
 
 export const BreatheAbout = () => {
+  const { isMobile } = useScreenSize();
   return (
     <div className="about-wrapper">
+      {isMobile && (
+        <div className="back-arrow">
+          <Link to="/breathe-timer">
+            <span className="material-symbols-outlined">arrow_back</span>
+          </Link>
+        </div>
+      )}
       <h2>. BREATHE</h2>
       <div className="about-text">
         Mindful breathing is a simple yet transformative practice that taps into

@@ -2,9 +2,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { MobileToDashBTN } from '../MobileToDashBTN';
 import './HabitTrackerDetailed.css';
 import { toggleHabit } from '../../reducers/habits';
+import { Link } from 'react-router-dom';
+import { InfoIcon } from '../../assets/SVGElements';
+import useScreenSize from '../../hooks/useScreenSize';
 
 export const HabitTrackerDetailed = () => {
   const dispatch = useDispatch();
+  const { isMobile } = useScreenSize();
   const habits = useSelector(state => state.habits.habits);
 
   const handleToggleHabit = id => {
@@ -13,41 +17,44 @@ export const HabitTrackerDetailed = () => {
   };
 
   const habitsCompletedCount = habits.filter(habit => habit.isComplete).length;
-  
+
   return (
     <div className="main-wrapper">
       <div className="app-container">
-      <header className="main-header">
-          <div className="main-app-name">. HABIT</div>    
-        </header>
-      <h2 className="secondary-header">Look what you can achieve today!</h2>
-      <h4 className="habit-detailed-counter">🏆: {habitsCompletedCount}/5</h4>
-      <div className="habit-detailed-wrapper-habits">
-        {habits.map(habit => {
-          return (
-            <div
-              className="habit-detailed-wrapper-habits-options"
-              key={habit.id}
-            >
-              <input
-                className="habit-detailed-checkbox"
-                type="checkbox"
-                id={habit.id}
-                checked={habit.isComplete}
-                onChange={() => handleToggleHabit(habit.id)}
-              />{' '}
-              <label
-                className="habit-detailed-text-label"
-                htmlFor={habit.id}
-              >
-                {habit.description}
-              </label>
+        <header className="main-header">
+          <div className="main-app-name">. HABIT</div>
+          {isMobile && (
+            <div className="info-button">
+              <Link to="/about-habit-tracker">
+                <InfoIcon />
+              </Link>
             </div>
-          );
-        })}
-        
-      </div>
-      <MobileToDashBTN />
+          )}
+        </header>
+        <h2 className="secondary-header">Look what you can achieve today!</h2>
+        <h4 className="habit-detailed-counter">🏆: {habitsCompletedCount}/5</h4>
+        <div className="habit-detailed-wrapper-habits">
+          {habits.map(habit => {
+            return (
+              <div
+                className="habit-detailed-wrapper-habits-options"
+                key={habit.id}
+              >
+                <input
+                  className="habit-detailed-checkbox"
+                  type="checkbox"
+                  id={habit.id}
+                  checked={habit.isComplete}
+                  onChange={() => handleToggleHabit(habit.id)}
+                />{' '}
+                <label className="habit-detailed-text-label" htmlFor={habit.id}>
+                  {habit.description}
+                </label>
+              </div>
+            );
+          })}
+        </div>
+        <MobileToDashBTN />
       </div>
     </div>
   );
