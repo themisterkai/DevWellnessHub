@@ -12,27 +12,27 @@ export const initialState = {
   habits: [
     {
       id: 0,
-      description: 'habit one',
+      description: 'exercise for at least 20 minutes',
       isComplete: false,
     },
     {
       id: 1,
-      description: 'habit two',
+      description: 'take a 15-minute walk',
       isComplete: false,
     },
     {
       id: 2,
-      description: 'habit three',
+      description: 'read a book for 20 min',
       isComplete: false,
     },
     {
       id: 3,
-      description: 'habit four',
+      description: 'drink at least 8 glasses of water',
       isComplete: false,
     },
     {
       id: 4,
-      description: 'habit five',
+      description: 'floss',
       isComplete: false,
     },
   ],
@@ -66,10 +66,10 @@ export const settings = createSlice({
       const { isMobile } = action.payload;
       state.isMobile = isMobile;
     },
-    factoryReset: state => {
+    factoryReset: () => {
       // Reset all fields to initial values
-      Object.assign(state, initialState);
-      localStorage.removeItem('settings');
+      localStorage.clear();
+      window.location.reload(false);
     },
   },
 });
