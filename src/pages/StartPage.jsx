@@ -134,7 +134,7 @@ export const StartPage = ({ onSetupComplete }) => {
           }}
       ></input>
       </div>
-      <div className="field-wrap save-buttons">
+      <div className="field-wrap">
       <button  onClick={handleSubmitName}>Save</button>
       <button  onClick={handleSetFocusTimerLength}>Save</button>
       <button  onClick={handleSetBreatheTimerLength}>Save</button>
