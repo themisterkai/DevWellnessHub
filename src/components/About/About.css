@@ -5,7 +5,7 @@
   display: inline-block;
   gap: 5vh;
   color: #fff;
-  font-size: 18px;
+  font-size: 2vmin;
   font-weight: 400;
   letter-spacing: 1.08px;
   line-height: normal;
@@ -13,9 +13,11 @@
 
 .about-text {
   margin: 30px;
+  font-size: 4vmin;
 }
 
 .about-wrapper h2 {
+  font-size: 7vmin;
   margin-left: 30px;
   margin-top: 10px;
   margin-bottom: -10px;
@@ -46,7 +48,7 @@
 /* Media query for medium-sized screens (e.g., tablets) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .about-wrapper {
-    font-size: 20px;
+    font-size: 1vmin;
   }
 }
 
@@ -54,11 +56,15 @@
   .about-wrapper {
     width: 30vw;
     height: 95vh;
-    font-size: 22px;
+  }
+
+  .about-text {
+    font-size: 2vmin;
   }
 
   .about-wrapper h2 {
     margin-top: 30px;
     margin-bottom: 0px;
+    font-size: 4vmin;
   }
 }
