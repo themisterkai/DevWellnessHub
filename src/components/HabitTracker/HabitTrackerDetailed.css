@@ -43,8 +43,7 @@
 }
 
 .habit-history {
-  margin-top: 20px;
-  color: #f0f2f1;
+  color: var(--primary-text-color);
   font-family: 'Inter-Regular', Helvetica;
   font-size: 2vmin;
   font-weight: 400;

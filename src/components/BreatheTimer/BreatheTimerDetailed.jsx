@@ -11,7 +11,7 @@ import {
 } from './BreatheTimerDispatch';
 import { getYesterdayDate, millisToMinutesAndSeconds } from '../../helpers';
 import useScreenSize from '../../hooks/useScreenSize';
-import { InfoIcon, ResetIcon } from '../../assets/SVGElements';
+import { DashLine, InfoIcon, ResetIcon } from '../../assets/SVGElements';
 import './BreatheTimerDetailed.css';
 import { MobileToDashBTN } from '../MobileToDashBTN';
 import { Link } from 'react-router-dom';
@@ -19,6 +19,7 @@ import { Link } from 'react-router-dom';
 export const BreatheTimerDetailed = () => {
   const dispatch = useDispatch();
   const yesterdayDate = getYesterdayDate();
+  const { isMobile } = useScreenSize();
 
   const breatheTimer = useSelector(state => state.breatheTimer);
   const breatheTimerLengthMS = useSelector(
@@ -104,6 +105,7 @@ export const BreatheTimerDetailed = () => {
         <p className="focus-done-day">
           Breathe timers done today: {breatheTimer.breatheTimerCount}
         </p>
+        <DashLine />
         <div className="breathe-history">
           {dataYesterday != null && (
             <div className="breathe-history-yesterday">

@@ -10,7 +10,7 @@ import { MobileToDashBTN } from '../MobileToDashBTN';
 import { getYesterdayDate } from '../../helpers';
 import useScreenSize from '../../hooks/useScreenSize';
 import { Link } from 'react-router-dom';
-import { InfoIcon } from '../../assets/SVGElements';
+import { DashLine, InfoIcon } from '../../assets/SVGElements';
 
 export const MoodTrackerDetailed = () => {
   const dispatch = useDispatch();
@@ -98,6 +98,7 @@ export const MoodTrackerDetailed = () => {
             value={mood.overwhelmedLevel}
           ></input>
         </div>
+        <DashLine />
         <div className="mood-history">
           {dataYesterday != null && (
             <div className="mood-history-yesterday">

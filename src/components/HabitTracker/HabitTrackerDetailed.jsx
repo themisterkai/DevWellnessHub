@@ -4,7 +4,7 @@ import { toggleHabit } from '../../reducers/habits';
 import { getYesterdayDate } from '../../helpers';
 import './HabitTrackerDetailed.css';
 import { Link } from 'react-router-dom';
-import { InfoIcon } from '../../assets/SVGElements';
+import { DashLine, InfoIcon } from '../../assets/SVGElements';
 import useScreenSize from '../../hooks/useScreenSize';
 
 export const HabitTrackerDetailed = () => {
@@ -75,6 +75,7 @@ export const HabitTrackerDetailed = () => {
             );
           })}
         </div>
+        <DashLine />
         <div className="habit-history">
           {dataYesterday != null && (
             <div className="habit-history-yesterday">

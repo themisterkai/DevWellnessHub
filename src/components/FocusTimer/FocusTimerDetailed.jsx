@@ -10,7 +10,7 @@ import {
   handleStartFocusTimer,
 } from './FocusTimerDispatch';
 import { getYesterdayDate, millisToMinutesAndSeconds } from '../../helpers';
-import { InfoIcon, ResetIcon } from '../../assets/SVGElements';
+import { DashLine, InfoIcon, ResetIcon } from '../../assets/SVGElements';
 import { Link } from 'react-router-dom';
 import useScreenSize from '../../hooks/useScreenSize';
 import './FocusTimerDetailed.css';
@@ -104,8 +104,9 @@ export const FocusTimerDetailed = () => {
           </CircularProgressbarWithChildren>
         </div>
         <p className="focus-done-day">
-          Focus timer done today: {focusTimer.focusTimerCount}
+          Focus timers done today: {focusTimer.focusTimerCount}
         </p>
+        <DashLine />
         <div className="focus-history">
           {dataYesterday != null && (
             <div className="focus-history-yesterday">
