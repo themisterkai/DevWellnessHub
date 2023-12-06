@@ -9,13 +9,16 @@ import {
   handleResetFocusTimer,
   handleStartFocusTimer,
 } from './FocusTimerDispatch';
-import { ResetIcon } from '../../assets/SVGElements';
 import { getYesterdayDate, millisToMinutesAndSeconds } from '../../helpers';
+import { InfoIcon, ResetIcon } from '../../assets/SVGElements';
+import { Link } from 'react-router-dom';
+import useScreenSize from '../../hooks/useScreenSize';
 import './FocusTimerDetailed.css';
 
 export const FocusTimerDetailed = () => {
   const dispatch = useDispatch();
   const yesterdayDate = getYesterdayDate();
+  const { isMobile } = useScreenSize();
 
   const focusTimer = useSelector(state => state.focusTimer);
   const focusTimerLengthMS = useSelector(
@@ -68,6 +71,13 @@ export const FocusTimerDetailed = () => {
       <div className="app-container">
         <header className="main-header">
           <div className="main-app-name">. FOCUS</div>
+          {isMobile && (
+            <div className="info-button">
+              <Link to="/about-focus-timer">
+                <InfoIcon />
+              </Link>
+            </div>
+          )}
         </header>
         <h2 className="secondary-header">Get focused now!</h2>
         <div

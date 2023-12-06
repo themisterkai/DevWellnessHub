@@ -1,10 +1,21 @@
+import { Link } from 'react-router-dom';
+import useScreenSize from '../../hooks/useScreenSize';
 import './About.css';
 
 export const About = () => {
+  const { isMobile } = useScreenSize();
   return (
     <div className="about-wrapper">
-      <h2>. ABOUT</h2>
-      <div className="about-text">
+      <div className="app-container">
+      {isMobile && (
+        <div className="back-arrow">
+          <Link to="/">
+            <span className="material-symbols-outlined">arrow_back</span>
+          </Link>
+        </div>
+      )}
+      <div className="about-header">. ABOUT</div>   
+      <div className="about-paragraph">
         In the fast-paced realm of coding and innovation, we understand the
         unique challenges developers face. That&apos;s why we&apos;ve curated a
         suite of features designed to empower you on your journey towards
@@ -28,6 +39,7 @@ export const About = () => {
         <i>DevWellnessHub</i> is not just an app; it&apos;s a companion on your
         journey to becoming a healthier, more productive, and fulfilled
         developer.
+      </div>
       </div>
     </div>
   );

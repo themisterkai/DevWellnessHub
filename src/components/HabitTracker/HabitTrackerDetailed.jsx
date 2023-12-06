@@ -3,9 +3,13 @@ import { MobileToDashBTN } from '../MobileToDashBTN';
 import { toggleHabit } from '../../reducers/habits';
 import { getYesterdayDate } from '../../helpers';
 import './HabitTrackerDetailed.css';
+import { Link } from 'react-router-dom';
+import { InfoIcon } from '../../assets/SVGElements';
+import useScreenSize from '../../hooks/useScreenSize';
 
 export const HabitTrackerDetailed = () => {
   const dispatch = useDispatch();
+  const { isMobile } = useScreenSize();
   const habits = useSelector(state => state.habits.habits);
   const yesterdayDate = getYesterdayDate();
 
@@ -40,6 +44,13 @@ export const HabitTrackerDetailed = () => {
       <div className="app-container">
         <header className="main-header">
           <div className="main-app-name">. HABIT</div>
+          {isMobile && (
+            <div className="info-button">
+              <Link to="/about-habit-tracker">
+                <InfoIcon />
+              </Link>
+            </div>
+          )}
         </header>
         <h2 className="secondary-header">Look what you can achieve today!</h2>
         <h4 className="habit-detailed-counter">🏆: {habitsCompletedCount}/5</h4>

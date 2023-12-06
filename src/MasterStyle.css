@@ -1,15 +1,36 @@
 /* MasterStyle.css -- all the classes here to be reusable! */
+
+/* Variables for dynamic theming. Color palettes. */
+/* Dark Color Palette */
+:root {
+  --primary-bg-color: #000000;
+  --secondary-bg-color: #1c1d1f;
+  --tertiary-bg-color: #4a4d53;
+  --primary-text-color: #f0f2f1;
+  --accent-color: #f0f2f1;
+  /* ... add more variables as needed for the dark palette */
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  background-color: var(--primary-bg-color);
+  align-items: center;
+  justify-content: center;
+}
+
 .main-wrapper {
   width: 45vw;
   height: 95vh;
-  background-color: #1c1d1f;
+  background-color: var(--secondary-bg-color);
   border-radius: 20px;
 }
 
 .tile-wrapper {
   width: 46.43%;
   height: 46.43%;
-  background-color: #4a4d53;
+  background-color: var(--tertiary-bg-color);
   border-radius: 7.7%;
   position: relative;
 }
@@ -34,7 +55,7 @@
 }
 
 .main-app-name {
-  color: #f0f2f1;
+  color: var(--primary-text-color);
   font-family: 'Inter-SemiBold', Helvetica;
   font-size: 4vmin;
   text-align: center;
@@ -44,7 +65,7 @@
 }
 
 .secondary-header {
-  color: #f0f2f1;
+  color: var(--primary-text-color);
   font-family: 'Inter-SemiBold', Helvetica;
   font-size: 3vmin;
   text-align: center;
@@ -54,7 +75,7 @@
 }
 
 .text-paragraph {
-  color: #f0f2f1;
+  color: var(--primary-text-color);
   font-family: 'Inter-Regular', Helvetica;
   font-size: 3vmin;
   text-align: center;
@@ -67,7 +88,7 @@
   position: absolute;
   top: 7.7%;
   left: 7.7%;
-  color: #f0f2f1;
+  color: var(--primary-text-color);
   font-family: 'Inter-Regular', Helvetica;
   font-size: 3vmin;
   font-weight: 400;
@@ -83,15 +104,15 @@
   text-decoration: none;
   cursor: pointer;
   border-radius: 5px;
-  border: 2px solid #4a4d53; /* Border color */
-  color: #f0f2f1; /* Text color */
-  background-color: #4a4d53; /* Background color */
+  border: 2px solid var(--tertiary-bg-color); /* Border color */
+  color: var(--primary-text-color); /* Text color */
+  background-color: var(--tertiary-bg-color); /* Background color */
 }
 
 .app-button:hover {
-  background-color: #f0f2f1; /* Background color */
-  border-color: #f0f2f1;
-  color: #4a4d53;
+  background-color: var(--primary-text-color); /* Background color */
+  border-color: var(--primary-text-color);
+  color: var(--tertiary-bg-color);
 }
 
 .line-dashboard {

@@ -1,42 +1,43 @@
 /* Dashboard.css */
 .settings-icon {
-    width: 3.5vmin;
+  width: 3.5vmin;
 }
 
 .app-wrapper {
-    width: 90vmin;
-    height: 90vmin;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2vmin 2vmin;
+  width: 90vmin;
+  height: 90vmin;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2vmin 2vmin;
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
 @media only screen and (max-width: 768px) {
-    .app-wrapper {
-        gap: 2vmin 4vmin;
-    }
-
+  .app-wrapper {
+    gap: 2vmin 4vmin;
+  }
 }
 
 /* Media query for medium-sized screens (e.g., tablets) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .app-wrapper {
-        width: 40vmin;
-        height: 40vmin;
-    }
-
+  .app-wrapper {
+    width: 40vmin;
+    height: 40vmin;
+  }
 }
-
 
 /* Media query for larger screens (e.g., desktops) */
 @media only screen and (min-width: 1025px) {
-    /* You can add styles specific to larger screens here if needed */ 
-    .app-wrapper {
-        width: 55vmin;
-        height: 55vmin;
-    }
-    
+  /* You can add styles specific to larger screens here if needed */
+  .app-wrapper {
+    width: 55vmin;
+    height: 55vmin;
+  }
+}
+
+.info-button {
+  width: 5vmin;
+  height: 5vmin;
 }

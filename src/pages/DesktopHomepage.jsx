@@ -37,6 +37,11 @@ export const DesktopHomepage = () => {
             <Route path="/breathe-timer" element={<BreatheTimerDetailed />} />
             <Route path="/mood-tracker" element={<MoodTrackerDetailed />} />
             <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/about-focus-timer" element={<FocusAbout />} />
+            <Route path="/about-habit-tracker" element={<HabitsAbout />} />
+            <Route path="/about-breathe-timer" element={<BreatheAbout />} />
+            <Route path="/about-mood-tracker" element={<MoodAbout />} />
             {/* Add more mobile-only routes as needed */}
           </Routes>
         </Router>

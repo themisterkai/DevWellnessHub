@@ -1,10 +1,21 @@
+import { Link } from 'react-router-dom';
+import useScreenSize from '../../hooks/useScreenSize';
 import './About.css';
 
 export const MoodAbout = () => {
+  const { isMobile } = useScreenSize();
   return (
     <div className="about-wrapper">
-      <h2>. MOOD</h2>
-      <div className="about-text">
+      <div className="app-container">
+      {isMobile && (
+        <div className="back-arrow">
+          <Link to="/mood-tracker">
+            <span className="material-symbols-outlined">arrow_back</span>
+          </Link>
+        </div>
+      )}
+      <div className="about-header">. MOOD</div>
+      <div className="about-paragraph">
         Emotions are intricate signals that reflect our mental state. Tracking
         these fluctuations allows for a deeper understanding of patterns,
         triggers, and the factors influencing your daily well-being.
@@ -24,6 +35,7 @@ export const MoodAbout = () => {
             emotional distress early on
           </li>
         </ul>
+      </div>
       </div>
     </div>
   );
