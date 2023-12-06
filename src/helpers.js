@@ -4,7 +4,9 @@ export const getCurrentDate = () => {
 };
 
 export const getYesterdayDate = () => {
-  const yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
+  const yesterday = new Date(new Date().setDate(new Date().getDate() - 1))
+    .toISOString()
+    .split('T')[0];
   return yesterday;
 };
 

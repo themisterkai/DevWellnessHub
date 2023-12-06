@@ -1,19 +1,38 @@
 .range-mood {
-    width: 70%; 
-    margin: 3vmin auto; 
-    text-align: center;
-    color: #f0f2f1;
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 3vmin;
-    font-weight: 400;
-    letter-spacing: 0.36px;
-    line-height: normal;
-    margin-bottom: 2vmin;
-  }
+  width: 70%;
+  margin: 3vmin auto;
+  text-align: center;
+  color: #f0f2f1;
+  font-family: 'Inter-Regular', Helvetica;
+  font-size: 3vmin;
+  font-weight: 400;
+  letter-spacing: 0.36px;
+  line-height: normal;
+  margin-bottom: 2vmin;
+}
 
-input[type="range"] {
-    width: 100%;
-    height: 1vmin; /* Set the height of the track */
-    -webkit-appearance: none; /* Remove default styles in WebKit browsers */
-  }
-  
+input[type='range'] {
+  width: 100%;
+  height: 1vmin; /* Set the height of the track */
+  -webkit-appearance: none; /* Remove default styles in WebKit browsers */
+}
+
+.mood-history {
+  color: #f0f2f1;
+  font-family: 'Inter-Regular', Helvetica;
+  font-size: 2vmin;
+  font-weight: 400;
+  /* margin-right: auto; */
+  /* padding-left: 50px; */
+  overflow: hidden;
+}
+
+.mood-history-yesterday {
+  padding: 20px;
+  float: left;
+}
+
+.mood-history-overall {
+  padding: 20px;
+  float: left;
+}
