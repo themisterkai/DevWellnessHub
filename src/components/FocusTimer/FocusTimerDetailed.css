@@ -19,8 +19,8 @@
 
 .focus-detailed-circular-progress-bar {
   margin: 0 auto;
-  width: 65vw;
-  height: 65vw;
+  width: 65vmin;
+  height: 65vmin;
   text-align: center;
   border-radius: 100%;
   box-shadow: -50px -50px 100px #6f6f6f, 50px 50px 100px #6f6f6f;
@@ -97,8 +97,8 @@
   }
 
   .focus-detailed-circular-progress-bar {
-    width: 25vw;
-    height: 25vw;
+    width: 20vw;
+    height: 20vw;
   }
 }
 
@@ -118,7 +118,7 @@
   }
 
   .focus-detailed-circular-progress-bar {
-    width: 20vw;
-    height: 20vw;
+    width: 25vmin;
+    height: 25vmin;
   }
 }
