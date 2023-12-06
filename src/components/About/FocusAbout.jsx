@@ -7,6 +7,7 @@ export const FocusAbout = () => {
   return (
     <div className="about-wrapper">
       <div className="app-container">
+      <div className="main-header">
       {isMobile && (
         <div className="back-arrow">
           <Link to="/focus-timer">
@@ -15,6 +16,7 @@ export const FocusAbout = () => {
         </div>
       )}
       <div className="about-header">. FOCUS</div>  
+      </div>
       <div className="about-paragraph">
         A Focus Timer, or Pomodoro timer, divides your work into manageable
         intervals, typically 25 minutes. After each timer, we invite you to take

@@ -7,6 +7,7 @@ export const MoodAbout = () => {
   return (
     <div className="about-wrapper">
       <div className="app-container">
+      <div className="main-header">
       {isMobile && (
         <div className="back-arrow">
           <Link to="/mood-tracker">
@@ -15,6 +16,7 @@ export const MoodAbout = () => {
         </div>
       )}
       <div className="about-header">. MOOD</div>
+      </div>
       <div className="about-paragraph">
         Emotions are intricate signals that reflect our mental state. Tracking
         these fluctuations allows for a deeper understanding of patterns,

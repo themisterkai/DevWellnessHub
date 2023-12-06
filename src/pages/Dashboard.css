@@ -6,6 +6,7 @@
 .info-button {
   width: 5vmin;
   height: 5vmin;
+  color: var(--primary-text-color);
 }
 
 .app-wrapper {

@@ -10,14 +10,13 @@ import {
   handleStartBreatheTimer,
 } from './BreatheTimerDispatch';
 import { millisToMinutesAndSeconds } from '../../helpers';
-import useScreenSize from '../../hooks/useScreenSize';
-import { InfoIcon, ResetIcon } from '../../assets/SVGElements';
+import { ResetIcon } from '../../assets/SVGElements';
 import './BreatheTimerDetailed.css';
-import { MobileToDashBTN } from '../MobileToDashBTN';
-import { Link } from 'react-router-dom';
+import { MobileBreatheBTN } from '../MobileBTN';
+
+
 
 export const BreatheTimerDetailed = () => {
-  const { isMobile } = useScreenSize();
   const dispatch = useDispatch();
 
   const breatheTimer = useSelector(state => state.breatheTimer);
@@ -50,13 +49,6 @@ export const BreatheTimerDetailed = () => {
       <div className="app-container">
         <header className="main-header">
           <div className="main-app-name">. BREATHE</div>
-          {isMobile && (
-            <div className="info-button">
-              <Link to="/about-breathe-timer">
-                <InfoIcon />
-              </Link>
-            </div>
-          )}
         </header>
         <h2 className="secondary-header">Breathe and Relax</h2>
         <div
@@ -89,7 +81,7 @@ export const BreatheTimerDetailed = () => {
         <p className="focus-done-day">
           Breathe timer done today: {breatheTimer.breatheTimerCount}
         </p>
-        <MobileToDashBTN />
+        <MobileBreatheBTN />
       </div>
     </div>
   );

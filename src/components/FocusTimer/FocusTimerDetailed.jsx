@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { MobileToDashBTN } from '../MobileToDashBTN';
+import { MobileFocusBTN } from '../MobileBTN';
 import {
   CircularProgressbarWithChildren,
   buildStyles,
@@ -9,15 +9,13 @@ import {
   handleResetFocusTimer,
   handleStartFocusTimer,
 } from './FocusTimerDispatch';
-import { InfoIcon, ResetIcon } from '../../assets/SVGElements';
+import { ResetIcon } from '../../assets/SVGElements';
 import { millisToMinutesAndSeconds } from '../../helpers';
 import './FocusTimerDetailed.css';
-import { Link } from 'react-router-dom';
-import useScreenSize from '../../hooks/useScreenSize';
+
 
 export const FocusTimerDetailed = () => {
   const dispatch = useDispatch();
-  const { isMobile } = useScreenSize();
 
   const focusTimer = useSelector(state => state.focusTimer);
   const focusTimerLengthMS = useSelector(
@@ -55,13 +53,6 @@ export const FocusTimerDetailed = () => {
       <div className="app-container">
         <header className="main-header">
           <div className="main-app-name">. FOCUS</div>
-          {isMobile && (
-            <div className="info-button">
-              <Link to="/about-focus-timer">
-                <InfoIcon />
-              </Link>
-            </div>
-          )}
         </header>
         <h2 className="secondary-header">Get focused now!</h2>
         <div
@@ -90,7 +81,7 @@ export const FocusTimerDetailed = () => {
         <p className="focus-done-day">
           Focus timer done today: {focusTimer.focusTimerCount}
         </p>
-        <MobileToDashBTN />
+        <MobileFocusBTN />
       </div>
     </div>
   );

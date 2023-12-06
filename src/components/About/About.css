@@ -6,8 +6,7 @@
 }
 
 .about-wrapper .app-container .back-arrow {
-  margin-left: 30px;
-  margin-top: 30px;
+  margin-right: 3%;
   color: var(--accent-color);
 }
 
@@ -16,7 +15,6 @@
 }
 
 .about-header {
-  padding-top: 10%;
   color: var(--primary-text-color);
   font-family: "Inter-SemiBold", Helvetica;
   font-size: 4vmin;
