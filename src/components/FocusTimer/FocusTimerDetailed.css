@@ -95,6 +95,11 @@
   .focus-done-day {
     font-size: 2vmin;
   }
+
+  .focus-detailed-circular-progress-bar {
+    width: 25vw;
+    height: 25vw;
+  }
 }
 
 /* Media query for larger screens (e.g., desktops) */
