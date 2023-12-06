@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import useScreenSize from "../hooks/useScreenSize";
-import { Link } from 'react-router-dom';
+import { MobileToDashBTN } from '../components/MobileToDashBTN' 
 import { useDispatch, useSelector } from 'react-redux';
 import {
   updateName,
@@ -8,9 +7,9 @@ import {
   updateBreatheTimerLengthMS,
   factoryReset,
 } from '../reducers/settings';
+import './SettingsPage.css'
 
 export const SettingsPage = () => {
-  const { isMobile } = useScreenSize();
   const dispatch = useDispatch();
   const settingsState = useSelector((state) => state.settings);
 
@@ -36,37 +35,47 @@ export const SettingsPage = () => {
   };
 
   return (
-    <div className="settings-wrapper">
-      {isMobile && <Link to="/">Go to Dashboard</Link>}
-      <div>
-        Set Name:{' '}
+    <div className="main-wrapper">
+      <div className="app-container">
+        <header className="main-header">
+          <div className="main-app-name">Your settings</div>
+        </header>
+        <h2 className="secondary-header">Adjust with your needs:</h2>
+      <p className="text-paragraph settings-description">Change your name, set Focus Timer length (minutes) and Breathe Timer length (minutes).</p>
+      <div className="settings-field-wrapper">
+      <div className="field-wrap">
+      <div className="text-paragraph">Name:</div>
+      <div className="text-paragraph">Focus:</div>
+      <div className="text-paragraph">Breathe:</div>
+      </div>
+      <div className="field-wrap">
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className="settings-input-field"
         />
-      </div>
-      <div>
-        Set Focus Timer Length (minutes):{' '}
         <input
           type="number"
           value={focusTimerLength}
           min="1"
           onChange={(e) => setFocusTimerLength(e.target.value)}
+          className="settings-input-field"
         />
-      </div>
-      <div>
-        Set Breathe Timer Length (minutes):{' '}
         <input
           type="number"
           value={breatheTimerLength}
           min="1"
           onChange={(e) => setBreatheTimerLength(e.target.value)}
+          className="settings-input-field"
         />
       </div>
-      <div className="settings-buttons">
-      <button onClick={handleSaveChanges}>Save Changes</button>
-      <button onClick={handleFactoryReset}>Factory Reset</button>
+      </div>
+      <div className="settings-buttons-wrapper">
+      <button className="app-button" onClick={handleSaveChanges}>Save Changes</button>
+      <button className="app-button" onClick={handleFactoryReset}>Factory Reset</button>
+      </div>
+      <MobileToDashBTN />
       </div>
     </div>
   );
