@@ -19,14 +19,6 @@
 
 }
 
-.settings-buttons-wrapper {
-    padding-top: 5%;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    gap: 2vmin;
-}
-
 .field-wrap {
     display: flex;
     flex-direction: column;

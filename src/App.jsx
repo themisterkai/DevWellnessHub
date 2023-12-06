@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { applyColorPalette } from './helpers';
-import { DesktopHomepage } from './pages/DesktopHomepage';
+import { DesktopHomepage } from './pages/DesktopHomePage';
 import { StartPage } from './pages/StartPage';
 import './MasterStyle.css';
 
@@ -23,10 +23,10 @@ export const App = () => {
     applyColorPalette(selectedPalette);
   }, [selectedPalette]);
 
-  return (
+  return ( 
     <div>
       {isSetupComplete ? (
-        <DesktopHomepage />
+          <DesktopHomepage />
       ) : (
         <StartPage onSetupComplete={handleSetupComplete} />
       )}
