@@ -3,12 +3,14 @@
 import useScreenSize from '../hooks/useScreenSize';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { DashLine, InfoIcon, SettingsIcon } from '../assets/SVGElements';
+import { DashLine, SettingsIcon } from '../assets/SVGElements';
 import { FocusTimer } from '../components/FocusTimer/FocusTimer';
 import { HabitTracker } from '../components/HabitTracker/HabitTracker';
 import { MoodTracker } from '../components/MoodTracker/MoodTracker';
 import { BreatheTimer } from '../components/BreatheTimer/BreatheTimer';
+import { MobileInfoBTN } from '../components/MobileBTN';
 import './Dashboard.css';
+
 
 export const Dashboard = () => {
   const { isMobile } = useScreenSize();
@@ -26,11 +28,6 @@ export const Dashboard = () => {
               <Link to="/settings">
                 <SettingsIcon />
               </Link>
-              <div className="info-button">
-                <Link to="/about">
-                  <InfoIcon />
-                </Link>
-              </div>
             </header>
             <h1 className="secondary-header">
               Welcome {settingsState.name}, ready for today&apos;s session?
@@ -42,6 +39,7 @@ export const Dashboard = () => {
               <BreatheTimer />
               <MoodTracker />
             </div>
+            <MobileInfoBTN />
           </div>
         </div>
       ) : (

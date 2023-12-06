@@ -7,7 +7,8 @@ export const BreatheAbout = () => {
   return (
     <div className="about-wrapper">
       <div className="app-container">
-      {isMobile && (
+      <div className="main-header">
+        {isMobile && (
         <div className="back-arrow">
           <Link to="/breathe-timer">
             <span className="material-symbols-outlined">arrow_back</span>
@@ -15,6 +16,7 @@ export const BreatheAbout = () => {
         </div>
       )}
       <div className="about-header">. BREATHE</div>
+      </div>
       <div className="about-paragraph">
         Mindful breathing is a simple yet transformative practice that taps into
         the restorative potential of each breath. It serves as an anchor,
