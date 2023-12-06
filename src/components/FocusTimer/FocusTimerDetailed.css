@@ -20,7 +20,7 @@
 .focus-detailed-circular-progress-bar {
   margin: 0 auto;
   width: 40%;
-  height: 40%;
+  height: 4%;
   aspect-ratio: 1 / 1;
   text-align: center;
   border-radius: 100%;
@@ -29,26 +29,26 @@
 }
 
 .focus-timer-elapsing {
-  color: #f0f2f1;
+  color: var(--primary-text-color);
   font-size: 4vmin;
 }
 
 .focus-timer-next {
   font-family: "Inter-Regular", Helvetica;
-  color: #f0f2f1;
+  color: var(--primary-text-color);
   font-size: 2vmin;
   font-weight: 600;
   letter-spacing: 0.36px;
 }
 
 .CircularProgressbar-path {
-  stroke: #f0f2f1;
+  stroke: var(--accent-color);
 }
 .CircularProgressbar-trail {
   stroke: #6F6F6F;
 }
 .CircularProgressbar-text {
-  fill: #f0f2f1;
+  fill: var(--primary-text-color);
 }
 
 
@@ -59,7 +59,7 @@
 
 .focus-done-day {
   padding-top: 5%;
-  color: #f0f2f1;
+  color: var(--primary-text-color);
   font-family: "Inter-Regular", Helvetica;
   font-size: 3.5vmin;
   font-weight: 600;

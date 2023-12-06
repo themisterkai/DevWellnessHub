@@ -3,8 +3,9 @@ import './About.css';
 export const MoodAbout = () => {
   return (
     <div className="about-wrapper">
-      <h2>. MOOD</h2>
-      <div className="about-text">
+      <div className="app-container">
+      <div className="about-header">. MOOD</div>
+      <div className="about-paragraph">
         Emotions are intricate signals that reflect our mental state. Tracking
         these fluctuations allows for a deeper understanding of patterns,
         triggers, and the factors influencing your daily well-being.
@@ -24,6 +25,7 @@ export const MoodAbout = () => {
             emotional distress early on
           </li>
         </ul>
+      </div>
       </div>
     </div>
   );

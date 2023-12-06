@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const initialState = {
   name: '',
   // we should set a default value here
-  colorPalette: '',
+  colorPalette: 'dark',
   // default value of 1 min in ms (for testing purposes)
   focusTimerLengthMS: 1 * 60 * 1000,
   // default value of 1 min

@@ -3,8 +3,9 @@ import './About.css';
 export const BreatheAbout = () => {
   return (
     <div className="about-wrapper">
-      <h2>. BREATHE</h2>
-      <div className="about-text">
+      <div className="app-container">
+      <div className="about-header">. BREATHE</div>
+      <div className="about-paragraph">
         Mindful breathing is a simple yet transformative practice that taps into
         the restorative potential of each breath. It serves as an anchor,
         grounding you in the present moment and offering a respite from the
@@ -25,6 +26,7 @@ export const BreatheAbout = () => {
             heart rate
           </li>
         </ul>
+      </div>
       </div>
     </div>
   );

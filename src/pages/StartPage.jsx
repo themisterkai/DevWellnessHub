@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import {
   updateName,
+  updateColorPalette,
   updateFocusTimerLengthMS,
   updateBreatheTimerLengthMS,
 } from '../reducers/settings';
@@ -23,9 +24,8 @@ export const StartPage = ({ onSetupComplete }) => {
   const [breatheTimerLength, setBreatheTimerLength] = useState(
     settingsState.breatheTimerLengthMS / (60 * 1000) // convert milliseconds to minutes
   );
-
+  
   // Add state variables to track button clicks
-  const [nameSubmitted, setNameSubmitted] = useState(false);
   const [focusTimerSubmitted, setFocusTimerSubmitted] = useState(false);
   const [breatheTimerSubmitted, setBreatheTimerSubmitted] = useState(false);
 
@@ -54,7 +54,10 @@ export const StartPage = ({ onSetupComplete }) => {
 
   const handleSubmitName = () => {
     dispatch(updateName({ name }));
-    setNameSubmitted(true);
+  };
+
+  const handleColorPaletteSelection = (selectedPalette) => {
+    dispatch(updateColorPalette({ colorPalette: selectedPalette }));
   };
 
   const handleSetFocusTimerLength = () => {
@@ -136,8 +139,20 @@ export const StartPage = ({ onSetupComplete }) => {
       <button  onClick={handleSetFocusTimerLength}>Save</button>
       <button  onClick={handleSetBreatheTimerLength}>Save</button>
       </div>
-      
       </div>
+      <div className="color-wrap">
+      <div className="text-paragraph">App Color:</div>
+      <select
+        id="colorPaletteSelect"
+        value={settingsState.colorPalette}
+        onChange={(e) => handleColorPaletteSelection(e.target.value)}
+      >
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+        {/* Add more options for additional color palettes */}
+      </select>
+      </div>
+      
       <div>
         <button className="app-button go-dash" onClick={handleGoToDashboard}>Go to Dashboard</button>
       </div>
