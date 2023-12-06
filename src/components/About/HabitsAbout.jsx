@@ -10,18 +10,20 @@ export const HabitsAbout = () => {
         pathways, making those actions more automatic over time. The key lies in
         mindful, repetitive practice.
         <p />
-        Key Benefits:
+        <i>Key Benefits:</i>
         <ul>
-          Building Consistency: Watch as daily actions evolve into ingrained
-          behaviors
-        </ul>
-        <ul>
-          Enhanced Accountability: Logging daily habits creates a tangible
-          record of your efforts
-        </ul>
-        <ul>
-          Positive Reinforcement: Positive reinforcement strengthens your
-          commitment to forming and maintaining healthy habits
+          <li>
+            <b>Building Consistency:</b> Watch as daily actions evolve into
+            ingrained behaviors
+          </li>
+          <li>
+            <b>Enhanced Accountability:</b> Logging daily habits creates a
+            tangible record of your efforts
+          </li>
+          <li>
+            <b>Positive Reinforcement:</b> Positive reinforcement strengthens
+            your commitment to forming and maintaining healthy habits
+          </li>
         </ul>
       </div>
     </div>

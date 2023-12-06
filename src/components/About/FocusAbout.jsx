@@ -10,17 +10,23 @@ export const FocusAbout = () => {
         a short break. It&apos;s a structured approach to boost focus and
         productivity.
         <p />
-        Key Benefits:
+        <i>Key Benefits:</i>
         <ul>
-          Maximized Productivity: Work in concentrated bursts, minimizing
-          procrastination
+          <li>
+            <b>Maximized Productivity:</b> Work in concentrated bursts,
+            minimizing procrastination
+          </li>
+          <li>
+            <b>Enhanced Concentration:</b> Break tasks into intervals to foster
+            deep concentration
+          </li>
+          <li>
+            <b>Improved Time Management:</b> Establish a disciplined routine
+          </li>
+          <li>
+            <b>Reduced Stress:</b> Regular breaks prevent burnout
+          </li>
         </ul>
-        <ul>
-          Enhanced Concentration: Break tasks into intervals to foster deep
-          concentration
-        </ul>
-        <ul>Improved Time Management: Establish a disciplined routine</ul>
-        <ul>Reduced Stress: Regular breaks prevent burnout</ul>
       </div>
     </div>
   );

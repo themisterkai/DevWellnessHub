@@ -7,20 +7,22 @@ export const MoodAbout = () => {
       <div className="about-text">
         Emotions are intricate signals that reflect our mental state. Tracking
         these fluctuations allows for a deeper understanding of patterns,
-        triggers, and the factors influencing your daily well-being. Our Mood
-        Tracker is your compass on this insightful journey.
+        triggers, and the factors influencing your daily well-being.
         <p />
-        Key Benefits:
+        <i>Key Benefits:</i>
         <ul>
-          Self-Awareness: Gain a deeper understanding of your emotional
-          landscape
-        </ul>
-        <ul>
-          Identifying Triggers: Uncover the factors influencing your emotions
-        </ul>
-        <ul>
-          Early Intervention: Identify and address patterns of emotional
-          distress early on
+          <li>
+            <b>Self-Awareness:</b> Gain a deeper understanding of your emotional
+            landscape
+          </li>
+          <li>
+            <b>Identifying Triggers:</b> Uncover the factors influencing your
+            emotions
+          </li>
+          <li>
+            <b>Early Intervention:</b> Identify and address patterns of
+            emotional distress early on
+          </li>
         </ul>
       </div>
     </div>
