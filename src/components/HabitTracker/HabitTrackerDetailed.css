@@ -1,5 +1,5 @@
 .habit-detailed-counter {
-    color: #f0f2f1;
+    color: var(--primary-text-color);
     font-family: "Inter-SemiBold", Helvetica;
     font-size: 2.5vmin;
     font-weight: 400;
@@ -25,12 +25,12 @@
     content: "";
     width: 3vmin; /* Adjust the size of the checkbox */
     height: 3vmin; /* Adjust the size of the checkbox */
-    border: 0.5vmin solid #4a4d53; /* Border color of the checkbox */
-    background-color: #f0f2f1; /* Background color of the checkbox */
+    border: 0.5vmin solid var(--tertiary-bg-color); /* Border color of the checkbox */
+    background-color: var(--primary-text-color); /* Background color of the checkbox */
 }
 
 .habit-detailed-text-label {
-    color: #f0f2f1;
+    color: var(--primary-text-color);
     font-family: "Inter-Regular", Helvetica;
     font-size: 2.5vmin;
     font-weight: 400;

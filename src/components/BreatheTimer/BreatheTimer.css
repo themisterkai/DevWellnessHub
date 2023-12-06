@@ -14,14 +14,14 @@
     top: 40%;
     left: 18%;
     width: 40%;
-    color: #1c1d1f;
+    color: var(--secondary-bg-color);
 }
 
 .breath-timer-running {
     position: absolute;
     top: 40%;
     left: 26%;
-    color: #f0f2f1;
+    color: var(--primary-text-color);
     font-family: "Inter-Regular", Helvetica;
     font-size: 2.3vmin;
     font-weight: 800;
@@ -33,7 +33,7 @@
     position: absolute;
     top: 80.77%;
     left: 83.07%;
-    color: #f0f2f1;
+    color: var(--primary-text-color);
     font-family: "Inter-Bold", Helvetica;
     font-size: 1.5vmin;
     font-weight: 700;

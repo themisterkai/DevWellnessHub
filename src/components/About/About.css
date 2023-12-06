@@ -1,70 +1,37 @@
 .about-wrapper {
-  height: 100vh;
-  background-color: #1c1d1f;
+  width: 30vw;
+  height: 95vh;
+  background-color: var(--secondary-bg-color);
   border-radius: 20px;
-  display: inline-block;
-  gap: 5vh;
-  color: #fff;
-  font-size: 2vmin;
-  font-weight: 400;
-  letter-spacing: 1.08px;
-  line-height: normal;
 }
 
-.about-text {
-  margin: 30px;
-  font-size: 4vmin;
-}
-
-.about-wrapper h2 {
-  font-size: 7vmin;
-  margin-left: 30px;
-  margin-top: 10px;
-  margin-bottom: -10px;
-}
-
-.about-wrapper .back-arrow {
+.about-wrapper .app-container .back-arrow {
   margin-left: 30px;
   margin-top: 30px;
-  color: #fff;
+  color: var(--accent-color);
 }
 
-.about-wrapper .back-arrow a {
-  color: #fff;
+.about-wrapper .app-container .back-arrow a {
+  color: var(--accent-color);
 }
 
-.habit-name {
-  position: absolute;
-  top: 7.7%;
-  left: 7.7%;
-  color: #ffffff;
-  font-family: 'Inter-Regular', Helvetica;
-  font-size: 1.5vmin;
-  font-weight: 400;
-  letter-spacing: 0.3px;
+.about-header {
+  padding-top: 10%;
+  color: var(--primary-text-color);
+  font-family: "Inter-SemiBold", Helvetica;
+  font-size: 3vmin;
+  font-weight: 600;
+  letter-spacing: 0.36px;
   line-height: normal;
 }
 
-/* Media query for medium-sized screens (e.g., tablets) */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .about-wrapper {
-    font-size: 1vmin;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .about-wrapper {
-    width: 30vw;
-    height: 95vh;
-  }
-
-  .about-text {
-    font-size: 2vmin;
-  }
-
-  .about-wrapper h2 {
-    margin-top: 30px;
-    margin-bottom: 0px;
-    font-size: 4vmin;
-  }
+.about-paragraph {
+  color: var(--primary-text-color);
+  font-family: "Inter-Regular", Helvetica;
+  padding-top: 10%;
+  width: 90%;
+  font-size: 2.5vmin;
+  font-weight: 400;
+  letter-spacing: 0.36px;
+  line-height: normal;
 }
