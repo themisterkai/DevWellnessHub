@@ -3,8 +3,9 @@ import './About.css';
 export const HabitsAbout = () => {
   return (
     <div className="about-wrapper">
-      <h2>. HABIT</h2>
-      <div className="about-text">
+      <div className="app-container">
+      <div className="about-header">. HABIT</div>   
+      <div className="about-paragraph">
         Habits are the product of repetition and intentional actions. When we
         consistently engage in specific behaviors, our brains establish neural
         pathways, making those actions more automatic over time. The key lies in
@@ -25,6 +26,7 @@ export const HabitsAbout = () => {
             your commitment to forming and maintaining healthy habits
           </li>
         </ul>
+      </div>
       </div>
     </div>
   );
