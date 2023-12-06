@@ -9,19 +9,33 @@ import {
   handleResetBreatheTimer,
   handleStartBreatheTimer,
 } from './BreatheTimerDispatch';
-import { millisToMinutesAndSeconds } from '../../helpers';
-import useScreenSize from '../../hooks/useScreenSize';
+import { getYesterdayDate, millisToMinutesAndSeconds } from '../../helpers';
 import { ResetIcon } from '../../assets/SVGElements';
 import './BreatheTimerDetailed.css';
 import { MobileToDashBTN } from '../MobileToDashBTN';
 
 export const BreatheTimerDetailed = () => {
-  const { isMobile } = useScreenSize();
   const dispatch = useDispatch();
+  const yesterdayDate = getYesterdayDate();
 
   const breatheTimer = useSelector(state => state.breatheTimer);
   const breatheTimerLengthMS = useSelector(
     state => state.settings.breatheTimerLengthMS
+  );
+
+  const historical = useSelector(state => state.historical.historicalData);
+  const dataYesterday = historical[yesterdayDate];
+
+  const historicalHabitData = Object.entries(historical).reduce(
+    (acc, curr) => {
+      acc.count += 1;
+      acc.done += curr[1].breatheTimer.breatheTimerCount;
+      return acc;
+    },
+    {
+      done: 0,
+      count: 0,
+    }
   );
 
   const percentage = (breatheTimer.breatheTimer / breatheTimerLengthMS) * 100;
@@ -47,11 +61,18 @@ export const BreatheTimerDetailed = () => {
   return (
     <div className="main-wrapper">
       <div className="app-container">
-      <header className="main-header">
-          <div className="main-app-name">. BREATHE</div>    
-      </header>
-      <h2 className="secondary-header">Breathe and Relax</h2>
-      <div className="focus-detailed-reset-icon" onClick={() => handleResetBreatheTimer(dispatch, breatheTimerLengthMS)}><ResetIcon /></div>
+        <header className="main-header">
+          <div className="main-app-name">. BREATHE</div>
+        </header>
+        <h2 className="secondary-header">Breathe and Relax</h2>
+        <div
+          className="focus-detailed-reset-icon"
+          onClick={() =>
+            handleResetBreatheTimer(dispatch, breatheTimerLengthMS)
+          }
+        >
+          <ResetIcon />
+        </div>
         <div
           className={breatheTimerClassnames}
           onClick={() => handleClickTimer()}
@@ -65,13 +86,34 @@ export const BreatheTimerDetailed = () => {
               rotation: 1 / 2 + 1 / 8,
             })}
           >
-            <h1 className="focus-timer-elapsing">{millisToMinutesAndSeconds(breatheTimer.breatheTimer)}</h1>
+            <h1 className="focus-timer-elapsing">
+              {millisToMinutesAndSeconds(breatheTimer.breatheTimer)}
+            </h1>
             <h6 className="focus-timer-next">{renderBreatheTimerText()}</h6>
           </CircularProgressbarWithChildren>
         </div>
-        <p className="focus-done-day">Breathe timer done today: {breatheTimer.breatheTimerCount}</p>
-      <MobileToDashBTN />
+        <p className="focus-done-day">
+          Breathe timers done today: {breatheTimer.breatheTimerCount}
+        </p>
+        <div className="breathe-history">
+          {dataYesterday != null && (
+            <div className="breathe-history-yesterday">
+              Yesterday&apos;s data:
+              <p />
+              Count: {dataYesterday.breatheTimer.breatheTimerCount}
+            </div>
+          )}
+          {historicalHabitData.count != 0 && (
+            <div className="breathe-history-overall">
+              Overall data:
+              <p />
+              Average per day:{' '}
+              {historicalHabitData.done / historicalHabitData.count}
+            </div>
+          )}
+        </div>
+        <MobileToDashBTN />
+      </div>
     </div>
-  </div>
   );
 };

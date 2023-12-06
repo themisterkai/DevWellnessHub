@@ -22,8 +22,6 @@ input[type='range'] {
   font-family: 'Inter-Regular', Helvetica;
   font-size: 2vmin;
   font-weight: 400;
-  /* margin-right: auto; */
-  /* padding-left: 50px; */
   overflow: hidden;
 }
 

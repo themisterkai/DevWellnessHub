@@ -13,7 +13,7 @@
   top: calc(55%);
   left: calc(0%);
   font-size: 3vmin;
-  font-family: "Inter-Regular", Helvetica;
+  font-family: 'Inter-Regular', Helvetica;
   width: 100%;
   vertical-align: middle;
   text-align: center;
@@ -78,23 +78,39 @@
   .focus-timer-elapsing {
     font-size: 3vmin;
   }
-  
+
   .pulsing:after {
     font-size: 2vmin;
   }
-
 }
 
 /* Media query for larger screens (e.g., desktops) */
 @media only screen and (min-width: 1025px) {
-  /* You can add styles specific to larger screens here if needed */ 
+  /* You can add styles specific to larger screens here if needed */
   .focus-timer-elapsing {
     font-size: 4vmin;
   }
-  
+
   .pulsing:after {
     font-size: 2vmin;
   }
-
 }
 
+.breathe-history {
+  margin-top: 20px;
+  color: #f0f2f1;
+  font-family: 'Inter-Regular', Helvetica;
+  font-size: 2vmin;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+.breathe-history-yesterday {
+  padding: 20px;
+  float: left;
+}
+
+.breathe-history-overall {
+  padding: 20px;
+  float: left;
+}

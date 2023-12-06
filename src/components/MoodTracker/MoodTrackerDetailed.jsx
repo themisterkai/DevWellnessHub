@@ -13,7 +13,6 @@ export const MoodTrackerDetailed = () => {
   const dispatch = useDispatch();
   const mood = useSelector(state => state.mood);
   const yesterdayDate = getYesterdayDate();
-  // console.log(yesterday);
 
   const historical = useSelector(state => state.historical.historicalData);
 
