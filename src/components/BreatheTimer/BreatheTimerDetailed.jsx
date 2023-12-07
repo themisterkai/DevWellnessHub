@@ -60,6 +60,9 @@ export const BreatheTimerDetailed = () => {
       breatheTimer.isBreatheTimerRunning && !breatheTimer.isBreatheTimerPaused,
   });
 
+  const withHistoricalData =
+    dataYesterday != null && historicalHabitData.count != 0;
+
   return (
     <div className="main-wrapper">
       <div className="app-container">
@@ -97,7 +100,7 @@ export const BreatheTimerDetailed = () => {
         <p className="focus-done-day">
           Breathe timers done today: {breatheTimer.breatheTimerCount}
         </p>
-        <DashLine />
+        {withHistoricalData && <DashLine />}
         <div className="breathe-history">
           {dataYesterday != null && (
             <div className="breathe-history-yesterday">
