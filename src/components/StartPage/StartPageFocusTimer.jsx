@@ -43,7 +43,9 @@ export const StartPageFocusTimer = ({ page, setPage }) => {
           }}
         ></input>
         <div className="start-page-button">
-          <button onClick={handleSetFocusTimerLength}>Next</button>
+          <button className="app-button" onClick={handleSetFocusTimerLength}>
+            Next
+          </button>
         </div>
       </div>
     </div>

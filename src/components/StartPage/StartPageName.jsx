@@ -21,7 +21,9 @@ export const StartPageName = ({ setName, page, setPage }) => {
           data-1p-ignore
         ></input>
         <div className="start-page-button">
-          <button onClick={handleSubmitName}>Next</button>
+          <button className="app-button" onClick={handleSubmitName}>
+            Next
+          </button>
         </div>
       </div>
     </div>

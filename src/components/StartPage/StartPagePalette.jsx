@@ -36,7 +36,9 @@ export const StartPagePalette = ({ name, page, setPage }) => {
           {/* Add more options for additional color palettes */}
         </select>
         <div className="start-page-button">
-          <button onClick={handleSubmitName}>Next</button>
+          <button className="app-button" onClick={handleSubmitName}>
+            Next
+          </button>
         </div>
       </div>
     </div>

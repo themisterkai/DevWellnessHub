@@ -45,7 +45,12 @@ export const StartPageBreatheTimer = ({
           }}
         ></input>
         <div className="start-page-button">
-          <button onClick={handleBreatheFocusTimerLength}>Next</button>
+          <button
+            className="app-button"
+            onClick={handleBreatheFocusTimerLength}
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>
