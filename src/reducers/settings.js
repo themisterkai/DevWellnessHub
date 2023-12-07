@@ -52,6 +52,10 @@ export const settings = createSlice({
       state.colorPalette = colorPalette;
       localStorage.setItem('settings', JSON.stringify(state));
     },
+    updateColorPaletteWithoutLocalStorage: (state, action) => {
+      const { colorPalette } = action.payload;
+      state.colorPalette = colorPalette;
+    },
     updateFocusTimerLengthMS: (state, action) => {
       const { focusTimerLengthMS } = action.payload;
       state.focusTimerLengthMS = focusTimerLengthMS;
@@ -66,6 +70,15 @@ export const settings = createSlice({
       const { isMobile } = action.payload;
       state.isMobile = isMobile;
     },
+    updateMultiple: (state, action) => {
+      const { name, colorPalette, focusTimerLengthMS, breatheTimerLengthMS } =
+        action.payload;
+      state.name = name;
+      state.colorPalette = colorPalette;
+      state.focusTimerLengthMS = focusTimerLengthMS;
+      state.breatheTimerLengthMS = breatheTimerLengthMS;
+      localStorage.setItem('settings', JSON.stringify(state));
+    },
     factoryReset: () => {
       // Reset all fields to initial values
       localStorage.clear();
@@ -78,8 +91,10 @@ export const {
   loadAppSettings,
   updateName,
   updateColorPalette,
+  updateColorPaletteWithoutLocalStorage,
   updateFocusTimerLengthMS,
   updateBreatheTimerLengthMS,
   updateIsMobile,
+  updateMultiple,
   factoryReset,
 } = settings.actions;
