@@ -1,20 +1,11 @@
-import { Link } from 'react-router-dom';
-import useScreenSize from '../../hooks/useScreenSize';
+import { MobileGoBackBTN } from '../MobileBTN';
 import './About.css';
 
 export const FocusAbout = () => {
-  const { isMobile } = useScreenSize();
   return (
     <div className="about-wrapper">
       <div className="app-container">
       <div className="main-header">
-      {isMobile && (
-        <div className="back-arrow">
-          <Link to="/focus-timer">
-            <span className="material-symbols-outlined">arrow_back</span>
-          </Link>
-        </div>
-      )}
       <div className="about-header">. FOCUS</div>  
       </div>
       <div className="about-paragraph">
@@ -41,6 +32,7 @@ export const FocusAbout = () => {
           </li>
         </ul>
       </div>
+      <MobileGoBackBTN />
       </div>
     </div>
   );

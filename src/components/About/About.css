@@ -17,7 +17,7 @@
 .about-header {
   color: var(--primary-text-color);
   font-family: "Inter-SemiBold", Helvetica;
-  font-size: 4vmin;
+  font-size: 7vmin;
   font-weight: 600;
   letter-spacing: 0.36px;
   line-height: normal;
@@ -28,7 +28,8 @@
   font-family: "Inter-Regular", Helvetica;
   padding-top: 10%;
   width: 90%;
-  font-size: 3.5vmin;
+  text-align: left;
+  font-size: 4vmin;
   font-weight: 400;
   letter-spacing: 0.36px;
   line-height: normal;
@@ -40,6 +41,10 @@
       width: 100vw;
       height: 100vh; /* Adjust as needed */
       border-radius: 0px;
+  }
+
+  .about-paragraph {
+    text-align: justify;
   }
 
 }

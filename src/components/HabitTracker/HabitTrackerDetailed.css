@@ -1,7 +1,7 @@
 .habit-detailed-counter {
   color: var(--primary-text-color);
   font-family: 'Inter-SemiBold', Helvetica;
-  font-size: 2.5vmin;
+  font-size: 5vmin;
   font-weight: 400;
   letter-spacing: 0.36px;
   line-height: normal;
@@ -28,15 +28,13 @@
   width: 3vmin; /* Adjust the size of the checkbox */
   height: 3vmin; /* Adjust the size of the checkbox */
   border: 0.5vmin solid var(--tertiary-bg-color); /* Border color of the checkbox */
-  background-color: var(
-    --primary-text-color
-  ); /* Background color of the checkbox */
+  background-color: var(--primary-text-color); /* Background color of the checkbox */
 }
 
 .habit-detailed-text-label {
   color: var(--primary-text-color);
   font-family: 'Inter-Regular', Helvetica;
-  font-size: 2.5vmin;
+  font-size: 4vmin;
   font-weight: 400;
   letter-spacing: 0.36px;
   line-height: normal;
@@ -45,7 +43,7 @@
 .habit-history {
   color: var(--primary-text-color);
   font-family: 'Inter-Regular', Helvetica;
-  font-size: 2vmin;
+  font-size: 3.5vmin;
   font-weight: 400;
   overflow: hidden;
 }
@@ -58,4 +56,36 @@
 .habit-history-overall {
   padding: 20px;
   float: left;
+}
+
+/* Media query for medium-sized screens (e.g., tablets) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .habit-detailed-counter {
+    font-size: 3vmin;
+  }
+
+  .habit-detailed-text-label {
+    font-size: 2vmin;
+  }
+
+  .habit-history {
+    font-size: 2vmin;
+  }
+}
+
+/* Media query for larger screens (e.g., desktops) */
+@media only screen and (min-width: 1025px) {
+  /* You can add styles specific to larger screens here if needed */
+  .habit-detailed-counter {
+    font-size: 3vmin;
+  }
+
+  .habit-detailed-text-label {
+    font-size: 2vmin;
+  }
+
+
+  .habit-history {
+    font-size: 2vmin;
+  }
 }

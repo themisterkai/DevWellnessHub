@@ -1,14 +1,4 @@
 /* Dashboard.css */
-.settings-icon {
-  width: 3.5vmin;
-}
-
-.info-button {
-  width: 5vmin;
-  height: 5vmin;
-  color: var(--primary-text-color);
-}
-
 .app-wrapper {
   width: 90vmin;
   height: 90vmin;

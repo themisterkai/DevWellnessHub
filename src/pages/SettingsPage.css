@@ -9,7 +9,9 @@
 }
 
 .settings-description {
-    width: 80%
+    width: 80%;
+    text-align: left;
+    padding-bottom: 2vmin;
 }
 
 .settings-input-field {
@@ -17,6 +19,14 @@
     margin-left: 20%;
     border-radius: 0.5vmin;
 
+}
+
+.settings-buttons-wrapper {
+    padding-top: 5%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 2vmin;
 }
 
 .field-wrap {

@@ -51,7 +51,7 @@ export const SettingsPage = () => {
     <div className="main-wrapper">
       <div className="app-container">
         <header className="main-header">
-          <div className="main-app-name">Your settings</div>
+          <div className="main-app-name">. SETTINGS</div>
         </header>
         <h2 className="secondary-header">Adjust with your needs:</h2>
         <p className="text-paragraph settings-description">

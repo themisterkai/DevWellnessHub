@@ -57,7 +57,7 @@ body {
 .main-app-name {
   color: var(--primary-text-color);
   font-family: 'Inter-SemiBold', Helvetica;
-  font-size: 4vmin;
+  font-size: 7vmin;
   text-align: center;
   font-weight: 600;
   letter-spacing: 0.36px;
@@ -67,7 +67,7 @@ body {
 .secondary-header {
   color: var(--primary-text-color);
   font-family: 'Inter-SemiBold', Helvetica;
-  font-size: 3vmin;
+  font-size: 4.5vmin;
   text-align: center;
   font-weight: 600;
   letter-spacing: 0.36px;
@@ -77,8 +77,8 @@ body {
 .text-paragraph {
   color: var(--primary-text-color);
   font-family: 'Inter-Regular', Helvetica;
-  font-size: 3vmin;
-  text-align: center;
+  font-size: 4vmin;
+  text-align: justify;
   font-weight: 400;
   letter-spacing: 0.36px;
   line-height: normal;
@@ -121,14 +121,6 @@ body {
   width: 100%;
 }
 
-.settings-buttons-wrapper {
-    padding-top: 5%;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    gap: 2vmin;
-}
-
 /* Media query for smaller screens (e.g., mobile devices) */
 @media only screen and (max-width: 768px) {
   .main-wrapper {
@@ -141,7 +133,12 @@ body {
 /* Media query for medium-sized screens (e.g., tablets) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .main-app-name {
-      padding-top: 10%;
+    padding-top: 10%;
+    font-size: 4vmin;
+  }
+
+  .secondary-header {
+    font-size: 3vmin;
   }
 
   .text-paragraph {
@@ -158,6 +155,11 @@ body {
   /* You can add styles specific to larger screens here if needed */
   .main-app-name {
     padding-top: 5%;
+    font-size: 4vmin;
+  }
+
+  .secondary-header {
+    font-size: 3vmin;
   }
 
   .text-paragraph {
