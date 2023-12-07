@@ -11,7 +11,7 @@ export const HabitTracker = () => {
   // Your logic to change the color based on habit completion
   const getCircleColor = habitId => {
     const habit = habitsState.habits.find(h => h.id === habitId);
-    return habit && habit.isComplete ? 'var(--primary-text-color)' : '#6F6F6F';
+    return habit && habit.isComplete ? 'var(--primary-accent-color)' : 'var(--secondary-accent-color)';
   };
   // if desktop render <HabitTrackerDetailed />
   // if mobile clicking will go to <MobileHabitTrackerPage />

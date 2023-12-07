@@ -13,7 +13,7 @@
   .menu-items {
     display: flex;
     flex-direction: column;
-    gap: 5vh;
+    gap: 7vh;
     font-size: 2vmax;
     font-weight: 400;
     letter-spacing: 1.08px;
@@ -58,12 +58,12 @@
   }
 
   .menu-items {
-    gap: 3vh;
+    gap: 5vh;
     font-size: 1.5vmax;
   }
 
   .functionality-menu-items {
-    gap: 1vh;
+    gap: 2vh;
   }
 }
 

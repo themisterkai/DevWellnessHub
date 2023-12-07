@@ -41,7 +41,7 @@
 }
 
 .CircularProgressbar-path {
-  stroke: var(--accent-color);
+  stroke: var(--primary-accent-color);
 }
 .CircularProgressbar-trail {
   stroke: var(--secondary-accent-color);

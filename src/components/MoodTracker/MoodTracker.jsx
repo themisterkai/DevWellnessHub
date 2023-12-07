@@ -8,24 +8,25 @@ export const MoodTracker = () => {
     const energyLevel = useSelector(state => state.mood.energyLevel);
     const overwhelmedLevel = useSelector(state => state.mood.overwhelmedLevel);
 
-    const totalLevel = moodLevel + energyLevel + overwhelmedLevel;
+    const totalLevel = ((moodLevel + energyLevel) - overwhelmedLevel);
+    console.log(totalLevel);
 
     return(
         <div className="tile-wrapper">
             <Link to="/mood-tracker">
             <div className="tile-main-name">. MOOD</div>
-            {totalLevel > 8 && (
+            {totalLevel > 4 && (
                <div className="moods-wrapper">
                <MoodUp />
                </div>
             )}
-            {totalLevel === 8 && (
+            {totalLevel === 4 && (
                 <div className="mood-lines-wrapper">
                 <MoodStableLine />
                 <MoodStableLine />
                 </div>
             )}
-            {totalLevel < 8 && (
+            {totalLevel < 4 && (
                 <div className="moods-wrapper">
                 <MoodDown />
                 </div>
