@@ -93,9 +93,9 @@ export const MoodTrackerDetailed = () => {
             <div className="mood-history-yesterday">
               Yesterday&apos;s data:
               <ul>
-                <li>mood: {dataYesterday.mood.moodLevel}/5</li>
-                <li>energy: {dataYesterday.mood.energyLevel}/5</li>
-                <li>overwhelmed: {dataYesterday.mood.overwhelmedLevel}/5</li>
+                <li>mood: {dataYesterday.mood.moodLevel} / 5</li>
+                <li>energy: {dataYesterday.mood.energyLevel} / 5</li>
+                <li>overwhelmed: {dataYesterday.mood.overwhelmedLevel} / 5</li>
               </ul>
             </div>
           )}
@@ -104,15 +104,25 @@ export const MoodTrackerDetailed = () => {
               Overall data:
               <ul>
                 <li>
-                  mood: {historicalMoodData.mood / historicalMoodData.count}/5
+                  mood:{' '}
+                  {Math.round(
+                    historicalMoodData.mood / historicalMoodData.count
+                  )}{' '}
+                  / 5
                 </li>
                 <li>
-                  energy: {historicalMoodData.energy / historicalMoodData.count}
-                  /5
+                  energy:{' '}
+                  {Math.round(
+                    historicalMoodData.energy / historicalMoodData.count
+                  )}{' '}
+                  / 5
                 </li>
                 <li>
                   overwhelmed:{' '}
-                  {historicalMoodData.overwhelmed / historicalMoodData.count}/5
+                  {Math.round(
+                    historicalMoodData.overwhelmed / historicalMoodData.count
+                  )}{' '}
+                  / 5
                 </li>
               </ul>
             </div>
