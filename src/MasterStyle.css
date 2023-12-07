@@ -7,7 +7,8 @@
   --secondary-bg-color: #1c1d1f;
   --tertiary-bg-color: #4a4d53;
   --primary-text-color: #f0f2f1;
-  --accent-color: #f0f2f1;
+  --primary-accent-color: #f0f2f1;
+  --secondary-accent-color: #6F6F6F;
   /* ... add more variables as needed for the dark palette */
 }
 

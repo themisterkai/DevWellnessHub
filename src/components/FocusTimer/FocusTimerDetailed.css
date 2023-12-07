@@ -23,7 +23,7 @@
   height: 65vmin;
   text-align: center;
   border-radius: 100%;
-  box-shadow: -50px -50px 100px #6f6f6f, 50px 50px 100px #6f6f6f;
+  box-shadow: -50px -50px 100px var(--secondary-accent-color), 50px 50px 100px var(--secondary-accent-color);
   cursor: pointer;
 }
 
@@ -44,7 +44,7 @@
   stroke: var(--accent-color);
 }
 .CircularProgressbar-trail {
-  stroke: #6f6f6f;
+  stroke: var(--secondary-accent-color);
 }
 .CircularProgressbar-text {
   fill: var(--primary-text-color);
