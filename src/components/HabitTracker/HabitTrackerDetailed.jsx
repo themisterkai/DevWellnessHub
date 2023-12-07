@@ -35,6 +35,9 @@ export const HabitTrackerDetailed = () => {
     }
   );
 
+  const withHistoricalData =
+    dataYesterday != null && historicalHabitData.count != 0;
+
   return (
     <div className="main-wrapper">
       <div className="app-container">
@@ -64,7 +67,7 @@ export const HabitTrackerDetailed = () => {
             );
           })}
         </div>
-        <DashLine />
+        {withHistoricalData && <DashLine />}
         <div className="habit-history">
           {dataYesterday != null && (
             <div className="habit-history-yesterday">

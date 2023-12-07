@@ -63,6 +63,9 @@ export const FocusTimerDetailed = () => {
     }
   };
 
+  const withHistoricalData =
+    dataYesterday != null && historicalFocusData.count != 0;
+
   return (
     <div className="main-wrapper">
       <div className="app-container">
@@ -96,7 +99,7 @@ export const FocusTimerDetailed = () => {
         <p className="focus-done-day">
           Focus timers done today: {focusTimer.focusTimerCount}
         </p>
-        <DashLine />
+        {withHistoricalData && <DashLine />}
         <div className="focus-history">
           {dataYesterday != null && (
             <div className="focus-history-yesterday">

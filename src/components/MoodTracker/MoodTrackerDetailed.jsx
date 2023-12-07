@@ -51,6 +51,9 @@ export const MoodTrackerDetailed = () => {
     }
   );
 
+  const withHistoricalData =
+    dataYesterday != null && historicalMoodData.count != 0;
+
   return (
     <div className="main-wrapper">
       <div className="app-container">
@@ -90,7 +93,7 @@ export const MoodTrackerDetailed = () => {
             value={mood.overwhelmedLevel}
           ></input>
         </div>
-        <DashLine />
+        {withHistoricalData && <DashLine />}
         <div className="mood-history">
           {dataYesterday != null && (
             <div className="mood-history-yesterday">
