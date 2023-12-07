@@ -3,7 +3,7 @@
 }
 
 .start-page .secondary-header {
-  padding: 50px;
+  padding: 5%;
 }
 
 .start-page-input-wrapper {
@@ -35,6 +35,14 @@
 
 /* Media query for smaller screens (e.g., mobile devices) */
 @media only screen and (max-width: 768px) {
+  .start-page .main-header {
+    padding-top: 2%;
+  }
+
+  .start-page .secondary-header {
+    padding-top: 2%;
+  }
+
   .start-page .main-app-name {
     margin-top: 4vmin;
     font-size: 10vmin;
