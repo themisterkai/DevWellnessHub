@@ -17,7 +17,6 @@ export const FocusTimerDetailed = () => {
   const dispatch = useDispatch();
   const yesterdayDate = getYesterdayDate();
 
-
   const focusTimer = useSelector(state => state.focusTimer);
   const focusTimerLengthMS = useSelector(
     state => state.settings.focusTimerLengthMS
@@ -111,7 +110,7 @@ export const FocusTimerDetailed = () => {
               Overall data:
               <p />
               Average per day:{' '}
-              {historicalFocusData.done / historicalFocusData.count}
+              {Math.round(historicalFocusData.done / historicalFocusData.count)}
             </div>
           )}
         </div>

@@ -23,7 +23,6 @@ export const DesktopHomepage = () => {
   //conditional rendering of which components (better than doing it in the App.jsx)
   const { isMobile } = useScreenSize();
 
-
   return (
     <>
       <FocusTimerRenderless />
@@ -55,11 +54,32 @@ export const DesktopHomepage = () => {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/focus-timer" element={<FocusTimerDetailed />} />
                 <Route path="/mood-tracker" element={<MoodTrackerDetailed />} />
-                <Route path="/habit-tracker"element={<HabitTrackerDetailed />}
+                <Route
+                  path="/habit-tracker"
+                  element={<HabitTrackerDetailed />}
                 />
-                <Route path="/breathe-timer" element={<BreatheTimerDetailed />}
+                <Route
+                  path="/breathe-timer"
+                  element={<BreatheTimerDetailed />}
                 />
                 <Route path="/settings" element={<SettingsPage />} />
+                <Route
+                  path="/about-focus-timer"
+                  element={<FocusTimerDetailed />}
+                />
+                <Route
+                  path="/about-habit-tracker"
+                  element={<HabitTrackerDetailed />}
+                />
+                <Route
+                  path="/about-breathe-timer"
+                  element={<BreatheTimerDetailed />}
+                />
+                <Route
+                  path="/about-mood-tracker"
+                  element={<MoodTrackerDetailed />}
+                />
+                <Route path="/about" element={<Dashboard />} />
               </Routes>
             </div>
             <Routes>
@@ -68,7 +88,12 @@ export const DesktopHomepage = () => {
               <Route path="/habit-tracker" element={<HabitsAbout />} />
               <Route path="/breathe-timer" element={<BreatheAbout />} />
               <Route path="/mood-tracker" element={<MoodAbout />} />
+              <Route path="/about" element={<About />} />
               <Route path="/settings" element={<About />} />
+              <Route path="/about-focus-timer" element={<FocusAbout />} />
+              <Route path="/about-habit-tracker" element={<HabitsAbout />} />
+              <Route path="/about-breathe-timer" element={<BreatheAbout />} />
+              <Route path="/about-mood-tracker" element={<MoodAbout />} />
             </Routes>
           </div>
         </Router>

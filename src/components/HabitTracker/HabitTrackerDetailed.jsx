@@ -22,7 +22,6 @@ export const HabitTrackerDetailed = () => {
 
   const historicalHabitData = Object.entries(historical).reduce(
     (acc, curr) => {
-      console.log('acc', acc);
       acc.count += 1;
       const habits = curr[1].habits.habits;
       acc.done += habits.filter(habit => habit.isComplete).length;
@@ -83,8 +82,11 @@ export const HabitTrackerDetailed = () => {
             <div className="habit-history-overall">
               Overall data:
               <p />
-              🏆: {historicalHabitData.done / historicalHabitData.count}/{' '}
-              {historicalHabitData.habitCount / historicalHabitData.count}
+              🏆:{' '}
+              {Math.round(
+                historicalHabitData.done / historicalHabitData.count
+              )}{' '}
+              / {historicalHabitData.habitCount / historicalHabitData.count}
             </div>
           )}
         </div>

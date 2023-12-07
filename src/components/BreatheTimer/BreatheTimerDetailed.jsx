@@ -15,9 +15,6 @@ import { DashLine, ResetIcon } from '../../assets/SVGElements';
 import { MobileBreatheBTN } from '../MobileBTN';
 import './BreatheTimerDetailed.css';
 
-
-
-
 export const BreatheTimerDetailed = () => {
   const dispatch = useDispatch();
   const yesterdayDate = getYesterdayDate();
@@ -114,7 +111,7 @@ export const BreatheTimerDetailed = () => {
               Overall data:
               <p />
               Average per day:{' '}
-              {historicalHabitData.done / historicalHabitData.count}
+              {Math.round(historicalHabitData.done / historicalHabitData.count)}
             </div>
           )}
         </div>
