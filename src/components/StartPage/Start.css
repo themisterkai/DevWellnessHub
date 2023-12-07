@@ -12,6 +12,7 @@
 }
 
 .start-page-input {
+  width: 50vmin;
   border: none;
   text-align: center;
   background-color: var(--secondary-bg-color);
