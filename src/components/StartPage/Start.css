@@ -1,0 +1,70 @@
+.start-page .main-header {
+  width: 100%;
+}
+
+.start-page .secondary-header {
+  padding: 50px;
+}
+
+.start-page-input-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.start-page-input {
+  border: none;
+  text-align: center;
+  background-color: var(--secondary-bg-color);
+  border-bottom: 1px solid var(--primary-text-color);
+  padding: 5px 10px;
+  outline: none;
+  color: var(--primary-text-color);
+  font-size: 4vmin;
+}
+
+.colorPaletteSelect {
+  font-size: 4vmin;
+  padding: 1vmin;
+}
+
+.start-page-button button {
+  margin-top: 2vmin;
+  font-size: 3vmin;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media only screen and (max-width: 768px) {
+  .start-page .main-app-name {
+    margin-top: 4vmin;
+    font-size: 10vmin;
+  }
+
+  .start-page .secondary-header {
+    font-size: 8vmin;
+  }
+
+  .start-page-input {
+    font-size: 8vmin;
+  }
+
+  .colorPaletteSelect {
+    font-size: 8vmin;
+    padding: 1vmin;
+  }
+
+  .start-page-button button {
+    margin-top: 4vmin;
+    font-size: 5vmin;
+  }
+}
+
+/* Media query for medium-sized screens (e.g., tablets) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .about-header {
+    font-size: 3vmin;
+  }
+
+  .about-paragraph {
+    font-size: 2vmin;
+  }
+}
