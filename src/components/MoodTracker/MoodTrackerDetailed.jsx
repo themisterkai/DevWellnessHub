@@ -9,6 +9,7 @@ import { getYesterdayDate } from '../../helpers';
 import { DashLine } from '../../assets/SVGElements';
 import './MoodTrackerDetailed.css';
 
+
 export const MoodTrackerDetailed = () => {
   const dispatch = useDispatch();
   const mood = useSelector(state => state.mood);
@@ -57,6 +58,8 @@ export const MoodTrackerDetailed = () => {
           <div className="main-app-name">. MOOD</div>
         </header>
         <h2 className="secondary-header">How are you feeling today?</h2>
+        <div className="today-tile-wrapper">
+        </div>
         <div className="range-mood">
           <div>Mood Level: {mood.moodLevel}</div>
           <input

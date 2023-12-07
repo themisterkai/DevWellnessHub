@@ -10,12 +10,12 @@ export const SettingsIcon = () => {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M7.75584 2.97728C7.75584 1.93129 8.59399 1.08334 9.62791 1.08334H13.372C14.406 1.08334 15.2441 1.93129 15.2441 2.97728V3.86319C15.5628 4.02343 15.8701 4.20348 16.1643 4.40177L16.9237 3.95824C17.8191 3.43524 18.964 3.74561 19.481 4.65147L21.353 7.93187C21.87 8.83772 21.5632 9.99604 20.6678 10.519L19.9078 10.9629C19.9188 11.1405 19.9243 11.3196 19.9243 11.5C19.9243 11.6804 19.9187 11.8595 19.9078 12.0372L20.6676 12.481C21.563 13.004 21.8698 14.1623 21.3529 15.0682L19.4808 18.3486C18.9638 19.2544 17.8189 19.5648 16.9235 19.0418L16.1642 18.5983C15.87 18.7966 15.5628 18.9766 15.2441 19.1368V20.0227C15.2441 21.0687 14.406 21.9167 13.372 21.9167H9.62791C8.59399 21.9167 7.75584 21.0687 7.75584 20.0227V19.1368C7.43715 18.9766 7.12991 18.7966 6.8357 18.5983L6.07646 19.0418C5.18107 19.5648 4.03613 19.2544 3.51917 18.3485L1.6471 15.0681C1.13014 14.1623 1.43693 13.004 2.33233 12.481L3.09213 12.0372C3.08121 11.8595 3.07567 11.6804 3.07567 11.5C3.07567 11.3196 3.08121 11.1405 3.09212 10.9629L2.33216 10.5191C1.43676 9.99606 1.12998 8.83774 1.64694 7.93189L3.519 4.65149C4.03596 3.74563 5.1809 3.43526 6.0763 3.95826L6.83563 4.40178C7.12986 4.20349 7.43712 4.02343 7.75584 3.86319V2.97728Z"
-        stroke="var(--accent-color)"
+        stroke="var(--primary-accent-color)"
         strokeWidth="1.5"
       />
       <path
         d="M14.3083 11.5C14.3083 13.069 13.0511 14.3409 11.5002 14.3409C9.94936 14.3409 8.69213 13.069 8.69213 11.5C8.69213 9.93102 9.94936 8.6591 11.5002 8.6591C13.0511 8.6591 14.3083 9.93102 14.3083 11.5Z"
-        stroke="var(--accent-color)"
+        stroke="var(--primary-accent-color)"
         strokeWidth="1.5"
       />
     </svg>
@@ -30,7 +30,7 @@ export const FocusCircle = () => {
       xmlns="http://www.w3.org/2000/svg"
       className="focus-circle-SVG"
     >
-      <circle id="Ellipse 16" cx="36" cy="36" r="35" stroke="#6F6F6F" />
+      <circle id="Ellipse 16" cx="36" cy="36" r="35" stroke="var(--secondary-accent-color)" />
     </svg>
   );
 };
@@ -72,7 +72,7 @@ export const BreathCircle = () => {
       xmlns="http://www.w3.org/2000/svg"
       className="breath-circle-SVG"
     >
-      <circle id="Ellipse 9" cx="35" cy="35" r="35" fill="#6F6F6F" />
+      <circle id="Ellipse 9" cx="35" cy="35" r="35" fill="var(--secondary-accent-color)" />
     </svg>
   );
 };
@@ -103,7 +103,7 @@ export const MoodStableLine = () => {
     >
       <path
         d="M3 3L88 3"
-        stroke="#6F6F6F"
+        stroke="var(--secondary-accent-color)"
         strokeWidth="5"
         strokeLinecap="round"
       />
@@ -121,7 +121,7 @@ export const MoodUp = () => {
     >
       <path
         d="M3 46L45.4264 3.57359L87.8528 46"
-        stroke="var(--accent-color)"
+        stroke="var(--primary-accent-color)"
         strokeWidth="5"
         strokeLinecap="round"
       />
@@ -139,7 +139,7 @@ export const MoodDown = () => {
     >
       <path
         d="M87.8528 3.42639L45.4264 45.8528L3 3.42639"
-        stroke="var(--accent-color)"
+        stroke="var(--primary-accent-color)"
         strokeWidth="5"
         strokeLinecap="round"
       />
@@ -157,7 +157,7 @@ export const DashLine = () => {
     >
       <path
         d="M1 1.5H281"
-        stroke="var(--accent-color)"
+        stroke="var(--primary-accent-color)"
         strokeWidth="1"
         strokeLinecap="round"
       />
@@ -175,7 +175,7 @@ export const ResetIcon = () => {
       <g
         fill="none"
         fillRule="evenodd"
-        stroke="var(--accent-color)"
+        stroke="var(--primary-accent-color)"
         strokeLinecap="round"
         strokeLinejoin="round"
         transform="matrix(0 1 1 0 2.5 2.5)"

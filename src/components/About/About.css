@@ -5,15 +5,6 @@
   border-radius: 20px;
 }
 
-.about-wrapper .app-container .back-arrow {
-  margin-right: 3%;
-  color: var(--accent-color);
-}
-
-.about-wrapper .app-container .back-arrow a {
-  color: var(--accent-color);
-}
-
 .about-header {
   color: var(--primary-text-color);
   font-family: "Inter-SemiBold", Helvetica;
