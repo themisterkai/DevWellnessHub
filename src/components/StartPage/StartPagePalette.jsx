@@ -33,6 +33,8 @@ export const StartPagePalette = ({ name, page, setPage }) => {
         >
           <option value="dark">Dark</option>
           <option value="light">Light</option>
+          <option value="teal">Teal</option>
+          <option value="earth">Earth</option>
           {/* Add more options for additional color palettes */}
         </select>
         <div className="start-page-button">
