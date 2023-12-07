@@ -83,8 +83,11 @@ export const HabitTrackerDetailed = () => {
             <div className="habit-history-overall">
               Overall data:
               <p />
-              🏆: {historicalHabitData.done / historicalHabitData.count}/{' '}
-              {historicalHabitData.habitCount / historicalHabitData.count}
+              🏆:{' '}
+              {Math.round(
+                historicalHabitData.done / historicalHabitData.count
+              )}{' '}
+              / {historicalHabitData.habitCount / historicalHabitData.count}
             </div>
           )}
         </div>
