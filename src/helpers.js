@@ -23,7 +23,7 @@ export const applyColorPalette = selectedPalette => {
       '--secondary-bg-color': '#1C1D1F',
       '--tertiary-bg-color': '#4a4d53',
       '--primary-text-color': '#F0F2F1',
-      '--accent-color': '#F0F2F1',
+      '--primary-accent-color': '#F0F2F1',
       '--secondary-accent-color': '#6F6F6F',
       /* Add more variables as needed */
     },
@@ -32,7 +32,7 @@ export const applyColorPalette = selectedPalette => {
       '--secondary-bg-color': '#E7E9E8',
       '--tertiary-bg-color': '#F0F2F1',
       '--primary-text-color': '#1C1D1F',
-      '--accent-color': '#1C1D1F',
+      '--primary-accent-color': '#1C1D1F',
       '--secondary-accent-color': '#6F6F6F',
       /* Add more variables as needed */
     },
