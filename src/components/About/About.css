@@ -6,6 +6,7 @@
 }
 
 .about-header {
+  padding-top: 10%;
   color: var(--primary-text-color);
   font-family: "Inter-SemiBold", Helvetica;
   font-size: 7vmin;

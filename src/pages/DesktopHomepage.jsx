@@ -11,12 +11,14 @@ import { MoodTrackerDetailed } from '../components/MoodTracker/MoodTrackerDetail
 import { HabitTrackerDetailed } from '../components/HabitTracker/HabitTrackerDetailed';
 import { BreatheTimerDetailed } from '../components/BreatheTimer/BreatheTimerDetailed';
 import { SettingsPage } from './SettingsPage';
-import './DesktopHomepage.css';
 import { About } from '../components/About/About';
 import { FocusAbout } from '../components/About/FocusAbout';
 import { HabitsAbout } from '../components/About/HabitsAbout';
 import { BreatheAbout } from '../components/About/BreatheAbout';
 import { MoodAbout } from '../components/About/MoodAbout';
+import { SettingsAbout } from '../components/About/SettingsAbout';
+import './DesktopHomepage.css';
+
 
 export const DesktopHomepage = () => {
   //Here the logic if to switch on mobile or on desktop with
@@ -89,7 +91,7 @@ export const DesktopHomepage = () => {
               <Route path="/breathe-timer" element={<BreatheAbout />} />
               <Route path="/mood-tracker" element={<MoodAbout />} />
               <Route path="/about" element={<About />} />
-              <Route path="/settings" element={<About />} />
+              <Route path="/settings" element={<SettingsAbout />} />
               <Route path="/about-focus-timer" element={<FocusAbout />} />
               <Route path="/about-habit-tracker" element={<HabitsAbout />} />
               <Route path="/about-breathe-timer" element={<BreatheAbout />} />
