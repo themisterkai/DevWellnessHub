@@ -52,35 +52,54 @@ export const MoodTrackerDetailed = () => {
     }
   );
 
-  const dataYesterdayMood = dataYesterday.mood.moodLevel;
-  const dataYesterdayEnergy = dataYesterday.mood.energyLevel
-  const dataYesterdayOver = dataYesterday.mood.overwhelmedLevel
-  const totalYesMood = ((dataYesterdayMood + dataYesterdayEnergy) - dataYesterdayOver)
-
   let generMood;
-  if (totalYesMood === 4) {
-    generMood = "stable"
-  } else if (totalYesMood > 4) {
-    generMood = "up"
-  } else {
-    generMood = "down"
-  }
+  let dataYesterdayMood;
+  let dataYesterdayEnergy;
+  let dataYesterdayOver;
+  let totalYesMood;
 
-  const dataMoodFive = Math.round(historicalMoodData.mood / historicalMoodData.count);
-  const dataEnergyFive = Math.round(historicalMoodData.energy / historicalMoodData.count);
-  const dataOverFive = Math.round(historicalMoodData.overwhelmed / historicalMoodData.count);
-  const totalMoodFive = ((dataMoodFive + dataEnergyFive) - dataOverFive)
+  if (dataYesterday != null) {
+    dataYesterdayMood = dataYesterday.mood.moodLevel;
+    dataYesterdayEnergy = dataYesterday.mood.energyLevel;
+    dataYesterdayOver = dataYesterday.mood.overwhelmedLevel;
+    totalYesMood = dataYesterdayMood + dataYesterdayEnergy - dataYesterdayOver;
+
+    if (totalYesMood === 4) {
+      generMood = 'stable';
+    } else if (totalYesMood > 4) {
+      generMood = 'up';
+    } else {
+      generMood = 'down';
+    }
+  }
 
   let generMoodFive;
-  if (totalMoodFive === 4) {
-    generMoodFive = "stable"
-  } else if (totalMoodFive > 4) {
-    generMoodFive = "up"
-  } else {
-    generMoodFive = "down"
+  let dataMoodFive;
+  let dataEnergyFive;
+  let dataOverFive;
+  let totalMoodFive;
+
+  if (historicalMoodData.count != 0) {
+    dataMoodFive = Math.round(
+      historicalMoodData.mood / historicalMoodData.count
+    );
+    dataEnergyFive = Math.round(
+      historicalMoodData.energy / historicalMoodData.count
+    );
+    dataOverFive = Math.round(
+      historicalMoodData.overwhelmed / historicalMoodData.count
+    );
+    totalMoodFive = dataMoodFive + dataEnergyFive - dataOverFive;
+
+    if (totalMoodFive === 4) {
+      generMoodFive = 'stable';
+    } else if (totalMoodFive > 4) {
+      generMoodFive = 'up';
+    } else {
+      generMoodFive = 'down';
+    }
   }
   
-
   const withHistoricalData =
     dataYesterday != null && historicalMoodData.count != 0;
 
