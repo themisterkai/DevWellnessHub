@@ -9,7 +9,6 @@ export const MoodTracker = () => {
     const overwhelmedLevel = useSelector(state => state.mood.overwhelmedLevel);
 
     const totalLevel = ((moodLevel + energyLevel) - overwhelmedLevel);
-    console.log(totalLevel);
 
     return(
         <div className="tile-wrapper">
