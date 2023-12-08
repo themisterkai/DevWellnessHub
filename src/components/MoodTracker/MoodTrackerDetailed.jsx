@@ -52,6 +52,54 @@ export const MoodTrackerDetailed = () => {
     }
   );
 
+  let generMood;
+  let dataYesterdayMood;
+  let dataYesterdayEnergy;
+  let dataYesterdayOver;
+  let totalYesMood;
+
+  if (dataYesterday != null) {
+    dataYesterdayMood = dataYesterday.mood.moodLevel;
+    dataYesterdayEnergy = dataYesterday.mood.energyLevel;
+    dataYesterdayOver = dataYesterday.mood.overwhelmedLevel;
+    totalYesMood = dataYesterdayMood + dataYesterdayEnergy - dataYesterdayOver;
+
+    if (totalYesMood === 4) {
+      generMood = 'stable';
+    } else if (totalYesMood > 4) {
+      generMood = 'up';
+    } else {
+      generMood = 'down';
+    }
+  }
+
+  let generMoodFive;
+  let dataMoodFive;
+  let dataEnergyFive;
+  let dataOverFive;
+  let totalMoodFive;
+
+  if (historicalMoodData.count != 0) {
+    dataMoodFive = Math.round(
+      historicalMoodData.mood / historicalMoodData.count
+    );
+    dataEnergyFive = Math.round(
+      historicalMoodData.energy / historicalMoodData.count
+    );
+    dataOverFive = Math.round(
+      historicalMoodData.overwhelmed / historicalMoodData.count
+    );
+    totalMoodFive = dataMoodFive + dataEnergyFive - dataOverFive;
+
+    if (totalMoodFive === 4) {
+      generMoodFive = 'stable';
+    } else if (totalMoodFive > 4) {
+      generMoodFive = 'up';
+    } else {
+      generMoodFive = 'down';
+    }
+  }
+  
   const withHistoricalData =
     dataYesterday != null && historicalMoodData.count != 0;
 
@@ -99,9 +147,10 @@ export const MoodTrackerDetailed = () => {
             <div className="mood-history-yesterday">
               Yesterday&apos;s data:
               <ul>
-                <li>mood: {dataYesterday.mood.moodLevel} / 5</li>
-                <li>energy: {dataYesterday.mood.energyLevel} / 5</li>
-                <li>overwhelmed: {dataYesterday.mood.overwhelmedLevel} / 5</li>
+                <li>general mood: {generMood}</li>
+                <li>mood: {dataYesterdayMood} / 5</li>
+                <li>energy: {dataYesterdayEnergy} / 5</li>
+                <li>overwhelmed: {dataYesterdayOver} / 5</li>
               </ul>
             </div>
           )}
@@ -109,25 +158,20 @@ export const MoodTrackerDetailed = () => {
             <div className="mood-history-overall">
               Overall data:
               <ul>
+                <li>general mood: {generMoodFive}</li>
                 <li>
                   mood:{' '}
-                  {Math.round(
-                    historicalMoodData.mood / historicalMoodData.count
-                  )}{' '}
+                  {dataMoodFive}{' '}
                   / 5
                 </li>
                 <li>
                   energy:{' '}
-                  {Math.round(
-                    historicalMoodData.energy / historicalMoodData.count
-                  )}{' '}
+                  {dataEnergyFive}{' '}
                   / 5
                 </li>
                 <li>
                   overwhelmed:{' '}
-                  {Math.round(
-                    historicalMoodData.overwhelmed / historicalMoodData.count
-                  )}{' '}
+                  {dataOverFive}{' '}
                   / 5
                 </li>
               </ul>
