@@ -21,7 +21,12 @@ export const StartPageStart = ({ onSetupComplete }) => {
   return (
     <div className="start-wrapper">
       {page === 0 && (
-        <StartPageName setName={setName} page={page} setPage={setPage} />
+        <StartPageName
+          name={name}
+          setName={setName}
+          page={page}
+          setPage={setPage}
+        />
       )}
       {page === 1 && (
         <StartPagePalette name={name} page={page} setPage={setPage} />

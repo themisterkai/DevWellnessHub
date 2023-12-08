@@ -6,19 +6,45 @@ import { useState } from 'react';
 
 export const StartPageFocusTimer = ({ page, setPage }) => {
   const dispatch = useDispatch();
+  const [error, setError] = useState('');
   const settingsState = useSelector(state => state.settings);
 
   const [focusTimerLength, setFocusTimerLength] = useState(
     settingsState.focusTimerLengthMS / (60 * 1000) // convert milliseconds to minutes
   );
 
+  const validate = input => {
+    if (input === '') {
+      setError('Input required');
+      return true;
+    } else if (input === '0') {
+      setError('Focus timer should be at least 1 min long');
+      return true;
+    } else if (parseInt(input) > 60) {
+      setError('Focus timer should be 60 min or less');
+      return true;
+    }
+    setError('');
+    return false;
+  };
+
+  const handleKeyUp = e => {
+    validate(e.target.value);
+    if (e.key === 'Enter') {
+      handleSetFocusTimerLength();
+    }
+  };
+
   const handleSetFocusTimerLength = () => {
-    dispatch(
-      updateFocusTimerLengthMS({
-        focusTimerLengthMS: focusTimerLength * 60 * 1000, // convert minutes to milliseconds
-      })
-    );
-    setPage(page + 1);
+    const hasError = validate(focusTimerLength);
+    if (!hasError) {
+      dispatch(
+        updateFocusTimerLengthMS({
+          focusTimerLengthMS: focusTimerLength * 60 * 1000, // convert minutes to milliseconds
+        })
+      );
+      setPage(page + 1);
+    }
   };
 
   return (
@@ -38,10 +64,12 @@ export const StartPageFocusTimer = ({ page, setPage }) => {
           type="number"
           value={focusTimerLength}
           min="1"
+          onKeyUp={handleKeyUp}
           onChange={e => {
             setFocusTimerLength(e.target.value);
           }}
         ></input>
+        <div className="start-page-error">{error}</div>
         <div className="start-page-button">
           <button className="app-button" onClick={handleSetFocusTimerLength}>
             Next

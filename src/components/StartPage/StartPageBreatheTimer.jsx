@@ -9,20 +9,46 @@ export const StartPageBreatheTimer = ({
   onSetupComplete,
 }) => {
   const dispatch = useDispatch();
+  const [error, setError] = useState('');
   const settingsState = useSelector(state => state.settings);
 
   const [breatheTimerLength, setBreatheTimerLength] = useState(
     settingsState.breatheTimerLengthMS / (60 * 1000) // convert milliseconds to minutes
   );
 
+  const validate = input => {
+    if (input === '') {
+      setError('Input required');
+      return true;
+    } else if (input === '0') {
+      setError('Breathe timer should be at least 1 min long');
+      return true;
+    } else if (parseInt(input) > 60) {
+      setError('Breathe timer should be 60 min or less');
+      return true;
+    }
+    setError('');
+    return false;
+  };
+
+  const handleKeyUp = e => {
+    validate(e.target.value);
+    if (e.key === 'Enter') {
+      handleBreatheFocusTimerLength();
+    }
+  };
+
   const handleBreatheFocusTimerLength = () => {
-    dispatch(
-      updateBreatheTimerLengthMS({
-        breatheTimerLengthMS: breatheTimerLength * 60 * 1000, // convert minutes to milliseconds
-      })
-    );
-    handleSubmitName();
-    onSetupComplete();
+    const hasError = validate(breatheTimerLength);
+    if (!hasError) {
+      dispatch(
+        updateBreatheTimerLengthMS({
+          breatheTimerLengthMS: breatheTimerLength * 60 * 1000, // convert minutes to milliseconds
+        })
+      );
+      handleSubmitName();
+      onSetupComplete();
+    }
   };
 
   return (
@@ -36,6 +62,7 @@ export const StartPageBreatheTimer = ({
       </h1>
       <div className="start-page-input-wrapper">
         <input
+          onKeyUp={handleKeyUp}
           className="start-page-input"
           type="number"
           value={breatheTimerLength}
@@ -44,6 +71,7 @@ export const StartPageBreatheTimer = ({
             setBreatheTimerLength(e.target.value);
           }}
         ></input>
+        <div className="start-page-error">{error}</div>
         <div className="start-page-button">
           <button
             className="app-button"

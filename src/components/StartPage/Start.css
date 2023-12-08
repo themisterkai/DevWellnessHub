@@ -11,6 +11,14 @@
   text-align: center;
 }
 
+.start-page-error {
+  width: 100%;
+  height: 3vmin;
+  text-align: center;
+  color: var(--primary-text-color);
+  font-size: 2vmin;
+}
+
 .start-page-input {
   width: 50vmin;
   border: none;
@@ -64,6 +72,14 @@
   .start-page-button button {
     margin-top: 4vmin;
     font-size: 5vmin;
+  }
+
+  .start-page-error {
+    width: 100%;
+    height: 5vmin;
+    text-align: center;
+    color: var(--primary-text-color);
+    font-size: 4vmin;
   }
 }
 
