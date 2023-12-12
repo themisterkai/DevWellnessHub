@@ -39,18 +39,18 @@ export const applyColorPalette = selectedPalette => {
     teal: {
       '--primary-bg-color': '#222831',
       '--secondary-bg-color': '#393E46',
-      '--tertiary-bg-color': '#00ADB5',
+      '--tertiary-bg-color': '#00969D',
       '--primary-text-color': '#EEEEEE',
       '--primary-accent-color': '#EEEEEE',
-      '--secondary-accent-color': '#17C0C7',   
+      '--secondary-accent-color': '#34DBE3',   
     },
     earth: {
-      '--primary-bg-color': '#594545',
-      '--secondary-bg-color': '#815B5B',
-      '--tertiary-bg-color': '#9E7676',
-      '--primary-text-color': '#FFF8EA',
-      '--primary-accent-color': '#FFF8EA',
-      '--secondary-accent-color': '#B48585',   
+      '--primary-bg-color': '#443535',
+      '--secondary-bg-color': '#644E4E',
+      '--tertiary-bg-color': '#937070',
+      '--primary-text-color': '#FFF4DF',
+      '--primary-accent-color': '#FFF4DF',
+      '--secondary-accent-color': '#D7A8A8',
     },
     // Add more color palettes as needed
   };
