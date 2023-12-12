@@ -92,4 +92,4 @@ The app saves automatically in local storage your settings and your data of each
 ## Authors
 
 - [@themisterkai](https://github.com/themisterkai)
-- [@ofabio-cassisa](https://github.com/fabio-cassisa)
+- [@fabio-cassisa](https://github.com/fabio-cassisa)
