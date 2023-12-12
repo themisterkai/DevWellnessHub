@@ -99,7 +99,7 @@ export const MoodTrackerDetailed = () => {
       generMoodFive = 'down';
     }
   }
-  
+
   const withHistoricalData =
     dataYesterday != null && historicalMoodData.count != 0;
 
@@ -115,6 +115,7 @@ export const MoodTrackerDetailed = () => {
           <div>Mood Level: {mood.moodLevel}</div>
           <input
             type="range"
+            aria-label="mood level input"
             min={1}
             max={5}
             onChange={e => handleUpdateMoodLevel(e.target.value)}
@@ -125,6 +126,7 @@ export const MoodTrackerDetailed = () => {
           <div>Energy Level: {mood.energyLevel}</div>
           <input
             type="range"
+            aria-label="energy level input"
             min={1}
             max={5}
             onChange={e => handleUpdateEnergyLevel(e.target.value)}
@@ -135,6 +137,7 @@ export const MoodTrackerDetailed = () => {
           <div>Overwhelmed Level: {mood.overwhelmedLevel}</div>
           <input
             type="range"
+            aria-label="overwhelmed level input"
             min={1}
             max={5}
             onChange={e => handleUpdateOverwhelmedLevel(e.target.value)}
@@ -159,21 +162,9 @@ export const MoodTrackerDetailed = () => {
               Overall data:
               <ul>
                 <li>general mood: {generMoodFive}</li>
-                <li>
-                  mood:{' '}
-                  {dataMoodFive}{' '}
-                  / 5
-                </li>
-                <li>
-                  energy:{' '}
-                  {dataEnergyFive}{' '}
-                  / 5
-                </li>
-                <li>
-                  overwhelmed:{' '}
-                  {dataOverFive}{' '}
-                  / 5
-                </li>
+                <li>mood: {dataMoodFive} / 5</li>
+                <li>energy: {dataEnergyFive} / 5</li>
+                <li>overwhelmed: {dataOverFive} / 5</li>
               </ul>
             </div>
           )}

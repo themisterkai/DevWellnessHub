@@ -69,12 +69,14 @@ export const SettingsPage = () => {
           <div className="field-wrap">
             <input
               type="text"
+              aria-label="name"
               value={name}
               onChange={e => setName(e.target.value)}
               className="settings-input-field"
             />
             <input
               type="number"
+              aria-label="focus timer length"
               value={focusTimerLength}
               min="1"
               onChange={e => setFocusTimerLength(e.target.value)}
@@ -82,6 +84,7 @@ export const SettingsPage = () => {
             />
             <input
               type="number"
+              aria-label="breathe timer length"
               value={breatheTimerLength}
               min="1"
               onChange={e => setBreatheTimerLength(e.target.value)}
@@ -89,6 +92,7 @@ export const SettingsPage = () => {
             />
             <select
               value={selectedPalette}
+              aria-label="color palette preference"
               onChange={e => setSelectedPalette(e.target.value)}
               className="settings-input-field"
             >

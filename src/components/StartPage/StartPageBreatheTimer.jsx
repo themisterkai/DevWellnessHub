@@ -64,6 +64,7 @@ export const StartPageBreatheTimer = ({
         <input
           onKeyUp={handleKeyUp}
           className="start-page-input"
+          aria-label="Breathe Timer length"
           type="number"
           value={breatheTimerLength}
           min="1"

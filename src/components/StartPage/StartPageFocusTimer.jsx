@@ -62,6 +62,7 @@ export const StartPageFocusTimer = ({ page, setPage }) => {
         <input
           className="start-page-input"
           type="number"
+          aria-label="Focus Timer length"
           value={focusTimerLength}
           min="1"
           onKeyUp={handleKeyUp}
