@@ -48,6 +48,7 @@ export const StartPageName = ({ name, setName, page, setPage }) => {
           required="required"
           className="start-page-input"
           type="text"
+          aria-label="Name"
           onKeyUp={handleKeyUp}
           onChange={e => {
             setName(e.target.value.trimStart());

@@ -28,6 +28,7 @@ export const StartPagePalette = ({ name, page, setPage }) => {
         <select
           id="colorPaletteSelect"
           className="colorPaletteSelect"
+          aria-label="Color Palette Preference"
           value={settingsState.colorPalette}
           onChange={e => handleColorPaletteSelection(e.target.value)}
         >
