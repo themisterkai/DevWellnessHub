@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { MobileToDashBTN } from '../components/MobileBTN';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {
   updateName,
   updateColorPalette,
@@ -11,6 +12,7 @@ import {
 import './SettingsPage.css';
 
 export const SettingsPage = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const settingsState = useSelector(state => state.settings);
 
@@ -27,8 +29,8 @@ export const SettingsPage = () => {
   );
 
   const handleFactoryReset = () => {
+    navigate('/');
     dispatch(factoryReset());
-    // You can also redirect the user to the StartPage here
   };
 
   const handleSaveChanges = () => {
