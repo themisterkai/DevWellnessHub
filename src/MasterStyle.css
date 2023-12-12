@@ -106,7 +106,7 @@ body {
   text-decoration: none;
   cursor: pointer;
   border-radius: 5px;
-  border: 2px solid var(--tertiary-bg-color); /* Border color */
+  border: 1px solid var(--primary-accent-color); /* Border color */
   color: var(--primary-text-color); /* Text color */
   background-color: var(--tertiary-bg-color); /* Background color */
 }
@@ -115,6 +115,12 @@ body {
   background-color: var(--primary-text-color); /* Background color */
   border-color: var(--primary-text-color);
   color: var(--tertiary-bg-color);
+}
+
+.app-button:active {
+  background-color: var(--tertiary-bg-color);
+  border-color: var(-primary-accent-color);
+  color: var(--primary-text-color);
 }
 
 .line-dashboard {

@@ -37,20 +37,20 @@ export const applyColorPalette = selectedPalette => {
       /* Add more variables as needed */
     },
     teal: {
-      '--primary-bg-color': '#222831',
-      '--secondary-bg-color': '#393E46',
-      '--tertiary-bg-color': '#00ADB5',
-      '--primary-text-color': '#EEEEEE',
-      '--primary-accent-color': '#EEEEEE',
-      '--secondary-accent-color': '#17C0C7',   
+      '--primary-bg-color': '#181C21',
+      '--secondary-bg-color': '#2C2F34',
+      '--tertiary-bg-color': '#019399',
+      '--primary-text-color': '#DEECEC',
+      '--primary-accent-color': '#DEECEC',
+      '--secondary-accent-color': '#1ECFD6',   
     },
     earth: {
-      '--primary-bg-color': '#594545',
-      '--secondary-bg-color': '#815B5B',
-      '--tertiary-bg-color': '#9E7676',
-      '--primary-text-color': '#FFF8EA',
-      '--primary-accent-color': '#FFF8EA',
-      '--secondary-accent-color': '#B48585',   
+      '--primary-bg-color': '#332929',
+      '--secondary-bg-color': '#4D3E3E',
+      '--tertiary-bg-color': '#755555',
+      '--primary-text-color': '#EAE0E0',
+      '--primary-accent-color': '#EAE0E0',
+      '--secondary-accent-color': '#D28787',   
     },
     // Add more color palettes as needed
   };
