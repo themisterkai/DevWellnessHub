@@ -42,7 +42,7 @@
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .start-page .main-header {
     padding-top: 2%;
   }
@@ -84,7 +84,7 @@
 }
 
 /* Media query for medium-sized screens (e.g., tablets) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .about-header {
     font-size: 3vmin;
   }
