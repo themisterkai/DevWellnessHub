@@ -1,6 +1,4 @@
 // useScreenSize.js
-//creating our own hook to manage the screenSize of a page and using to
-//conditionally render the component needed.
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateIsMobile } from '../reducers/settings';
@@ -16,11 +14,26 @@ const useScreenSize = () => {
       dispatch(updateIsMobile({ isMobile: newIsMobile }));
     };
 
-    window.addEventListener('resize', handleResize);
+    const handleOrientationChange = () => {
+      // Use setTimeout to wait for a short period after orientation change
+      setTimeout(() => {
+        const newIsMobile = window.innerWidth <= 768;
+        setIsMobile(newIsMobile);
+        dispatch(updateIsMobile({ isMobile: newIsMobile }));
+      }, 200);
+    };
 
-    // Clean up the event listener when the component is unmounted
+    // Initial setup
+    handleResize();
+
+    // Add event listeners
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleOrientationChange);
+
+    // Clean up the event listeners when the component is unmounted
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleOrientationChange);
     };
   }, [dispatch]);
 
