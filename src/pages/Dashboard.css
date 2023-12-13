@@ -37,10 +37,10 @@
   }
 }
 
-@media only screen and (min-width: 767px) and (max-width: 768px) {
+@media only screen and (min-width: 500px) and (max-width: 768px) {
   .app-wrapper {
-    width: 70vmin;
-    height: 70vmin;
+    width: 60vmin;
+    height: 60vmin;
   }
 }
 
