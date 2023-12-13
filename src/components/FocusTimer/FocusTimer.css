@@ -19,8 +19,8 @@
 .focus-timer-running {
     position: absolute;
     color: var(--primary-text-color);
-    top: 40%;
-    left: 25%;
+    top: 41%;
+    left: 26%;
     font-family: "Inter-Regular", Helvetica;
     font-size: 2.3vmin;
     font-weight: 800;
@@ -48,6 +48,8 @@
     
     .focus-timer-running {
         font-size: 4vmin;
+        top: 41%;
+        left: 26%;
     }
 }
 
@@ -55,5 +57,7 @@
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     .focus-timer-running {
         font-size: 1.8vmin;
+        top: 41;
+        left: 26;
     }
 }

@@ -7,11 +7,11 @@ import { updateIsMobile } from '../reducers/settings';
 
 const useScreenSize = () => {
   const dispatch = useDispatch();
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const handleResize = () => {
-      const newIsMobile = window.innerWidth < 768;
+      const newIsMobile = window.innerWidth <= 768;
       setIsMobile(newIsMobile);
       dispatch(updateIsMobile({ isMobile: newIsMobile }));
     };
