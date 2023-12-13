@@ -91,9 +91,8 @@
   float: left;
 }
 
-
 /* Media query for medium-sized screens (e.g., tablets) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .focus-timer-elapsing {
     font-size: 3vmin;
   }
@@ -122,4 +121,3 @@
     font-size: 2vmin;
   }
 }
-

@@ -8,7 +8,7 @@
 .about-header {
   padding-top: 10%;
   color: var(--primary-text-color);
-  font-family: "Inter-SemiBold", Helvetica;
+  font-family: 'Inter-SemiBold', Helvetica;
   font-size: 7vmin;
   font-weight: 600;
   letter-spacing: 0.36px;
@@ -17,7 +17,7 @@
 
 .about-paragraph {
   color: var(--primary-text-color);
-  font-family: "Inter-Regular", Helvetica;
+  font-family: 'Inter-Regular', Helvetica;
   padding-top: 10%;
   width: 90%;
   text-align: left;
@@ -28,21 +28,20 @@
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .about-wrapper {
-      width: 100vw;
-      height: 100vh; /* Adjust as needed */
-      border-radius: 0px;
+    width: 100vw;
+    height: 100vh; /* Adjust as needed */
+    border-radius: 0px;
   }
 
   .about-paragraph {
     text-align: justify;
   }
-
 }
 
 /* Media query for medium-sized screens (e.g., tablets) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .about-header {
     font-size: 3vmin;
   }
@@ -54,7 +53,7 @@
 
 /* Media query for larger screens (e.g., desktops) */
 @media only screen and (min-width: 1025px) {
-  /* You can add styles specific to larger screens here if needed */ 
+  /* You can add styles specific to larger screens here if needed */
   .about-header {
     font-size: 3vmin;
   }

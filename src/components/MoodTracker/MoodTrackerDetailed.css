@@ -17,7 +17,6 @@ input[type='range'] {
   --webkit-appearance: none; /* Remove default styles in WebKit browsers */
 }
 
-
 .mood-history {
   color: var(--primary-text-color);
   font-family: 'Inter-Regular', Helvetica;
@@ -37,7 +36,7 @@ input[type='range'] {
 }
 
 /* Media query for medium-sized screens (e.g., tablets) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .mood-history {
     font-size: 2vmin;
   }

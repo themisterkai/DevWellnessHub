@@ -8,7 +8,7 @@
   --tertiary-bg-color: #4a4d53;
   --primary-text-color: #f0f2f1;
   --primary-accent-color: #f0f2f1;
-  --secondary-accent-color: #6F6F6F;
+  --secondary-accent-color: #6f6f6f;
   /* ... add more variables as needed for the dark palette */
 }
 
@@ -110,7 +110,7 @@ body {
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .main-wrapper {
     width: 100vw;
     height: 100vh; /* Adjust as needed */
@@ -119,7 +119,7 @@ body {
 }
 
 /* Media query for medium-sized screens (e.g., tablets) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .main-app-name {
     padding-top: 10%;
     font-size: 4vmin;
@@ -158,4 +158,3 @@ body {
     font-size: 1.8vmin;
   }
 }
-

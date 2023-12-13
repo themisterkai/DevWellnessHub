@@ -5,11 +5,11 @@ import { updateIsMobile } from '../reducers/settings';
 
 const useScreenSize = () => {
   const dispatch = useDispatch();
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 769);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
 
   useEffect(() => {
     const handleResize = () => {
-      const newIsMobile = window.innerWidth <= 769;
+      const newIsMobile = window.innerWidth <= 767;
       setIsMobile(newIsMobile);
       dispatch(updateIsMobile({ isMobile: newIsMobile }));
     };
@@ -17,7 +17,7 @@ const useScreenSize = () => {
     const handleOrientationChange = () => {
       // Use setTimeout to wait for a short period after orientation change
       setTimeout(() => {
-        const newIsMobile = window.innerWidth <= 769;
+        const newIsMobile = window.innerWidth <= 767;
         setIsMobile(newIsMobile);
         dispatch(updateIsMobile({ isMobile: newIsMobile }));
       }, 200);

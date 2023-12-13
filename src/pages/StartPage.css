@@ -1,29 +1,27 @@
 /* MasterStyle.css -- all the classes here to be reusable! */
 .start-wrapper {
-    width: 70vw; 
-    height: 70vh;
-    background-color: var(--secondary-bg-color);
-    border-radius: 20px;
-
+  width: 70vw;
+  height: 70vh;
+  background-color: var(--secondary-bg-color);
+  border-radius: 20px;
 }
 
 .app-button.go-dash {
-    margin-top: 10%;
+  margin-top: 10%;
 }
 
 .color-wrap {
-    margin-top: 1%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 1vmin;
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1vmin;
 }
 /* Media query for smaller screens (e.g., mobile devices) */
-@media only screen and (max-width: 768px) {
-    .start-wrapper {
-        width: 100vw;
-        height: 100vh; /* Adjust as needed */
-        border-radius: 0px;
-    }
-
+@media only screen and (max-width: 767px) {
+  .start-wrapper {
+    width: 100vw;
+    height: 100vh; /* Adjust as needed */
+    border-radius: 0px;
+  }
 }
