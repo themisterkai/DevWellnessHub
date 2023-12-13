@@ -9,10 +9,38 @@
   gap: 2vmin 2vmin;
 }
 
+.tile-wrapper {
+  width: 46.43%;
+  height: 46.43%;
+  background-color: var(--tertiary-bg-color);
+  border-radius: 7.7%;
+  position: relative;
+}
+
+.tile-main-name {
+  position: absolute;
+  top: 7.7%;
+  left: 7.7%;
+  color: var(--primary-text-color);
+  font-family: 'Inter-Regular', Helvetica;
+  font-size: 3vmin;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: normal;
+}
+
+
 /* Media query for smaller screens (e.g., mobile devices) */
 @media only screen and (max-width: 768px) {
   .app-wrapper {
     gap: 2vmin 4vmin;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 768px) {
+  .app-wrapper {
+    width: 70vmin;
+    height: 70vmin;
   }
 }
 
