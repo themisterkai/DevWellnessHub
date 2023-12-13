@@ -1,59 +1,61 @@
 .focus-circle {
-    position: absolute;
-    top: 20%;
-    left: 20%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .focus-circle-SVG {
-    width: 75%;
-    height: 75%;
+  padding: 20%;
 }
 
-.set-timer {
-    position: absolute;
-    top: 41%;
-    left: 27%;
-    width: 23%;
+.focus-circle-text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.focus-timer-running {
-    position: absolute;
-    color: var(--primary-text-color);
-    top: 41%;
-    left: 26%;
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 2.3vmin;
-    font-weight: 800;
-    letter-spacing: 0.3px;
-    line-height: normal;
+.focus-timer-text {
+  color: var(--primary-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter-Regular', Helvetica;
+  font-size: 2.3vmin;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  line-height: normal;
 }
 
 .focus-timer-done-counter {
-    position: absolute;
-    top: 80.77%;
-    left: 83.07%;
-    color: var(--primary-text-color);
-    font-family: "Inter-Bold", Helvetica;
-    font-size: 1.5vmin;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    line-height: normal;
+  position: absolute;
+  top: 80.77%;
+  left: 83.07%;
+  color: var(--primary-text-color);
+  font-family: 'Inter-Bold', Helvetica;
+  font-size: 1.5vmin;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: normal;
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
-@media only screen and (max-width: 768px) {
-    .focus-timer-done-counter {
-        font-size: 2.5vmin;
-    }
-    
-    .focus-timer-running {
-        font-size: 4vmin;
-    }
+@media only screen and (max-width: 767px) {
+  .focus-timer-done-counter {
+    font-size: 2.5vmin;
+  }
+
+  .focus-timer-text {
+    font-size: 4vmin;
+  }
 }
 
 /* Media query for medium-sized screens (e.g., tablets) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .focus-timer-running {
-        font-size: 1.8vmin;
-    }
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .focus-timer-text {
+    font-size: 1.8vmin;
+  }
 }
