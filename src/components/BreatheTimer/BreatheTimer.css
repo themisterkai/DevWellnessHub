@@ -19,8 +19,8 @@
 
 .breath-timer-running {
     position: absolute;
-    top: 40%;
-    left: 25%;
+    top: 41%;
+    left: 26%;
     color: var(--primary-text-color);
     font-family: "Inter-Regular", Helvetica;
     font-size: 2.3vmin;
